@@ -1,0 +1,265 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+@font-face{
+    font-family: "RobotoThin";
+    src: url("../fonts/Roboto/Roboto-Thin.ttf");   
+}
+
+html, body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    /*background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    */
+    background-attachment:fixed;
+    font-family: 'RobotoThin', Helvetica, Calibri, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    width:100%;
+    margin:0px;
+    padding:0px;
+    
+    color:#EEE;
+	background:#066;
+    overflow: hidden;
+}
+
+/* Portrait layout (default) */
+.app {
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        
+    }
+}
+
+/*------------CANVAS-----------*/
+#game_canvas{
+    background:#8BC34A;
+	color:#212121;
+    
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+    
+    overflow: hidden;
+}
+
+#game_canvas div{
+    position: absolute;
+}
+
+#game_treadmill{
+    width:100%;
+    height:10%;
+    background:#607D8B;
+    /*border:#455A64 0.9vmin solid;*/
+    bottom:0%;
+    z-index: 10000;
+    border-radius: 3vw;
+}
+
+#game_flag{
+    position: absolute;
+    right: 1px;
+    bottom: 7%;
+}
+
+#game_button_holder{
+    position: absolute;
+    height: 8.4vmin;
+    bottom: 10px;
+    z-index: 20000 !important;
+    width:100%;
+    text-align: right;
+}   
+
+#game_button_holder .game_button:first-child{
+    left:3%;
+}
+
+#game_button_holder .game_button:nth-child(n+2){
+    right:12%;
+}
+
+#game_button_holder .game_button:last-child{
+    right:3%;
+}
+
+#game_button_holder .game_button{
+    padding:1.2vmin;
+    border-radius: 100%;
+    background:rgba(255,193,7,0.6);
+    font-size:6vmin !important;
+    cursor: pointer;
+	position: absolute;
+    
+    transition: all 0.3s ease;
+}
+
+#game_button_holder .game_button:hover, #game_button_holder .game_button:active{
+    background:#FFF9C4;   
+}
+
+#game_button_holder .game_button:active{
+	top:2px;
+}
+
+#top_bar{
+    width:100%;
+    height:10%;
+    background:#689F38;
+    top:0%;
+    z-index: 10000;
+    position: absolute;
+    
+    transition: all 0.3s ease;
+}
+
+#game_menu{
+    position: absolute;
+    top:0;bottom: 0; margin: auto;
+    height:7vmin;   
+}
+
+#game_menu .button{
+    font-size:7vmin !important;
+}
+
+#buttonHolder{
+    right:1.5%;
+    position: absolute;
+    top:0;bottom: 0; margin: auto;
+    height:5vmin;
+}
+
+.button{
+    font-size:5vmin !important;
+    cursor: pointer;
+    
+    transition: all 0.3s ease;
+}   
+
+.button:hover{
+    color:#F0F4C3;   
+}
+
+#scoreDiv{
+    position: absolute;
+    width:20vw;
+    color:#212121;
+    padding-top:8px; padding-bottom:8px;
+    font-size:4vmin;
+    height:4vmin;
+    
+    margin: auto;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    
+    text-align:center;
+}
+
+/*----------PLAYER----------*/
+#game_player{
+    position: absolute;
+    /*transition: all 0.3s ease;*/
+}
+
+/*--------SPRINT BAR---------*/
+#sprintbar{
+    width:100%;
+    height:10%;
+    background:#FF9800;
+    bottom: -10%;
+}
+
+#sprintlevel{
+    width:100%;
+    background:#E64A19;
+    top:0;bottom:0;
+    z-index: 1000;
+}
+
+/*--------OBSTACLES---------*/
+.obstacle{
+    position: absolute;
+}
+.obstacle.spike{
+    bottom:10%;
+}
+.obstacle.spike_top{
+}
+
+.obstacle img{
+}
+
+/*--------SPLASH SCREEN-------*/
+#game_canvas #splashScreen{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+
+#splashScreen span{
+    height:10%;
+    width:100%;
+    position: absolute;
+    /*top:0; bottom:0; left:0; right:0;*/
+    top: 38%;
+    text-align: center;
+    font-size: 8vmin;
+    font-weight: 800;
+}
+
+#splashScreen span.splashScreenNewline{
+    display: inline-block;
+    padding-top: 10vmin;
+    font-size: 5vmin;
+    font-weight: 100;
+}
+
+#splashScreen.appear{
+    opacity: 1;
+}
+
+#splashScreen.disappear{
+    opacity: 0;
+}
+
+
+/*----------------------*/
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
