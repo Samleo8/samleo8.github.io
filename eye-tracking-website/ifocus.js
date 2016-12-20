@@ -136,7 +136,7 @@ function pageInit(){
     /*-------I-FOCUS CURSOR-------*/
     //Array of all kinds of elements that are clickable.
     //Format CSS style: #id, .class, element
-    clickable = new Array("a",".link-btn",".options-btn",".alt-nav .navCircle:not(.alt-colour)",".navCircle.alt-colour","video","#back-btn",".aboutpg .conceptCircle:not(.active)");
+    clickable = new Array("a",".cursor-clickable",".link-btn",".options-btn",".alt-nav .navCircle:not(.alt-colour)",".navCircle.alt-colour","video","#back-btn",".aboutpg .conceptCircle:not(.active)");
     clickableInverted = new Array("#optionsCircle","#navList:not(.alt-nav) .navCircle:not(.alt-colour)","#optionsIcons span");
     clickableDelayed = {
         "#game-row1 a":4000,
@@ -291,7 +291,7 @@ function pageInit(){
         out+="<div class='gameTitle'>"+gamesTitle[i]+"</div>";
         gameDiv.innerHTML = out;
         if(gamesTitle[i]=="ScrollType"){
-            gameDiv.parentNode.href = "ScrollType/ScrollType.html";
+            gameDiv.parentNode.href = "ScrollType/scrollType.html";
         }
         else{
             gameDiv.parentNode.href = "game.html?name="+titleCmp;
