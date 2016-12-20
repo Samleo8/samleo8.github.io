@@ -719,6 +719,11 @@ h1.title{
     user-select: none;
 }
 
+.tag.new{
+    background:rgb(153, 0, 0);
+    transform: rotate(30deg);
+}
+
 .tag.efficient{
     background:rgb(153, 0, 0);
 }
