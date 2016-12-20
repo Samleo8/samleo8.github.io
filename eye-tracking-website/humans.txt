@@ -1,0 +1,24 @@
+# humanstxt.org/
+# The humans responsible and technology colophon
+
+# TEAM
+Samuel Leong
+Location: Singapore, Singapore
+
+Walter Kong
+Location: Singapore, Singapore
+
+Ryan Tan
+Location: Singapore, Singapore
+
+Group
+Email: ieyefocus@gmail.com
+
+# THANKS
+Xiao Songyuan
+
+# SITE
+Last update: 17/01/2014 10:12:02.20 SST
+Standards: HTML5, CSS3
+Components: - 
+Software: Adobe Edge Code CC

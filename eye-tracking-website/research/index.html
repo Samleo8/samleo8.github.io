@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<base href="../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="Images/favicon.ico">
+<title>I-Focus: Research</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="cursor.css" rel="stylesheet" type="text/css">
+<meta name="robots">
+<link rel="author" href="humans.txt">
+<meta name="description" content="I-Focus: Efficient, Effective, Intuitive." />
+<meta name="keywords" content="eye-tracking, gestures, input modes, multi-modal, futuristic, technology, research, application, project, efficient, effective, intuitive" />
+<noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;	
+		
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;	
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
+<script src="jquery.js"></script>
+<script src="ifocus.lib.js"></script>
+<script src="ifocus.js"></script>
+<script src="cursor.js"></script>
+</head>
+<body>
+<!--Scroll Bars-->
+<div id="scrollUp" class="scrollArea" onmouseover="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollDown" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollLeft" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollRight" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+
+<!--Navigation-->
+<div id="navList" class="disappear">
+    <div class="navCircle circle circle-height alt-colour disableSelect" id="navCircle1"><span class="center">Toggle<br>Menu</span></div>
+    <a href="demo/index.html"><div class="navCircle circle circle-height" id="navCircle2"><span class="menu-icon icon-demo"></span><span class="center">Live Demo</span></div></a>
+    <a href="games/index.html"><div class="navCircle circle circle-height alt-colour" id="navCircle3"><span class="menu-icon icon-games"></span><span class="center">Games</span></div></a>
+    <a href="concept/index.html"><div class="navCircle circle circle-height" id="navCircle4"><span class="menu-icon icon-concept"></span><span class="center">Concept</span></div></a>
+    <a href="about/index.html"><div class="navCircle circle circle-height" id="navCircle5"><span class="menu-icon icon-contact"></span><span class="center">About Us</span></div></a>
+</div>
+
+<!--START MAIN-->
+<div id="main-content">
+    <h1 class="title">Research</h1>
+    <div class="hr-divider pad-bottom"></div>
+    <div id="researchIntro">
+        <img src="Images/Research/researchSetup.png" />
+        <p>In our research, we conducted trial tests on 2 platforms - a game and a website - to test out the intuitiveness, feasibility and functionality of eye-tracking on them.</p>
+        <p>6 participants were randomly selected from the Defence Science Organisation of Singapore, of varying ages, ranging from 28-35 years old. Some participants did not have any experience with eye-tracking and leap motion, but all of them underwent a proper briefing.</p>
+        <p>We found out that once the the eye-tracker is accurate enough, eye-tracking beats the mouse in terms of intuitiveness, speed and efficiency, as well as performance for targeting &amp; tracking tasks.</p>
+        <p>We also found out that the most optimal method of navigating with an eye-tracker is with a radial menu. Although most prefered physical clicks and scrolling with the mouse wheel, they still found the optimised scrolling method and modified cursor quite intuitive.</p>
+    </div>
+    <div class="hr-divider pad-bottom"></div>
+    <div class="researchContent">
+        <h2 class="light">Part 1 - Game</h2>
+        <p>This part of the research aims to explore the effectiveness, intuitiveness and capability of eye-tracking for targeting and tracking tasks.</p>
+        <p><a href="games/game.html?name=MainGame" title="7u j8ts l0st">The game</a> was played 3 times by each participant, each time having a different input method, namely eye-tracker, mouse, and leap motion. Before each run, the participant was briefed and had an opportunity to practice with that particular input mode.</p>
+        <p>We recorded the timing participants needed to complete <a href="games/game.html?name=MainGame" title="7u j8ts l0st">the game</a> each time, and also asked them to rank the input methods according to preference. We also recorded misfire rates.</p>
+        <div class="text-center">
+            <img src="Images/Research/graphGame.png" id="reasonGameImg-1">
+            <img src="Images/Research/commentsGame.png" id="reasonGameImg-2">
+            <img src="Images/Research/gamePic.jpg" id="reasonGameImg-3">
+        </div>
+    </div>
+    <div class="hr-divider pad"></div>
+    <div class="researchContent">
+    <h2 class="light">Part 2 - Website</h2>
+    <p>Each participant was required to navigate through 2 versions of our website, which differed in menu arrangement, selection method, and scrolling method. They were given clear instructions along the way to make sure that they knew what to do.</p>
+    <p>In short, one version was optimised for eye-tracking and was completely hands-free, while another version was optimised for some use of the mouse for clicking and scrolling.</p>
+    <p>Participants were given a standard series of simple tasks such as clicking links, reading, and changing options. After navigating through each version, participants were required to take the Questionnaire for User Interaction Satisfaction (QUIS).</p>
+    <div class="text-center">
+        <img src="Images/Research/graphWebsite.png" id="reasonGameImg-1">
+        <figure class="researchWebsite">
+            <img src="Images/Research/menuCompare.png">
+            <figcaption><em>Radial Menu</em> more intuitive than <em>linear menu</em></figcaption>
+        </figure>
+        <figure class="researchWebsite">
+            <img src="Images/Research/cursorCompare.png">
+            <figcaption><em>Physical click</em> more intuitive than <em>modified cursor</em></figcaption>
+        </figure>
+    </div></div>
+    <div class="hr-divider pad"></div>
+    <div class="researchContent">
+    <h2>Part 3 - Miscellaneous Findings</h2>
+    <ul>
+        <li>Calibration works better with lights on</li>
+        <li>Participants tilted head as an attempt to mitigate lack of accuracy</li>
+        <li>Participants sometimes pan the screen to mitigate lack of accuracy</li>
+        <li>Sometimes participants instinctively looked away before clicking, thinking that they had already clicked</li>
+        <li>Participants found cursor that moved around while reading very irritating</li>
+        <li>Participants complained mainly about accuracy, stating that if there had been pinpoint accuracy, eye-tracking would be faster and more intuitive than the mouse and keyboard.</li>
+        <li>Sound input could be a possible alternative to the physical click</li>
+    </ul>
+    </div>
+    <div class="hr-divider pad"></div>
+    <h2 class="light">Conclusion</h2>
+    <div id="researchConclusion">
+    <p>Once the <b>hardware limitation</b> is removed, or the eye-tracker is <b>accurate enough</b>, eye-tracking beats the mouse in terms of <b>intuitiveness</b> and <b>efficiency</b>, particularly at <b>targeting tasks</b>.
+    <p>To optimise an interface for eye-tracking, the interface should preferably use a <b>radial menu</b> for navigation. <b>Kinesthetic clicks</b> and <b>physical scrolling</b> options were found to be preferred. Nevertheless, the addition of an auto-scrolling function and hands-free cursor is an advisable option, for the sake of the physically disabled.</p>
+    </div>
+</div><div></div>
+<!--END MAIN-->
+    
+<!--Options-->
+<div id="optionsCircle" class="circle circle-height disableSelect" onmouseover="optionsHover(this)" onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+    <span class="" id="optionsCircleContent">
+        <h1>Options</h1>
+	</span>
+</div>
+    
+
+<div id="optionsBox" class="invertedColor disableSelect">
+	<h1>
+        Options
+        <div id="optionsIcons">
+            <span class="icon-home"></span>
+            <span class="icon-reset"></span>
+            <span class="icon-keyboard"></span>
+        </div>
+    </h1>
+    <hr>
+    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
+	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
+    
+	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
+    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
+    
+	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+	
+    <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>
+</div>
+    
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+<div id="mobileShow">
+    <div id="mobileShowCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work on mobile.</p>
+            <p>Try a laptop/desktop, sorry.</p>
+        </div>
+    </div>
+</div>
+
+<div class="cursor">
+    <div class="cursor-bg">
+        <div class="text"></div>
+    </div>       
+    <div class="spiner-holder-one animate-0-25-a">
+        <div class="spiner-holder-two animate-0-25-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-25-50-a">
+        <div class="spiner-holder-two animate-25-50-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-50-75-a">
+        <div class="spiner-holder-two animate-50-75-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-75-100-a">
+        <div class="spiner-holder-two animate-75-100-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

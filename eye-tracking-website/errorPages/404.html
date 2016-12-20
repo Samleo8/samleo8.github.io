@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Error 404: Page Vanished</title>
+<style>
+@font-face{
+	font-family:"Museo300";
+	src:url(../Fonts/Museo300.otf);
+}
+@font-face{
+	font-family:"Museo500";
+	src:url(../Fonts/Museo500.otf);
+}
+@font-face{
+	font-family:"Museo700";
+	src:url(../Fonts/Museo700.otf);
+}
+@font-face{
+	font-family:"Museo900";
+	src:url(../Fonts/Museo900.otf);
+}
+
+html{
+	width:100%;
+	height:100%;
+	padding:0;	
+	margin:0;
+	font-family:"Museo300","Calibri","Arial",Sans-Serif;
+	color:#EEE;
+	background:#066;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family:"Museo500","Calibri","Arial",Sans-Serif;
+}    
+    
+a, a:visited{
+    color:#066;
+    border-bottom:dotted 1px #066;
+    text-decoration:none;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+a:hover{
+    color:#099;
+    border-bottom-color:#099;
+}
+    
+#errorShow{
+    display:inline-block;
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:0;
+    bottom:0;
+    background:#066;
+    text-align:center;
+    z-index:2147483640; /* no mobile takes precedence */
+}
+#errorCircle{
+    width:350px;
+    height:350px;
+    padding:10px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    border-radius:1000px;
+    background:#EEE;
+    color:#066;
+    text-align:center;
+}
+#errorCircle div{
+    width:250px;
+    height:250px;	
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+#errorCircle h1{
+    font-size:40px;
+    margin-top:20px;	
+    margin-bottom:5px;
+}
+</style>
+</head>
+<body>
+<div id="errorShow">
+    <div id="errorCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <h2>Error 404:<br>Page Vanished</h2>
+            <p>The requested URL was not found on this server.</p>
+            <p>You can go back to your <a onclick="javascript:history.go(-1)">last page</a> and try again.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

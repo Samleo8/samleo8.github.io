@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="Images/favicon.ico">
+<title>I-Focus</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="cursor.css" rel="stylesheet" type="text/css">
+<meta name="robots">
+<link rel="author" href="humans.txt">
+<meta name="description" content="I-Focus: Efficient, Effective, Intuitive." />
+<meta name="keywords" content="eye-tracking, gestures, input modes, multi-modal, futuristic, technology, research, application, project, efficient, effective, intuitive" />
+<noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;	
+		
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;	
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
+<script src="jquery.js"></script>
+<script src="ifocus.lib.js"></script>
+<script src="ifocus.js"></script>
+<script src="cursor.js"></script>
+</head>
+<body>
+<div id="scrollUp" class="scrollArea" onmouseover="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollDown" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollLeft" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollRight" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+
+<div id="welcomeArea" class="disableSelect">
+    <div id="welcomeBanner">
+        <h1>Don't Blink!<br>You could miss I-Focus.</h1>
+        <h2>Efficient. Effective. Intuitive.</h2>
+        <p>Through research and applications that you will see in this website,</p>
+        <p>I-Focus aims to combine the latest in eye-tracking technology</p>
+        <p>with other forms of input to give you an effective and intuitive set of gestures.</p>
+        <div>
+            <span class="options-btn unchecked" id="banner_optionsWelcomeHide" onClick="toggleOptions('welcomeHide')">
+                Do not show again (Can change in options)
+            </span>
+        </div>
+    </div>
+    <div id="welcomeContinueBtn" class="circle circle-width disableSelect" onclick="closeWelcome()">
+        <span class="disableSelect">
+            <img src="Images/logo.png"/>
+            <div>See More</div>
+        </span>
+    </div>
+</div>
+    
+<div id="mainCircleHome" class="circle circle-height">
+	<span class="" id="mainCircleContent">
+        <h1>I-Focus</h1>
+        <em>Efficient. Effective. Intuitive.</em>
+        <p>I-Focus could just <b>revolutionise</b> the way we interact with our devices.</p>
+	</span>
+</div>
+
+<!--Navigation-->
+<div id="navListHome">
+    <ul>
+        <a href="demo/index.html"><li class="navHome"><span class="center">Live Demo</span></li></a>
+        <a href="games/index.html"><li class="navHome"><span class="center">Games</span></li></a>
+        <a href="research/index.html"><li class="navHome"><span class="center">Research</span></li></a>
+        <a href="concept/index.html"><li class="navHome"><span class="center">Concept</span></li></a>
+        <a href="about/index.html"><li class="navHome"><span class="center">About Us</span></li></a>
+        
+    </ul>
+</div>
+
+<!--Options-->
+<div id="optionsCircle" class="circle circle-height disableSelect" onmouseover="optionsHover(this)" onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+    <span class="" id="optionsCircleContent">
+        <h1>Options</h1>
+	</span>
+</div>
+
+<div id="optionsBox" class="invertedColor disableSelect">
+	<h1>
+        Options
+        <div id="optionsIcons">
+            <span class="icon-home"></span>
+            <span class="icon-reset"></span>
+            <span class="icon-keyboard"></span>
+        </div>
+    </h1>
+    <hr>
+    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
+	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
+    
+	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
+    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
+    
+	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+	
+    <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>
+</div>
+    
+<!--
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+<!---->
+
+<!--Error Circles-->
+<div id="bs" style="height:100%; position:absolute; left:0; padding:0; margin:0; background:rgba(0,0,0,0.4)">&nbsp;</div>
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+
+<div id="mobileShow">
+    <div id="mobileShowCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work on mobile.</p>
+            <p>Try a laptop/desktop, sorry.</p>
+        </div>
+    </div>
+</div>
+    
+<div class="cursor">
+    <div class="cursor-bg">
+        <div class="text"></div>
+    </div>       
+    <div class="spiner-holder-one animate-0-25-a">
+        <div class="spiner-holder-two animate-0-25-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-25-50-a">
+        <div class="spiner-holder-two animate-25-50-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-50-75-a">
+        <div class="spiner-holder-two animate-50-75-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-75-100-a">
+        <div class="spiner-holder-two animate-75-100-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

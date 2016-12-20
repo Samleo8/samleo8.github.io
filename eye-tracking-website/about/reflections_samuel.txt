@@ -1,0 +1,31 @@
+This project has been a very fresh and enriching experience for me, not just due to the interesting nature of our project, but also because we got to collaborate with the Defence Science Organisation of Singapore (DSO).
+
+I remember looking at the suggested list of projects and realising that none of them sparked a particular interest to me, much less wow audiences. I decided to propose our own project, one that we would be truly passionate about. I still remember being inspired by one DSO engineer’s work on helping soldiers spot targets within their focal and peripheral vision. Some research and discussion soon led me to the idea of eye-tracking and now I have a project I can call my own.
+
+On hindsight, I am glad that we chose this project over the suggested ones. It is indeed a project which can interest audiences with its novelty, but more importantly, it is a project that the group is passionate about (and one which even our mentors take high interest in). 
+
+With this year’s project being unique and ambitious, programming and designing the applications has been a big challenge, since our project requires a large range of applications. It was a true test of my programming skills as I had to code games, the website and in particular the console application using a programming language new to me.
+
+Having worked together for one year already, the team was able to better use complement each other’s strengths and weaknesses to complete the various tasks successfully. 
+
+During the semi-finals presentation, we had faced a major hurdle when the eye-tracker suddenly stopped working. Even though we were not able to pull off the live demo as planned, the team was able to adapt to the situation by showing videos instead. It was only through co-operating together that were able to overcome such a challenge.
+
+The most notable part of the project was working with DSO and interacting with the engineers there. With their help and mentorship we were able to progress from being amateurs to successfully conducting research on live participants.
+
+I was impressed by our mentors’ experience and foresight as we discussed possibilities of how we would go about conducting our research. While we were formulated our ideas, our mentor sent us questions to help us gain greater insights into what we were delving into.
+
+Even after fully grasping the overall idea of our gesture project, we still had to plan the actual research. I used to dislike detailed planning, thinking it was too tedious, especially since we already had an overview of what to do. Yet through this experience, I understood the importance of proper planning.
+ 
+We first discussed with our mentors the overall procedure of the experiment. Although this initial stage seemed boring, it was a crucial stage and a good learning experience as we needed guidance on how to gather relevant and concrete results. If not from our discussion, I would never have learnt of the Questionnaire for User Interface Satisfaction (an industry standard survey) and would probably have used a less accurate survey instead.
+
+We also had to go through a trial run, which involved preparing the setup and familiarising ourselves with the procedure. It turned out that we spent a lot of time fixing the setup and needed to make some changes to the experiment. Had we went straight with the research itself, we would have faced too many hiccups and would have needed to redo our experiment again.
+
+I understood from this experience that no matter how eager one is to dive into the experiment, proper planning and pre-experiment testing is crucial in order to ensure the experiment runs smoothly and relevant research can be conducted.
+
+There was much to learn from the experiment itself as well. The trial run, the advice from our mentors and my familiarity with the project came in very useful throughout the experiment as we needed to adapt to the different situations when dealing with different participants. It was interesting interacting with different participants, seeing their reactions and hearing their suggestions on how to improve on the project.
+
+The entire research process, from the planning to the actual experiment and down to writing the research paper, was an eye-opening experience that helped me better appreciate first-hand the kind of research that our DSO mentors conduct on a day-to-day basis. 
+
+Having had a glimpse of various departments in DSO, I found this particular field of research (human computer interaction) the most interesting, as it was really fun interacting with live participants and analysing their reactions to our experiment.
+
+Overall, this project has been an enriching learning experience and I would love to embark on a similar project if given the chance.

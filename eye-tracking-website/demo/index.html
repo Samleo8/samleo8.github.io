@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="../Images/favicon.ico">
+<title>I-Focus: Live Demo</title>
+<link href="../main.css" rel="stylesheet" type="text/css">
+<link href="../cursor.css" rel="stylesheet" type="text/css">
+<meta name="robots">
+<link rel="author" href="humans.txt">
+<meta name="description" content="I-Focus: Efficient, Effective, Intuitive." />
+<meta name="keywords" content="eye-tracking, gestures, input modes, multi-modal, futuristic, technology, research, application, project, efficient, effective, intuitive" />
+<noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;	
+		
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;	
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
+<script src="../jquery.js"></script>
+<script src="../ifocus.lib.js"></script>
+<script src="../ifocus.js"></script>
+<script src="../smooth-scroll.js"></script>
+<script src="../cursor.js"></script>
+</head>
+<body>
+<!--Scroll Bars-->
+<div id="scrollUp" class="scrollArea" onmouseover="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollDown" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollLeft" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollRight" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+
+<!--Navigation-->
+<div id="navList" class="disappear">
+    <div class="navCircle circle circle-height alt-colour disableSelect" id="navCircle1"><span class="center">Toggle<br>Menu</span></div>
+    <a href="../games/index.html"><div class="navCircle circle circle-height" id="navCircle2"><span class="menu-icon icon-games"></span><span class="center">Games</span></div></a>
+    <a href="../research/index.html"><div class="navCircle circle circle-height alt-colour" id="navCircle3"><span class="menu-icon icon-research"></span><span class="center">Research</span></div></a>
+    <a href="../concept/index.html"><div class="navCircle circle circle-height" id="navCircle4"><span class="menu-icon icon-concept"></span><span class="center">Concept</span></div></a>
+    <a href="../about/index.html"><div class="navCircle circle circle-height" id="navCircle5"><span class="menu-icon icon-contact"></span><span class="center">About Us</span></div></a>
+</div>
+
+<!--START MAIN-->
+<div id="main-content">
+    <h1 class="title">Live Demo</h1>
+    <h3>To show you we are talking business.</h3>
+    <div class="hr-divider pad-bottom"></div>
+    <div id="liveDemoIntro">
+        <p>I-Focus is an eye-tracking project that aims to use the latest in eye-tracking technology, combined with other forms of input, to create a set of multimodal gestures capable of intuitive interface control.</p>
+        <p>Through a full package incorporating research and application, we present you an interface that is...</p>
+    </div>
+    <div class="hr-divider pad-bottom"></div>
+    <div class="split split3" id="liveDemoStart">
+        <div>
+            <span>Efficient</span>
+            <div class="demoContent" id="demoContentEfficient">
+                
+            </div>
+        </div>
+        <div>
+            <span>Effective</span>
+            <div class="demoContent" id="demoContentEffective">
+                
+            </div>
+        </div>
+        <div>
+            <span>Intuitive</span>
+            <div class="demoContent" id="demoContentIntuitive">
+                
+            </div>
+        </div>
+    </div>
+    <div class="hr-divider pad"></div>    
+    
+    <a id="anchor-i-focus"></a>
+    <h2 class="light">Presenting I-Focus
+        <div class="tag efficient"></div><div class="tag effective"></div><div class="tag intuitive"></div>
+    </h2>
+    <!---->
+    <div class="text-center">
+        <video width="960" height="540" controls="controls">
+            <source src="project_final.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!---->
+    <div class="hr-divider pad"></div>
+    
+    <a id="anchor-future-of-eye-tracking"></a>
+    <h2 class="light">The Future of Eye-Tracking
+        <div class="tag efficient"></div><div class="tag effective"></div><div class="tag intuitive"></div>
+    </h2>
+    <p>Eye-tracking could revolutionise the way we work, play and interact with our devices.</p>
+    <p>Watch this video on the enormous potential and uses of eye-tracking in our daily lives.</p>
+    <p><i>Credits: This video is from an an eye-tracking giant Tobii</i></p>
+    <div class="text-center">
+        <video width="960" height="540" controls="controls">
+            <source src="Tobii-Vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="hr-divider pad"></div>
+    
+    <a id="anchor-multi-modal-input-systems"></a>
+    <h2 class="light">
+        Multi-modal Input Systems
+        <div class="tag efficient"></div><div class="tag effective"></div><div class="tag intuitive"></div>
+    </h2>
+    <p>At I-Focus we believe in using multi-modal input systems.</p>
+    <p>There is no one-size-fits-all solution for an efficient, effective and intuitive interface. We need to recognise every input system's advantages and disadvantages, and realise no system is perfect.</p>
+    <p>Currently, we are only able to use our hands and the few conventional devices such as the mouse, and tablets to control the user interface.</p>
+    <p>Our project will allow for more direct interaction with our devices. Movements of the body and the eyes can be directly translated into controls for the user interface, which will definitely prove useful, productive and convenient for majority of users. </p>
+    <p>With I-Focus, the computer is literally just a glance away.</p>
+    
+    <div class="hr-divider pad"></div>
+    
+    <a id="anchor-auto-scrolling"></a>
+    <h2 class="light">
+        Auto-Scrolling
+        <div class="tag effective"></div><div class="tag intuitive"></div>
+    </h2>
+    <p>Auto-Scrolling is a in-site feature that allows you to read on without moving a finger.</p>
+    <p>You see, the marvel of eye-tracking lies in the way it gives us semi-telepathic powers when controlling an interface.</p>
+    <p>Eye-tracking makes reading and scrolling very effective and highly intuitive.</p>
+    <p>By looking at the edges of the screen, we know you want to look on. And with I-Focus' auto-scrolling function, everything is so intuitive you won't even actively think about it.</p>
+    
+    <div class="hr-divider pad"></div>
+    
+    <a id="anchor-videos"></a>
+    <h2 class="light">
+        Videos
+        <div class="tag efficient"></div><div class="tag intuitive"></div>
+    </h2>
+    <p>Eye-tracking gives you the ability to control your computer ever so naturally.</p>
+    <p>With I-Focus, the interface seems to read your mind, understanding your intentions in the blink of an eye.</p>
+    <p>When watching videos, looking away from the video triggers a pause, and looking back automatically resumes it. </p>
+    <p><i>Credits: This video is from Texas University</i></p>
+    <div class="text-center">
+        <video width="960" height="540" controls>
+            <source src="EyeTrack-Disabled.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="hr-divider pad"></div>
+    
+    <a id="anchor-games"></a>
+    <h2 class="light">
+        Games
+        <div class="tag effective"></div><div class="tag intuitive"></div>
+    </h2>
+    <p>Games immerse you when it appeals and reacts to your sight. </p>
+    <p>Wouldn’t it be great to have the reticle automatically shifted to where you’re looking?</p>
+    <p>We’re exploring the possibilities eye-tracking can bring to the gaming world, and these simple games demonstrate a few.</p>
+    <div class="text-center"><a href="../games/index.html"><div class="link-button gen-btn" id="link-button-games">A New Gaming Experience</div></a></div>
+    
+    <div class="hr-divider pad"></div>
+    
+    <a id="anchor-multi-tasking"></a>
+    <h2 class="light">
+        Multi-Tasking
+        <div class="tag efficient"></div><div class="tag effective"></div>
+    </h2>
+    <p>Working and typing on 2 different windows or screens simultaneously wouldn’t be inconvenient anymore.</p>
+    <p>Toggling screens can be done just by looking at the desired window, or as otherwise configured.</p>
+    <p>Scrolling won't require you to lift your hands off the keyboard. Just stare, and wait for the <a data-scroll href="#anchor-auto-scrolling">auto-scroll</a> function to kick in.</p>
+    <div class="text-center"><a href="../games/ScrollType/scrolltype.html"><div class="link-button gen-btn" id="link-button-games">Experience it for yourself</div></a></div>
+</div>
+<div>
+    
+</div>
+<!--END MAIN-->
+    
+<!--Options-->
+<div id="optionsCircle" class="circle circle-height disableSelect" onmouseover="optionsHover(this)" onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+    <span class="" id="optionsCircleContent">
+        <h1>Options</h1>
+	</span>
+</div>
+    
+
+<div id="optionsBox" class="invertedColor disableSelect">
+	<h1>
+        Options
+        <div id="optionsIcons">
+            <span class="icon-home"></span>
+            <span class="icon-reset"></span>
+            <span class="icon-keyboard"></span>
+        </div>
+    </h1>
+    <hr>
+    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
+	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
+    
+	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
+    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
+    
+	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+	
+    <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>
+</div>
+    
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+<div id="mobileShow">
+    <div id="mobileShowCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work on mobile.</p>
+            <p>Try a laptop/desktop, sorry.</p>
+        </div>
+    </div>
+</div>
+    
+<div class="cursor">
+    <div class="cursor-bg">
+        <div class="text"></div>
+    </div>       
+    <div class="spiner-holder-one animate-0-25-a">
+        <div class="spiner-holder-two animate-0-25-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-25-50-a">
+        <div class="spiner-holder-two animate-25-50-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-50-75-a">
+        <div class="spiner-holder-two animate-50-75-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-75-100-a">
+        <div class="spiner-holder-two animate-75-100-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+</div>
+    
+<script>
+smoothScroll.init({
+    speed: 500, 
+    easing: 'easeInOutCubic',
+    updateURL: false, //whether or not to update the URL with the anchor hash on scroll
+    offset: 0, //how far to offset the scrolling anchor location in pixels
+    callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
+    callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling
+});
+</script>
+</body>
+</html>

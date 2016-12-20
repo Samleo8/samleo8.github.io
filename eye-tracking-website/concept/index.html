@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="../Images/favicon.ico">
+<title>I-Focus: Concept</title>
+<link href="../main.css" rel="stylesheet" type="text/css">
+<link href="../cursor.css" rel="stylesheet" type="text/css">
+<meta name="robots">
+<link rel="author" href="humans.txt">
+<meta name="description" content="I-Focus: Efficient, Effective, Intuitive." />
+<meta name="keywords" content="eye-tracking, gestures, input modes, multi-modal, futuristic, technology, research, application, project, efficient, effective, intuitive" />
+<noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;	
+		
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;	
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
+<script src="../jquery.js"></script>
+<script src="../ifocus.lib.js"></script>
+<script src="../ifocus.js"></script>
+<script src="../cursor.js"></script>
+</head>
+<body>
+<!--Scroll Bars-->
+<div id="scrollUp" class="scrollArea" onmouseover="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollDown" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollLeft" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+<div id="scrollRight" class="scrollArea" onMouseOver="scrollAreaFire(this.id)" onmouseout="stopScrolling()"></div>
+
+<!--Navigation-->
+<div id="navList" class="disappear">
+    <div class="navCircle circle circle-height alt-colour disableSelect" id="navCircle1"><span class="center">Toggle<br>Menu</span></div>
+    <a href="../demo/index.html"><div class="navCircle circle circle-height" id="navCircle2"><span class="menu-icon icon-demo"></span><span class="center">Live Demo</span></div></a>
+    <a href="../games/index.html"><div class="navCircle circle circle-height alt-colour" id="navCircle3"><span class="menu-icon icon-games"></span><span class="center">Games</span></div></a>
+    <a href="../research/index.html"><div class="navCircle circle circle-height" id="navCircle5"><span class="menu-icon icon-research"></span><span class="center">Research</span></div></a>
+    <a href="../about/index.html"><div class="navCircle circle circle-height" id="navCircle4"><span class="menu-icon icon-contact"></span><span class="center">About Us</span></div></a>
+</div>
+
+<!--START MAIN-->
+<div id="main-content">
+    <h1 class="title">Concept</h1>
+    <h3>What I-Focus is all about</h3>
+    <div class="hr-divider pad-bottom"></div>
+    <div id="liveDemoIntro" class="smaller">
+        <p>I-Focus is an attempt at a brand new user-interface interaction methods.</p>
+        <p>With eye or gaze-gestures as the predominant input method, users will get to use a variety of input methods including leap motion and key-presses to interact with the interfaces that the project team has created. </p>
+    </div>
+    <div class="hr-divider pad-bottom"></div>
+    <div id="conceptIntro">
+        <!--Align circles dynamically-->
+        <div class="conceptCircle circle circle-height">
+            <h2 class="title">Objectives</h2>
+            <div class="content center">
+                 Find the most suitable input methods for our website and games, and the best gesture-function combination.
+            </div>
+        </div>
+        
+        <div class="conceptCircle circle circle-height">
+            <h2 class="title">Target Audience</h2>
+            <div class="content center">
+                General Public
+                <p>Physically Disabled</p>
+            </div>
+        </div>
+        
+        <div class="conceptCircle circle circle-height">
+            <h2 class="title">Rationale</h2>
+            <div class="content center">
+                We believe that eye gestures will create a more intuitive experience interacting with our daily devices.
+            </div>
+        </div>
+    </div>
+    <div class="hr-divider pad-top-bottom"></div>
+    <div id="conceptContent">
+        <h2>Overview</h2>
+        <p>This project is an eye-tracking project by a group of 4 Hwa Chong students in collaboration with the Defence Organisation of Singapore (DSO).</p>
+        <p>Eye-tracking (or gaze-tracking) is basically controlling the interface by looking at where you want the cursor to move to. The intention of the project was to test out how various gesture control methods can make interface control more efficient and intuitive.</p>
+        <p>We decided to focus on eye-tracking as our main input method as it was an interesting and emerging technology that is rarely documented, but seemed to be very efficient and intuitive.</p>
+        <div class="hr-divider pad-top-bottom"></div>
+        <div></div>
+        <div class="text-center"><a href="../demo/index.html"><div class="link-button gen-btn" id="link-button-games">&nbsp;&nbsp;&nbsp;See I-Focus in Action &nbsp;&nbsp;&nbsp;</div></a></div>
+        <div></div>
+        <div class="hr-divider pad-top-bottom"></div>
+        <h2>Inspiration</h2>
+        <p>Throughout history, the world has been looking to design and improve user interfaces, making them more intuitive and user-friendly.</p>
+        <p>It is interesting to see how we started off with the Disk Operating System (DOS) system, before advancing towards on to the common Graphic User Interface (GUI) that we use on our computers today.</p>
+        <p>Yet we are never satisfied with our interfaces, but are instead taking on the challenge to constantly improve them. We now have touchscreens and motion sensing, as evident in commercial products such as our smartphones and the Xbox Kinect, but this is nonetheless insufficient.</p>
+        <p>I-Focus explores an entirely new method of user-interface interaction - eye-tracking - which we believe is an efficient and intuitive method of interaction, but is not as well-documented.</p>
+        <div class="hr-divider pad-top-bottom"></div>
+        <h2>Methodology &amp; Timeline</h2>
+        <p>Our project involves 3 main stages: Designing the application, conducting research and making improvements. It is a constant cycle lasting throughout the project, from the prelims to the finals.</p>
+        <div class="text-center"><img src="../images/timeline.png" width="70%" /></div>
+    </div>
+</div>
+<div></div>
+<!--END MAIN-->
+    
+<!--Options-->
+<div id="optionsCircle" class="circle circle-height disableSelect" onmouseover="optionsHover(this)" onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+    <span class="" id="optionsCircleContent">
+        <h1>Options</h1>
+	</span>
+</div>
+    
+
+<div id="optionsBox" class="invertedColor disableSelect">
+	<h1>
+        Options
+        <div id="optionsIcons">
+            <span class="icon-home"></span>
+            <span class="icon-reset"></span>
+            <span class="icon-keyboard"></span>
+        </div>
+    </h1>
+    <hr>
+    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
+	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
+    
+	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
+    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
+    
+	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+	
+    <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>
+</div>
+    
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+<div id="mobileShow">
+    <div id="mobileShowCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work on mobile.</p>
+            <p>Try a laptop/desktop, sorry.</p>
+        </div>
+    </div>
+</div>
+
+<div class="cursor">
+    <div class="cursor-bg">
+        <div class="text"></div>
+    </div>       
+    <div class="spiner-holder-one animate-0-25-a">
+        <div class="spiner-holder-two animate-0-25-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-25-50-a">
+        <div class="spiner-holder-two animate-25-50-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-50-75-a">
+        <div class="spiner-holder-two animate-50-75-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-75-100-a">
+        <div class="spiner-holder-two animate-75-100-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

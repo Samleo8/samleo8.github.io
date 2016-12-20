@@ -1,0 +1,7 @@
+# robotstxt.org/
+
+User-agent: *
+Disallow: /archive/
+Disallow: /cache.bat
+Disallow: /cache-update.bat
+Disallow: /errorPages/

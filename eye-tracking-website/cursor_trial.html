@@ -1,0 +1,54 @@
+<html>
+
+<head>
+
+<script src="ifocus.lib.js"></script>
+<script src="cursor.js"></script>
+<link href="cursor.css" rel="stylesheet" type="text/css">
+<style>body{background:black;}</style>
+<script>
+var mouseX,mouseY;
+var cur;
+window.onload = function(){
+	cur = new Cursor();
+	cur.init();
+}
+window.onmousemove = function(){
+	e = window.event;
+	mouseX = e.clientX;
+	mouseY = e.clientY;
+	var ele = getElementsByClass("cursor")[0];
+	ele.style.top = mouseY-25;
+	ele.style.left = mouseX-25;
+}
+</script>
+</head>
+<body>
+    <div class="cursor">
+        <div class="cursor-bg">
+            <div class="text"></div>
+        </div>       
+        <div class="spiner-holder-one animate-0-25-a">
+            <div class="spiner-holder-two animate-0-25-b">
+                <div class="loader-spiner"></div>
+            </div>
+        </div>
+        <div class="spiner-holder-one animate-25-50-a">
+            <div class="spiner-holder-two animate-25-50-b">
+                <div class="loader-spiner"></div>
+            </div>
+        </div>
+        <div class="spiner-holder-one animate-50-75-a">
+            <div class="spiner-holder-two animate-50-75-b">
+                <div class="loader-spiner"></div>
+            </div>
+        </div>
+        <div class="spiner-holder-one animate-75-100-a">
+            <div class="spiner-holder-two animate-75-100-b">
+                <div class="loader-spiner"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!---->

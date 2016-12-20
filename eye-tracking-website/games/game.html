@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="../Images/favicon.ico">
+<title>I-Focus: Games</title>
+<link href="../main.css" rel="stylesheet" type="text/css">
+<link href="../cursor.css" rel="stylesheet" type="text/css">
+<meta name="robots">
+<link rel="author" href="humans.txt">
+<meta name="description" content="I-Focus: Efficient, Effective, Intuitive." />
+<meta name="keywords" content="eye-tracking, gestures, input modes, multi-modal, futuristic, technology, research, application, project, efficient, effective, intuitive" />
+<noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;	
+		
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;	
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
+    
+<style>
+    #flashContent {
+        width:800px;
+        height:600px;
+        margin:auto;
+    }
+    
+    #back-btn{
+        position:fixed;
+        width:250px;
+        height:250px;
+        border-radius:100%;
+        top:-15%;
+        right:-5%;
+        background:rgba(200, 200, 200, 0.6);
+        color:#333;
+        font-size:170%;
+        transition:all 0.3s ease;
+        cursor:pointer;
+    }
+    
+    #back-btn:hover{
+        top:-14%;
+        right:-4%;
+        background:rgb(187, 187, 187);
+    }
+    
+    #back-btn span{
+        position:absolute;
+        text-align:left;
+        bottom:25%;
+        left:25%;
+        width:100%;
+    }
+    
+
+</style>
+<script src="../ifocus.lib.js"></script>
+<script src="../cursor.js"></script>
+<script>
+var cur,options = {};
+options["eyeCursorEnabled"]=true;
+    
+window.onload = function(){
+    var gameName = window.location.href.split("game.html?name=")[1];
+    
+    if(window.location.href.indexOf("game.html?name=")!=-1 && gameName.length>0){
+        var out = ''
+        out+='<object width="800" height="600" align="middle">';
+        out+='<param name="movie" value="'+gameName+'.swf" />';
+        out+='<embed  id="gameSwf" src="'+gameName+'.swf" width="800" height="600">'
+        out+='</object>';
+        
+        document.getElementById("flashContent").innerHTML = out;
+    }
+    else {
+        alert("Unable to load game. Going back to previous page");
+        console.log("Unable to load game. Going back to previous page");
+        
+        goBack();
+    }
+    
+    cur = new Cursor();
+    cur.init();
+    
+    var clickable = new Array("#back-btn");
+    
+    for(var a=0;a<clickable.length;a++){
+        var eles = clickable[a].parseElement();
+        for(var i=0;i<eles.length;i++){
+            eles[i].addEventListener("mouseover", activateCursor, false);
+            eles[i].addEventListener("mouseout", deactivateCursor, false);      
+        }
+    }   
+    
+    document.getElementById("flashContent").onmouseover = function(){
+        cur.hide();    
+    }
+    document.getElementById("flashContent").onmouseout = function(){
+        cur.show();    
+    }
+    
+    window.addEventListener("mousemove",function(){
+        e = window.event;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cur.element.style.left = mouseX-25+"px";
+        cur.element.style.top = mouseY-25+"px";
+    });
+}
+
+function activateCursor(){
+    if(!options["eyeCursorEnabled"]) return;
+    
+    cur.hoverElement = this;
+    cur.activate();
+}
+
+function deactivateCursor(){
+    if(!options["eyeCursorEnabled"]) return;
+    
+    cur.deactivate();
+}
+
+function goBack(){
+    if(history.length){
+        history.go(-1);
+    }
+    else window.location = "../index.html";       
+}
+</script>
+</head>
+<body>    
+<div id="flashContent">
+</div>
+    
+<div id="back-btn" onclick="goBack()">
+    <span>
+        Back to<br>
+        I-Focus
+    </span>
+</div>
+
+<div class="cursor">
+    <div class="cursor-bg">
+        <div class="text"></div>
+    </div>       
+    <div class="spiner-holder-one animate-0-25-a">
+        <div class="spiner-holder-two animate-0-25-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-25-50-a">
+        <div class="spiner-holder-two animate-25-50-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-50-75-a">
+        <div class="spiner-holder-two animate-50-75-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-75-100-a">
+        <div class="spiner-holder-two animate-75-100-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+</div>
+    
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+<div id="mobileShow">
+    <div id="mobileShowCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work on mobile.</p>
+            <p>Try a laptop/desktop, sorry.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

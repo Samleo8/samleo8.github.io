@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html class="bg1">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScrollType</title>
+<link href="scrollType.css" type="text/css" rel="stylesheet">
+<link href="../../cursor.css" type="text/css" rel="stylesheet">
+<script src="scrollType.js"></script>
+<script src="../../ifocus.lib.js"></script>
+<script src="../../cursor.js"></script>
+<script>
+var cur,options = {};
+options["eyeCursorEnabled"]=true;
+    
+window.onload = function(){
+    cur = new Cursor();
+    cur.init();
+    
+    var clickable = new Array("a","#back-btn");
+    
+    for(var a=0;a<clickable.length;a++){
+        var eles = clickable[a].parseElement();
+        for(var i=0;i<eles.length;i++){
+            eles[i].addEventListener("mouseover", activateCursor, false);
+            eles[i].addEventListener("mouseout", deactivateCursor, false);      
+        }
+    }   
+    window.addEventListener("mousemove",function(){
+        e = window.event;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cur.element.style.left = mouseX-25+"px";
+        cur.element.style.top = mouseY-25+"px";
+    });
+}
+
+function activateCursor(){
+    if(!options["eyeCursorEnabled"]) return;
+    
+    cur.hoverElement = this;
+    cur.activate();
+}
+
+function deactivateCursor(){
+    if(!options["eyeCursorEnabled"]) return;
+    
+    cur.deactivate();
+}
+
+function goBack(){
+    if(history.length){
+        history.go(-1);
+    }
+    else window.location = "../index.html";       
+}
+</script>
+</head>
+<body onKeyDown="doType(event)" onLoad="loadBg(); newGame()">
+<div id="back-btn" onclick="goBack()">
+    <span>Back to<br>I-Focus</span>
+</div>
+<div id="game-desc">
+    <h1 id="game-title">ScrollType</h1>
+    <h2 id="game-instructions">Instructions: </h2>
+    <p class="inline instructions">Type the text on the right. <strong style="color:#8CE8FF;">Swipe over button</strong> to switch to the next set of words. Specially suited for eye-tracking.</p>
+    <input type="text" id="hiddenTextBox" class="invisible">
+</div>
+<div class="hr-divider clear"></div>
+<div id="game-main">
+    <div id="game-type">
+    	<span id="game-type-out">Type to Start...</span><span class="typeCursor no-select">|</span>
+    </div>
+    <div id="game-controls">
+    	<div id="game-timer">00:00</div>
+	    <div id="game-word-type"></div>
+    	<div id="game-next-btn" class="btn no-select" onMouseOut="nextSen()">NEXT SENTENCE</div>
+    </div>
+</div>
+<div class="hr-divider clear"></div>
+<div id="footer">
+    2014 &copy; Created by Samuel Leong for <a href="../../index.html">I-Focus</a> | Game Info <br>
+    Change Background: <a onclick="changeBg(1);">Dark</a> | <a onclick="changeBg(2);">Darker</a> | <a onclick="changeBg(3);">Darkest</a>
+</div>
+
+<div class="cursor">
+    <div class="cursor-bg">
+        <div class="text"></div>
+    </div>       
+    <div class="spiner-holder-one animate-0-25-a">
+        <div class="spiner-holder-two animate-0-25-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-25-50-a">
+        <div class="spiner-holder-two animate-25-50-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-50-75-a">
+        <div class="spiner-holder-two animate-50-75-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+    <div class="spiner-holder-one animate-75-100-a">
+        <div class="spiner-holder-two animate-75-100-b">
+            <div class="loader-spiner"></div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>
