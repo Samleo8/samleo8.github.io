@@ -21,54 +21,6 @@
 	font-family:"Sansation";
 	src:url(Fonts/SansationLight.ttf);
 }
-/*------------ERRORS-----------*/
-#noScriptShow, #mobileShow, #mobileShowCircle{
-	display:none;
-}
-
-body.ismobile #mobileShow{
-    display:inline-block;
-    height:100%;
-    width:100%;
-    position:fixed;
-    top:0;
-    bottom:0;
-    background:#066;
-    text-align:center;
-    z-index:2147483641; /*no mobile takes precedence*/
-}
-body.ismobile #mobileShowCircle{
-    display:block;
-    width:300px;
-    height:300px;
-    padding:10px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin:auto;
-    border-radius:1000px;
-    background:#EEE;
-    color:#066;
-    text-align:center;
-}
-body.ismobile #mobileShowCircle div{
-    width:200px;
-    height:200px;	
-    
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin:auto;
-}
-body.ismobile #mobileShowCircle h1{
-    font-size:40px;
-    margin-top:20px;	
-    margin-bottom:5px;
-}
 
 /*-------GLOBALS--------*/
 html{
@@ -173,6 +125,8 @@ label{
     box-sizing:content-box;
 	text-align:center;
 }
+
+/* TODO: Start using flex instead */
 
 .center{
 	position:absolute;
@@ -542,49 +496,6 @@ label{
 .alt-nav #navCircle6{
     display:block;
 }
-
-/*Old Version*/
-/*
-#navCircle1{
-    height:40%;
-    top:-6%;
-    right:-3%;
-    font-size:4vmin;
-}
-
-#navCircle2{
-    height:35%;
-    top:10%;
-    right:10%;
-    font-size:4vmin;
-}
-
-#navCircle3{
-    height:25%;
-    top:28%;
-    right:-3%;
-    font-size:3vmin;
-}
-
-#navCircle3 span{
-    right:20%;
-}
-    
-#navCircle4{
-    height:20%;
-    top:2%;
-    right:22%;
-    font-size:3vmin;
-}
-
-#navCircle5{
-    height:20%;
-    top:35%;
-    right:20%;
-    font-size:3vmin;
-}
-/**/
-
 
 /*-----------HOME------------*/
 #mainCircleHome{
@@ -1159,73 +1070,3 @@ figcaption {
 	background:#066;
     color:#EEE;
 }
-
-#banner_optionsWelcomeHide{
-    width:30%;
-    margin-top:0;
-    padding-top:1%;
-    padding-bottom:1%;
-    padding-left:7%;
-    padding-right:1.5%;
-}
-
-#banner_optionsWelcomeHide:before{
-    width:15%;
-    line-height:1.8;
-}
-
-#banner_optionsWelcomeHide:hover{
-    background:rgb(0,130,130);
-}
-
-
-/*-----SCROLL AREAS-----*/
-.scrollArea{
-	position:fixed;	
-	border:#000 1px solid;
-	z-index:2147483647;
-	/*opacity:1;/**/
-}
-
-.scrollArea.hidden{
-    border:none;   
-}
-
-#scrollUp,#scrollDown{
-	width:80%;
-	height:10%;
-	margin-left:auto;
-	margin-right:auto;
-	left:0;
-	right:0;
-}
-
-#scrollLeft,#scrollRight{
-	height:70%;
-	width:3%;
-	margin-top:auto;
-	margin-bottom:auto;
-	top:0;
-	bottom:0;
-}
-
-#scrollUp{
-	top:0;
-    cursor:url(Images/arrow-up.png) 15 15, n-resize;
-}
-
-#scrollDown{
-	height:13%;
-	bottom:0;
-	cursor:url(Images/arrow-down.png) 15 15, s-resize;
-}	
-
-#scrollLeft{
-	left:0;	
-    cursor:url(Images/arrow-left.png) 15 15, w-resize;
-}
-
-#scrollRight{
-	right:0;
-    cursor:url(Images/arrow-right.png) 15 15, e-resize;
-}	

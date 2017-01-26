@@ -8,27 +8,6 @@
 <script src="main.js"></script>
 </head>
 <body>
-<div id="welcomeArea" class="disableSelect">
-    <div id="welcomeBanner">
-        <h1>Don't Blink!<br>You could miss I-Focus.</h1>
-        <h2>Efficient. Effective. Intuitive.</h2>
-        <p>Through research and applications that you will see in this website,</p>
-        <p>I-Focus aims to combine the latest in eye-tracking technology</p>
-        <p>with other forms of input to give you an effective and intuitive set of gestures.</p>
-        <div>
-            <span class="options-btn unchecked" id="banner_optionsWelcomeHide" onClick="toggleOptions('welcomeHide')">
-                Do not show again (Can change in options)
-            </span>
-        </div>
-    </div>
-    <div id="welcomeContinueBtn" class="circle circle-width cursor-clickable disableSelect" onclick="closeWelcome()">
-        <span class="disableSelect">
-            <img src="Images/logo.png"/>
-            <div>See More</div>
-        </span>
-    </div>
-</div>
-    
 <div id="mainCircleHome" class="circle circle-height">
 	<span class="" id="mainCircleContent">
         <h1>I-Focus</h1>
@@ -59,76 +38,13 @@
 <div id="optionsBox" class="invertedColor disableSelect">
 	<h1>
         Options
-        <div id="optionsIcons">
-            <span class="icon-home"></span>
-            <span class="icon-reset"></span>
-            <span class="icon-keyboard"></span>
-        </div>
     </h1>
     <hr>
-    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
-	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
-    
-	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
-    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
-    
-	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
-    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+        <div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
 	
     <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
     <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>
-</div>
-    
-<!--
-<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-<!---->
-
-<!--Error Circles-->
-<div id="bs" style="height:100%; position:absolute; left:0; padding:0; margin:0; background:rgba(0,0,0,0.4)">&nbsp;</div>
-<div id="noScriptShow">
-    <div id="noScriptCircle" class="circle">
-    	<div>
-            <h1>I-Focus</h1>
-            <p>This website will not work without JavaScript enabled.</p>
-            <p>Please enable JavaScript in your browser.</p>
-        </div>
-    </div>
-</div>
-
-<div id="mobileShow">
-    <div id="mobileShowCircle" class="circle">
-    	<div>
-            <h1>I-Focus</h1>
-            <p>This website will not work on mobile.</p>
-            <p>Try a laptop/desktop, sorry.</p>
-        </div>
-    </div>
-</div>
-    
-<div class="cursor">
-    <div class="cursor-bg">
-        <div class="text"></div>
-    </div>       
-    <div class="spiner-holder-one animate-0-25-a">
-        <div class="spiner-holder-two animate-0-25-b">
-            <div class="loader-spiner"></div>
-        </div>
-    </div>
-    <div class="spiner-holder-one animate-25-50-a">
-        <div class="spiner-holder-two animate-25-50-b">
-            <div class="loader-spiner"></div>
-        </div>
-    </div>
-    <div class="spiner-holder-one animate-50-75-a">
-        <div class="spiner-holder-two animate-50-75-b">
-            <div class="loader-spiner"></div>
-        </div>
-    </div>
-    <div class="spiner-holder-one animate-75-100-a">
-        <div class="spiner-holder-two animate-75-100-b">
-            <div class="loader-spiner"></div>
-        </div>
-    </div>
 </div>
 </body>
 </html>
