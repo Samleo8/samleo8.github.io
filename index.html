@@ -38,10 +38,19 @@
 <div id="optionsBox" class="invertedColor disableSelect">
 	<h1>
         Options
+        <div id="optionsIcons">
+            <span class="icon-reset"></span>
+        </div>
     </h1>
     <hr>
-        <div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
-        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
+	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
+    
+	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
+    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
+    
+	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
 	
     <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
     <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>

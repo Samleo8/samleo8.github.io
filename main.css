@@ -126,8 +126,6 @@ label{
 	text-align:center;
 }
 
-/* TODO: Start using flex instead */
-
 .center{
 	position:absolute;
 	top:0;
@@ -136,6 +134,8 @@ label{
 	right: 0;
 	margin:auto;
 }
+
+/* TODO: Use "flex" instead */
 
 .split{
     margin-right:auto;
@@ -269,15 +269,10 @@ label{
 }
 
 /*--------ICOMOON-------*/
+/* TODO: Switch to material */
 @font-face {
     font-family: 'icomoon';
-    /*
-	src:url('fonts/icomoon.eot?jo5ey2');
-	src:url('fonts/icomoon.svg?jo5ey2#icomoon') format('svg');
-    src:url('fonts/icomoon.eot?#iefixjo5ey2') format('embedded-opentype'),
-		url('fonts/icomoon.woff?jo5ey2') format('woff'),
-		url('fonts/icomoon.ttf?jo5ey2') format('truetype');
-    */
+    
     src:url('Fonts/icomoon.eot');
 	src:url('fonts/icomoon.svg') format('svg');
     src:url('Fonts/icomoon.eot') format('embedded-opentype'),
@@ -565,331 +560,8 @@ label{
 	padding-bottom:1%;	
 }
 
-/*-----MAIN CONTENT-----*/
-#main-content{
-    width:96%;
-    margin-left:2%;
-    padding-bottom:8%;
-}
-
-#main-content p{
-    font-family:"Sansation","calibri","arial",sans-serif;
-}   
-
-h1.title{
-    font-size:8vmin;
-}
-
-/*------LIVE DEMO------*/
-#liveDemoIntro{
-    font-size:2vw;
-}
-
-#liveDemoIntro.smaller{
-    font-size:1.7vw;
-}
-
-#liveDemoStart{
-    font-size:2.5vw;
-}
-
-#liveDemoStart div{
-    position:relative;
-    height:30vh;
-}
-
-#liveDemoStart div span{
-    position:absolute;
-    height:20%;
-    top:40%;
-    left:0;
-    right:0;
-    margin:auto;
-    
-    transition:all 0.3s ease;
-}
-
-#liveDemoStart div:hover span{
-    top:10px;
-}
-
-.tag{
-    display:inline-block;
-    border:none;
-    border-radius:8px;
-    font-size:14px;
-    padding:5px;
-    margin-right:10px;
-    
-    /*Disable Selection*/
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.tag.new{
-    background:rgb(153, 0, 0);
-    transform: rotate(30deg);
-}
-
-.tag.efficient{
-    background:rgb(153, 0, 0);
-}
-
-.tag.effective{
-    background:rgb(56, 118, 29);
-}
-
-.tag.intuitive{
-    background:rgb(11, 83, 148);
-}
-
 /*---------GAMES--------*/
-.game-screenshot{
-    text-align:center;
-    transition:all 0.5s ease;
-    display:inline-block;
-    margin-left:0;
-}
-.game-screenshot:hover{
-    background:rgba(240,240,240,0.1);
-}
 
-.game-screenshot img{
-    width:90%;
-    transition:all 0.3s ease;   
-}
-
-.gameTitle{
-    width:100%;
-    font-size:150%;
-}
-
-#game-row1{
-    height:100%;
-}
-
-#game-row1 div:last-child{
-    margin-left:-0.5%;
-    height:80%;
-}
-
-#game-row2{
-    
-}
-
-#game-row3{
-    
-}
-
-/*--------CONCEPT--------*/
-#conceptContent{
-    font-size:110%;
-}
-.conceptCircle{
-    margin-top:20px;
-    position:absolute;
-    height:46%;
-    transition:all 0.3s ease;
-}
-.aboutpg .conceptCircle{
-    margin-top:48px;
-    height:38%;
-    cursor:pointer;
-}
-
-.aboutpg .conceptCircle.active{
-    width:100%;
-    height:100%;
-    border-radius:0px;
-    position:fixed;
-    top:0;
-    left:0;
-    margin-top:0;
-    background:#EEE;
-    z-index:2147483647;
-}
-
-.aboutpg .conceptCircle.active .title{
-    top:7%;
-    padding:0;
-    margin-bottom:0px;
-}
-
-.aboutpg .conceptCircle.active .content{
-    top:18%;
-    overflow-y:scroll;
-}
-
-.conceptCircle:hover{
-    background-color:rgb(141,211,107);
-}
-
-.conceptCircle .title{
-    font-size:4.5vh;
-    height:5vh;
-    position:absolute;
-    height:20%;
-    top:43%;
-    left:0;
-    right:0;
-    margin:auto;
-    
-    transition:all 0.3s ease;
-}
-
-.conceptCircle:hover .title{
-    top:20%;
-    font-size:4vh;
-}
-
-.conceptCircle .content{
-    opacity:0;
-    top:37%;
-    width:80%;
-    font-family:"Sansation","calibri","arial",sans-serif;
-    font-size:2.8vh;
-        
-    transition:all 0.3s ease;
-}
-
-.conceptCircle:hover .content{
-    opacity:1;
-}
-
-/*-----RESEARCH-----*/
-#researchIntro p, #researchConclusion p{
-    font-size:1.5vw;
-}
-
-#researchConclusion b{
-}
-
-#researchIntro img {
-    float:right;
-    width:25%;
-    margin:0 0 10px 10px;
-}
-
-#reasonGameImg-1 {
-    float:left;
-    width:65%;
-}
-
-#reasonGameImg-2 {
-    float:right;
-    width:30%;
-}
-
-#reasonGameImg-3 {
-    float:right;
-    width:30%;
-    margin-top:10px;
-}
-
-figure.researchWebsite {
-    float:right;
-    width:28%;
-}
-
-figure.researchWebsite img {
-    width:100%;
-}
-
-figcaption {
-    
-}
-
-.researchContent{
-    font-size:1.35vw;   
-}
-
-/*-----WELCOME BANNER-----*/
-#welcomeArea, #welcomeBanner, #welcomeContinueBtn{
-    transition:all 0.5s ease;   
-}
-
-#welcomeArea.disappear, #welcomeArea.disappear #welcomeBanner,#welcomeArea.disappear #welcomeContinueBtn{
-    position:fixed;
-    right:-300%;
-    opacity:0;
-}
-
-#welcomeArea{
-    display:inline-block;
-    height:100%;
-    width:100%;
-    background:rgba(255,255,255,0.8);
-    text-align:center;
-    z-index:2147483647;
-    
-    position:fixed;
-    top:0;
-    bottom:0;   
-}
-
-#welcomeBanner{
-    position:fixed;
-    height:52%;
-
-    background:#066;
-    box-shadow:0px 0px 30px 8px #666;
-    width:100%;
-    margin:auto;
-    right:0;
-    left:0;
-    top:0;
-    bottom:0;
-    padding-top:2%;
-    padding-bottom:2%;
-    text-align:center;
-}
-
-#welcomeBanner h1{
-    font-size:6vmin;
-}
-
-#welcomeBanner p{
-    font-size:3.5vmin;
-    margin:0;
-    padding:0;
-}
-
-#welcomeBanner div{
-    margin-top:1%;
-    font-size:3vmin;
-}
-
-#welcomeContinueBtn{
-    position:absolute;
-    right:8%;
-    bottom:10%;
-    width:10%;
-    box-shadow:0px 0px 30px 8px #666;
-    font-size:3vmin;
-    transition:all 0.3s ease;
-    cursor:pointer;
-}
-
-#welcomeArea #welcomeContinueBtn:hover{
-    box-shadow:0px 0px 40px 16px #666;
-}
-
-#welcomeContinueBtn span{
-    width:50%;
-    height:50%;
-}
-
-#welcomeContinueBtn img{
-    width:70%;   
-}
-
-#welcomeContinueBtn span div{
-    margin-top:-15%;   
-}
 /*-----OPTIONS CIRCLE-----*/
 #optionsCircle{
 	height:22%;
@@ -971,21 +643,6 @@ figcaption {
 #optionsBox h1 div span:hover{
     color:rgb(141,211,107);
 }
-
-/*
-#optionsBox div input{
-    margin-right:3%;   
-}
-
-#optionsBox label{
-    transition:all 0.5s ease;
-    cursor:pointer;
-}
-
-#optionsBox label:hover{
-    text-shadow:0px 0px 8px #AAA;
-}
-*/
 
 #optionsBox.disappear{
 	top:-200%;

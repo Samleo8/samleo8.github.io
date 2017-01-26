@@ -189,17 +189,7 @@ function keyboardShortcuts(){
     }
 }
 
-/*-------NAVLIST------*/    
-function navCircleHover(){
-    //use "this" to access element being hovered over.
-    //console.log(this.id);
-}
-
-function navCircleUnhover(){
-    //use "this" to access element being hovered over.
-    
-}
-
+/*-------NAVLIST------*/
 function toggleMenu(){
     if(navList.className.indexOf("disappear")!=-1){
         navList.className = navList.className.replaceAll("disappear","appear");
@@ -209,11 +199,6 @@ function toggleMenu(){
         navList.className = navList.className.replaceAll("appear","disappear");   
         document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Toggle<br>Menu";
     }    
-}
-
-/*------WELCOME------*/
-function closeWelcome(){
-    document.getElementById("welcomeArea").className = document.getElementById("welcomeArea").className.replaceAll("appear","disappear");
 }
 
 /*------OPTIONS------*/
