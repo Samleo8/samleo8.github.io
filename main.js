@@ -1,19 +1,32 @@
 //options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; saveOptions(); window.location.href = "../index.html"
 
 /*---------DOCUMENT READY---------*/
-// IE
-addEvent(document, 'DOMContentLoaded', function() {
-	pageInit();
+var domReady = function (callback) {
+    // Mozilla, Opera and WebKit
+    if (document.addEventListener) {
+        document.addEventListener("DOMContentLoaded", callback, false);
+        // If Internet Explorer, the event model is used
+    } else if (document.attachEvent) {
+        document.attachEvent("onreadystatechange", function() {
+            if (document.readyState === "complete" ) {
+                callback();
+            }
+        });
+        // A fallback to window.onload, that will always work
+    } else {
+        var oldOnload = window.onload;
+        window.onload = function () {
+            oldOnload && oldOnload();
+            callback();
+        }
+    }
+};
+
+domReady( function(){
+    pageInit();
     pageChange();
 });
 
-// Other
-addEvent(document, 'onreadystatechange', function() {
-    if (document.readyState == 'complete'){
-		pageInit();
-        pageChange();
-	}
-});
 
 /*----------GLOBALS---------*/
 var windowH,windowW;
@@ -97,7 +110,6 @@ function pageInit(){
     if(window.mobilecheck()){
         document.body.className = "ismobile";
     }
-    scrollAreas = getElementsByClass("scrollArea");
 
     loadOptions();
     
@@ -151,10 +163,11 @@ function pageInit(){
     
     //Options Box Buttons
     if(document.getElementById("mainCircleHome")==null)
-            getEle("#optionsIcons .icon-home")[0].addEventListener("click",function(){window.location.href = "../index.html"},false);
-    
-    getEle("#optionsIcons .icon-reset")[0].addEventListener("click",resetOptions,false);
-    getEle("#optionsIcons .icon-keyboard")[0].addEventListener("click",function(){},false);
+        getEle(".optionsIcons .icon-home")[0].addEventListener("click",function(){
+            window.location.href = "../index.html"
+        },false);
+
+    getEle(".optionsIcons .icon-reset")[0].addEventListener("click",resetOptions,false);    
 }   
 
 function circlesCalibration(){
@@ -326,18 +339,10 @@ function saveOptions(){
 }
 
 function checkOptions(){
-    document.getElementById("optionsScrollEnable").checked = options["scrollAreaEnabled"];
-    document.getElementById("optionsHideScroll").disabled = !options["scrollAreaEnabled"];
-    document.getElementById("optionsHideScroll").checked = !options["scrollAreaHidden"];
-    document.getElementById("optionsCursorEnable").checked = options["eyeCursorEnabled"];
     document.getElementById("optionsBoxHide").checked = options["hideOnLaunch"];
-    document.getElementById("optionsWelcomeHide").checked = options["welcomeHide"];
     document.getElementById("optionsMenuHide").checked = !options["menuHide"];
     document.getElementById("optionsMenuType").checked = options["tabbedMenu"];
     
-    if(document.getElementById("banner_optionsWelcomeHide")!=null)
-        document.getElementById("banner_optionsWelcomeHide").checked = options["welcomeHide"];
-        
     var optionsBtns = getElementsByClass("options-btn");
     for(var i=0;i<optionsBtns.length;i++){
         var ele = optionsBtns[i];
@@ -346,15 +351,6 @@ function checkOptions(){
         //trace(ele.id+" "+ele.checked);
         if(ele.checked) btnCheck(ele.id);
         else btnUncheck(ele.id);
-        
-        if(ele.id=="optionsHideScroll"){
-            if(ele.disabled){
-                if(ele.className.indexOf("disabled")==-1){
-                    ele.className+=" disabled";
-                }
-            }
-            else ele.className = ele.className.replaceAll(" disabled","");
-        }
     }
     //trace("");
 }
@@ -493,4 +489,3 @@ function beginScrolling(){
 function stopScrolling(){
     clearInterval(tick);
 }
-

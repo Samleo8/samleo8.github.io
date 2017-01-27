@@ -5,25 +5,25 @@
 <!--<link rel="shortcut icon" href="Images/favicon.ico">-->
 <title>Samuel Leong's Website</title>
 <link href="main.css" rel="stylesheet" type="text/css">
+<script src="main.lib.js"></script>
 <script src="main.js"></script>
 </head>
 <body>
-<div id="mainCircleHome" class="circle circle-height">
+<div id="mainCircleHome" class="circle circle-height disableSelect">
 	<span class="" id="mainCircleContent">
-        <h1>I-Focus</h1>
-        <em>Efficient. Effective. Intuitive.</em>
-        <p>I-Focus could just <b>revolutionise</b> the way we interact with our devices.</p>
+        <h1>Welcome</h1>
+        <p>My name is Samuel Leong, and this is my website.</p>
 	</span>
 </div>
 
 <!--Navigation-->
-<div id="navListHome">
+<div id="navListHome" class="disableSelect">
     <ul>
-        <a href="demo/index.html"><li class="navHome"><span class="center">Live Demo</span></li></a>
+        <a href="about-me/index.html"><li class="navHome"><span class="center">About Me</span></li></a>
         <a href="games/index.html"><li class="navHome"><span class="center">Games</span></li></a>
-        <a href="research/index.html"><li class="navHome"><span class="center">Research</span></li></a>
-        <a href="concept/index.html"><li class="navHome"><span class="center">Concept</span></li></a>
-        <a href="about/index.html"><li class="navHome"><span class="center">About Us</span></li></a>
+        <a href="web/index.html"><li class="navHome"><span class="center">Web creations</span></li></a>
+        <a href="research/index.html"><li class="navHome"><span class="center">Research Projects</span></li></a>
+        <a href="credits/index.html"><li class="navHome"><span class="center">Credits</span></li></a>
         
     </ul>
 </div>
@@ -35,25 +35,21 @@
 	</span>
 </div>
 
+<!--Options Box-->
 <div id="optionsBox" class="invertedColor disableSelect">
-	<h1>
-        Options
-        <div id="optionsIcons">
-            <span class="icon-reset"></span>
+    <div id="optionsBoxHeader">
+        <div class="optionsTitle"><h1>Options</h1></div>
+        <div class="optionsIconsHolder">
+            <div class="optionsIcons"><span class="icon-home"></span></div>
+            <div class="optionsIcons"><span class="icon-reset"></span></div>
         </div>
-    </h1>
+    </div>
     <hr>
-    <div id="optionsScrollEnable" onClick="toggleOptions('scrollEnable')" class="options-btn unchecked">Enable Auto Scrolling</div>
-	<div id="optionsHideScroll" onClick="toggleOptions('scrollHidden')" class="options-btn unchecked">Show Scroll Areas</div>
-    
-	<div id="optionsCursorEnable" onClick="toggleOptions('cursorEnable')" class="options-btn unchecked">Adapt Cursor for Eye-tracking</div>
-    <div id="optionsWelcomeHide" onClick="toggleOptions('welcomeHide')" class="options-btn unchecked">Hide Welcome Banner</div>
-    
 	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
     <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
 	
     <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
-    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide on launch</div>
+    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide options on launch</div>
 </div>
 </body>
 </html>

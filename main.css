@@ -532,11 +532,11 @@ label{
 	top:0;
 	bottom:0;
 	/**/
-	list-style-image:url(Images/homeBullet.png);
+    list-style-image:url(Images/homeBullet.png);
 }
 
 #navListHome ul a li span.center{
-    height:40%;
+    height:80%;
 }   
 
 #navListHome ul a{
@@ -601,7 +601,7 @@ label{
 #optionsBox{
 	position:fixed;
 	width:50%;
-	height:60%;
+	height:40%;
 	padding:2%;
 	border:5px solid #066;
 	right:0;
@@ -618,30 +618,52 @@ label{
 	box-shadow: 0px 0px 100px 8px #EEE;	
 }
 
-#optionsBox h1{
-    font-size:5.5vmin;
-    margin-top:3%;
+#optionsBoxHeader{
+    display: inline-block;
+    margin-top: 0;
+    width:100%;
+}
+
+#optionsBoxHeader div.optionsTitle{
+    display: inline-block;
+}
+
+#optionsBoxHeader div.optionsTitle h1{
 	margin-bottom:0;
+    font-size:36px;    
 }
 
-#optionsBox div{
-	margin-top:2.5%;
+#optionsBoxHeader .optionsIconsHolder{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 30px;
+    
+    width: 70px;
+    height: 40px;
+    margin-top: 20px;
+    position: relative;
+    
+    display: inline-flex;
+    float: right;
 }
 
-#optionsBox h1 div{
-    display:inline-block;
-    float:right;
-    margin-top:0;
+#optionsBoxHeader .optionsIcons{
+    flex:1;
 }
 
-#optionsBox h1 div span{
-    cursor:pointer;
-    transition:all 0.3s ease;
-    font-size:90%;
+#optionsBoxHeader .optionsIcons span{
+    position: absolute;
+    bottom: 0px;
+    
+    text-align: center;
 }
 
-#optionsBox h1 div span:hover{
+#optionsBoxHeader .optionsIcons span:hover{
     color:rgb(141,211,107);
+}
+
+#optionsBoxHeader .optionsIcons span:active{
+    bottom:-2px;
 }
 
 #optionsBox.disappear{
