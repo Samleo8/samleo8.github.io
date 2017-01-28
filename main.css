@@ -569,9 +569,9 @@ label{
 
 /*-----OPTIONS CIRCLE-----*/
 #optionsCircle{
-	height:22%;
-	right:-1.1%;
-	bottom:-4.4%;
+	height:140px;
+	right:-18px;
+	bottom:-35px;
     cursor:pointer;
     transition:all 0.3s ease;
 }
@@ -579,27 +579,26 @@ label{
 #optionsCircle span{
 	position:absolute;
 	padding:0;
-    font-size:2vmin;
-    height:30%;
-    top:20%;
-    left:8%;
+    /*font-size:2vmin;*/
+    font-size:14px;
+    bottom:40px;
+    right:25px;
     transition:all 0.3s ease;
 }
 
 /*hover*/
 #optionsCircle:hover{
-	right:-1.65%;
-	bottom:-6.6%;
+	right:-25px;
+	bottom:-60px;
     cursor:pointer;
 }
 
 #optionsCircle:hover span{
 	position:absolute;
 	padding:0;
-    font-size:3vmin;
-    height:30%;
-    top:20%;
-    left:6%;
+    font-size:20px;
+    bottom:65px;
+    right:40px;
 }
 
 /*--------OPTION BOX-------*/
