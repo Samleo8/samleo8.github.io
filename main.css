@@ -382,6 +382,9 @@ label{
 }
 
 #navList.disappear #navCircle1{
+    transition:all 0.5s ease;
+    transition-delay: 0s;
+    
     opacity:1;
     font-size:180%;
     margin:0;
@@ -411,8 +414,9 @@ label{
     font-size: 90%;
 }
 
-#navCircle1{
+#navCircle1{    
     height:225px;
+    width:225px;
     top:0; bottom:0; left: 0; right: 0; margin: auto;
     font-size:160%;
     cursor:pointer;
@@ -421,6 +425,7 @@ label{
 
 #navCircle2{
     height:255px;
+    width:255px; 
     top: 5px;
     right: 0px;
     font-size:150%;
@@ -428,6 +433,7 @@ label{
 
 #navCircle3{
     height: 190px;
+    width: 190px;
     bottom: 35px;
     right: 95px;
     font-size: 130%;
@@ -435,6 +441,7 @@ label{
    
 #navCircle4{
     height: 140px;
+    width: 140px;
     top: 100px;
     left: 85px;
     z-index: 110;
@@ -443,6 +450,7 @@ label{
 
 #navCircle5{
     height:100px;
+    width:100px;
     top: 320px;
     left: 120px;
     font-size: 115%;

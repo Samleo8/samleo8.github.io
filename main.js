@@ -51,23 +51,28 @@ var navList;
 var navCirclesOrder = [
     {
         "name": "About Me",
-        "href": "../about/index.html"
+        "href": "../about/index.html",
+        "icon": "icon-about",
     },
     {
         "name": "Games",
-        "href": "../games/index.html"
+        "href": "../games/index.html",
+        "icon": "icon-games"
     },
     {
         "name": "Research",
-        "href": "../research/index.html"
+        "href": "../research/index.html",
+        "icon": "icon-research"
     },
     {
         "name": "Web",
-        "href": "../web/index.html"
+        "href": "../web/index.html",
+        "icon": "icon-web"
     },
     {
         "name": "Misc",
-        "href": "../misc/index.html"
+        "href": "../misc/index.html",
+        "icon": "icon-misc"
     }
 ];
 
@@ -194,10 +199,24 @@ function pageInit(){
     //Navigation Circles Ordering
     var urlArr = window.location.href.toString().split("/");
     var currPage = "../"+urlArr[urlArr.length-2]+"/index.html";
-    console.log(currPage);
-    
+        
     var navCirclesEle = document.getElementsByClassName("navCircle");
     
+    var i;
+    
+    for(i=0;i<navCirclesOrder;i++){
+        //Get rid of entry for current page
+        if(navCirclesOrder[i]["href"] == currPage){
+            navCirclesOrder.splice(i,1);
+            break;
+        }
+    }
+    
+    for(i=1;i<navCirclesEle.length;i++){ //skip first navCircle (#navCircle1)
+        navCirclesEle[i].parentElement.href = navCirclesOrder[i-1]["href"];
+        navCirclesEle[i].getElementsByClassName("menu-icon")[0].className += " "+navCirclesOrder[i-1]["icon"];
+        navCirclesEle[i].getElementsByClassName("center")[0].innerHTML = navCirclesOrder[i-1]["name"];
+    }
 }   
 
 function circlesCalibration(){
@@ -292,48 +311,13 @@ function resetOptions(){
     if(!confirm("Are you sure you want to reset options?")) return;
     
     //Remove after live demo
-    //*
     options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; options["menuHide"] = true;
     saveOptions();
     //if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
-    //*/
 }
 
 function toggleOptions(opt){
-	if(opt == 'scrollEnable'){
-		options["scrollAreaEnabled"] = !options["scrollAreaEnabled"];
-        document.getElementById("optionsHideScroll").disabled = !options["scrollAreaEnabled"];
-        
-        if(!options["scrollAreaEnabled"]){
-            for(i=0;i<scrollAreas.length;i++){
-                scrollAreas[i].className += " hidden";
-            }
-        }
-        else if(!options["scrollAreaHidden"]){
-            for(i=0;i<scrollAreas.length;i++){
-				scrollAreas[i].className = scrollAreas[i].className.replaceAll(" hidden","");
-			}
-        }
-	}
-	else if(opt == 'scrollHidden' && !document.getElementById("optionsHideScroll").disabled){
-		options["scrollAreaHidden"] = !options["scrollAreaHidden"];
-		if(options["scrollAreaHidden"]){
-			for(i=0;i<scrollAreas.length;i++){
-				scrollAreas[i].className += " hidden";
-			}
-		}
-		else{
-			for(i=0;i<scrollAreas.length;i++){
-				scrollAreas[i].className = scrollAreas[i].className.replaceAll(" hidden","");
-			}
-		}
-	}
-	else if(opt == 'cursorEnable'){
-	   	options["eyeCursorEnabled"] = !options["eyeCursorEnabled"];
-        if(options["eyeCursorEnabled"]) cur.show();
-        else cur.hide();
-	}
-    else if(opt == 'boxHide'){
+	if(opt == 'boxHide'){
         options["hideOnLaunch"] = !options["hideOnLaunch"];   
     }
     else if(opt == 'welcomeHide'){
@@ -344,7 +328,8 @@ function toggleOptions(opt){
     }
     else if(opt == 'menuTypeToggle'){
         options["tabbedMenu"] = !options["tabbedMenu"];
-        if(navList!=null){    
+            
+        if(navList!=null){
             if(options["tabbedMenu"]){
                 if(navList.className.indexOf("alt-nav")==-1){
                     navList.className+=" alt-nav";
@@ -354,7 +339,7 @@ function toggleOptions(opt){
                 navList.className = navList.className.replaceAll(" alt-nav","");
             }
             
-            var tt = setTimeout(function(){ pageChange(); clearTimeout(tt);},250);
+            var tt = setTimeout(function(){ pageChange(); clearTimeout(tt);},500);
         }
     }
     
