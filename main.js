@@ -30,7 +30,7 @@ domReady( function(){
 
 /*----------GLOBALS---------*/
 var windowH,windowW;
-//I-Focus Auto-scroll
+
 var options = {
     "scrollAreaEnabled":true,
     "scrollAreaHidden":false,
@@ -48,6 +48,28 @@ window.onresize = function(){
 //Variables
 var optionsOriWidth;
 var navList;
+var navCirclesOrder = [
+    {
+        "name": "About Me",
+        "href": "../about/index.html"
+    },
+    {
+        "name": "Games",
+        "href": "../games/index.html"
+    },
+    {
+        "name": "Research",
+        "href": "../research/index.html"
+    },
+    {
+        "name": "Web",
+        "href": "../web/index.html"
+    },
+    {
+        "name": "Misc",
+        "href": "../misc/index.html"
+    }
+];
 
 //Page resize
 function pageChange(){
@@ -126,11 +148,11 @@ function pageInit(){
     if(navList!=null){
         if(options["menuHide"]){
             if(navList.className.indexOf("disappear")==-1){
-                navList.className = navList.className.replaceAll("appear","disappear");   
+                navList.className = navList.className.replaceAll("appear center","disappear");   
             }
         }
         else{
-            navList.className = navList.className.replaceAll("disappear","appear");
+            navList.className = navList.className.replaceAll("disappear","appear center");
         }
         
         if(options["tabbedMenu"]){
@@ -143,10 +165,10 @@ function pageInit(){
         }
         
         if(navList.className.indexOf("disappear")==-1){
-            document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Toggle Menu";
+            document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
         }
         else{
-            document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Toggle<br>Menu";
+            document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
         }
         
         //Create Mouseover & Mouseout events for Menu
@@ -168,6 +190,9 @@ function pageInit(){
         },false);
 
     getEle(".optionsIcons .icon-reset")[0].addEventListener("click",resetOptions,false);    
+    
+    //Navigation Circles Ordering
+    
 }   
 
 function circlesCalibration(){
@@ -215,12 +240,12 @@ function navCircleUnhover(){
 
 function toggleMenu(){
     if(navList.className.indexOf("disappear")!=-1){
-        navList.className = navList.className.replaceAll("disappear","appear");
-        document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Toggle Menu";
+        navList.className = navList.className.replaceAll("disappear","appear center");
+        document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
     }
     else{
-        navList.className = navList.className.replaceAll("appear","disappear");   
-        document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Toggle<br>Menu";
+        navList.className = navList.className.replaceAll("appear center","disappear");   
+        document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
     }    
 }
 
