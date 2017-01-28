@@ -203,6 +203,16 @@ function keyboardShortcuts(){
 }
 
 /*-------NAVLIST------*/
+function navCircleHover(){
+    //use "this" to access element being hovered over.
+    //console.log(this.id);
+}
+
+function navCircleUnhover(){
+    //use "this" to access element being hovered over.
+    
+}
+
 function toggleMenu(){
     if(navList.className.indexOf("disappear")!=-1){
         navList.className = navList.className.replaceAll("disappear","appear");
@@ -244,13 +254,13 @@ function closeOptions(){
 }
 
 function resetOptions(){
-//localStorage.removeItem("ifocus-options");
+    if(!confirm("Are you sure you want to reset options?")) return;
     
     //Remove after live demo
     //*
     options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; options["menuHide"] = true;
     saveOptions();
-    if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
+    //if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
     //*/
 }
 

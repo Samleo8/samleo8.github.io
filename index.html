@@ -2,11 +2,57 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!--<link rel="shortcut icon" href="Images/favicon.ico">-->
+<link rel="shortcut icon" href="Images/favicon.ico">
 <title>Samuel Leong's Website</title>
 <link href="main.css" rel="stylesheet" type="text/css">
 <script src="main.lib.js"></script>
 <script src="main.js"></script>
+<noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;	
+		
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;	
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
 </head>
 <body>
 <div id="mainCircleHome" class="circle circle-height disableSelect">
@@ -19,11 +65,11 @@
 <!--Navigation-->
 <div id="navListHome" class="disableSelect">
     <ul>
-        <a href="about-me/index.html"><li class="navHome"><span class="center">About Me</span></li></a>
+        <a href="about/index.html"><li class="navHome"><span class="center">About Me</span></li></a>
         <a href="games/index.html"><li class="navHome"><span class="center">Games</span></li></a>
         <a href="web/index.html"><li class="navHome"><span class="center">Web creations</span></li></a>
         <a href="research/index.html"><li class="navHome"><span class="center">Research Projects</span></li></a>
-        <a href="credits/index.html"><li class="navHome"><span class="center">Credits</span></li></a>
+        <a href="credits/index.html"><li class="navHome"><span class="center">Miscellaneous</span></li></a>
         
     </ul>
 </div>
@@ -45,11 +91,25 @@
         </div>
     </div>
     <hr>
-	<div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
-    <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
-	
-    <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
-    <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide options on launch</div>
+    <div id="optionsBoxContent">
+        <div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
+        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+
+        <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+        <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide options on launch</div>
+    </div>
 </div>
+    
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+    
 </body>
 </html>
