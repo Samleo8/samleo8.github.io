@@ -137,10 +137,10 @@ function pageInit(){
     
     //Options Box Hide
     if(options["hideOnLaunch"]){
-        document.getElementById("optionsBox").className = "disappear "+document.getElementById("optionsBox").className;
+        document.getElementById("optionsBox").className += " disappear";
     }
     else{
-        document.getElementById("optionsBox").className = "appear "+document.getElementById("optionsBox").className;
+        document.getElementById("optionsBox").className = " appear";
     }
     
     //Add Event Listeners
@@ -192,6 +192,11 @@ function pageInit(){
     getEle(".optionsIcons .icon-reset")[0].addEventListener("click",resetOptions,false);    
     
     //Navigation Circles Ordering
+    var urlArr = window.location.href.toString().split("/");
+    var currPage = "../"+urlArr[urlArr.length-2]+"/index.html";
+    console.log(currPage);
+    
+    var navCirclesEle = document.getElementsByClassName("navCircle");
     
 }   
 
@@ -239,6 +244,8 @@ function navCircleUnhover(){
 }
 
 function toggleMenu(){
+    closeOptions();
+            
     if(navList.className.indexOf("disappear")!=-1){
         navList.className = navList.className.replaceAll("disappear","appear center");
         document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
@@ -263,19 +270,22 @@ function optionsUnhover(obj){
 }
 
 function optionsClick(obj){
+    navList.className = navList.className.replaceAll("appear center","disappear");   
+    document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
+    
 	optionsBox = document.getElementById("optionsBox");
-    if(optionsBox.className.indexOf("disappear")!=-1){
+    if(optionsBox.className.indexOf(" disappear")!=-1){
 		openOptions();
 	}
 	else closeOptions();
 }
 
 function openOptions(){
-	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll("disappear ","appear ");	
+	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" disappear"," appear");	
 }
 
 function closeOptions(){
-	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll("appear ","disappear ");	
+	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" appear"," disappear");	
 }
 
 function resetOptions(){
