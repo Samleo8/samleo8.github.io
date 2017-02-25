@@ -151,7 +151,7 @@ function pageInit(){
     //Add Event Listeners
     navList = document.getElementById("navList");
     if(navList!=null){
-        if(options["menuHide"]){
+        if(options["menuHide"] || !options["hideOnLaunch"]){
             if(navList.className.indexOf("disappear")==-1){
                 navList.className = navList.className.replaceAll("appear center","disappear");   
             }
@@ -381,7 +381,6 @@ function checkOptions(){
         var ele = optionsBtns[i];
         if(ele.id == "closeOptionsBtn") continue;
         
-        //trace(ele.id+" "+ele.checked);
         if(ele.checked) btnCheck(ele.id);
         else btnUncheck(ele.id);
     }
@@ -394,12 +393,27 @@ function btnUncheck(id){
     if(ele.className.indexOf("unchecked")==-1){
         ele.className = ele.className.replaceAll("checked","unchecked");
     }
+
+    //For ensuring that menu doesn't get shown if optionsBox is also shown
+    if(ele.id == "optionsBoxHide") btnDisable("optionsMenuHide");
 }
 
 function btnCheck(id){
     var ele = document.getElementById(id);
     ele.checked = true;
     ele.className = ele.className.replaceAll("unchecked","checked");
+    
+    if(ele.id == "optionsBoxHide") btnEnable("optionsMenuHide");
+}
+
+function btnDisable(id){
+    var ele = document.getElementById(id);
+    ele.className = ele.className.replaceAll(" disabled","")+" disabled";
+}
+
+function btnEnable(id){
+    var ele = document.getElementById(id);
+    ele.className = ele.className.replaceAll(" disabled","");
 }
 
 /*------VIDEOS-------*/
