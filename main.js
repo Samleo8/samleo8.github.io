@@ -316,7 +316,10 @@ function resetOptions(){
     //if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
 }
 
-function toggleOptions(opt){
+function toggleOptions(opt,ele){
+    if(ele!=null)
+        if(ele.className.indexOf("disabled")!=-1) return;
+    
 	if(opt == 'boxHide'){
         options["hideOnLaunch"] = !options["hideOnLaunch"];   
     }

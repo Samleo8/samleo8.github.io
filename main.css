@@ -367,12 +367,11 @@ label{
 }
 
 #navList.appear .navCircle:not(#navCircle1){
-    transition:all 0.5s ease;
-    transition-delay:0.3s;
+    transition:all 0.3s ease;
 }
 
 #navList.disappear .navCircle:not(#navCircle1){
-    transition:all 0.5s ease;
+    transition:all 0.3s ease;
     transition-delay:0s;
     
     top:-30%;
@@ -382,8 +381,7 @@ label{
 }
 
 #navList.disappear #navCircle1{
-    transition:all 0.5s ease;
-    transition-delay: 0s;
+    transition:all 0.3s ease;
     
     opacity:1;
     font-size:180%;

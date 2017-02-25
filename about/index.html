@@ -113,11 +113,11 @@
     </div>
     <hr>
     <div id="optionsBoxContent">
-        <div id="optionsMenuHide" onClick="toggleOptions('menuHide')" class="options-btn unchecked">Show Menu at Start</div>
-        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle')" class="options-btn unchecked">Tab-Style Menu</div>
+        <div id="optionsMenuHide" onClick="toggleOptions('menuHide',this)" class="options-btn unchecked">Show Menu at Start</div>
+        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle',this)" class="options-btn unchecked disabled">Tab-Style Menu</div>
 
         <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
-        <div id="optionsBoxHide" onClick="toggleOptions('boxHide')" class="options-btn unchecked">Hide options on launch</div>
+        <div id="optionsBoxHide" onClick="toggleOptions('boxHide',this)" class="options-btn unchecked">Hide options on launch</div>
     </div>
 </div>
     
