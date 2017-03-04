@@ -98,6 +98,23 @@ label{
     cursor:pointer;
 }
 
+h1.title{
+    font-size: 300%;
+    
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-top:25px;
+    padding-right:50px;
+    
+    background:#EEE;
+    color:#066;
+    
+    /*
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    */
+}
+
 .hr-divider{
     height:0px;
     border-top:1px #CCC dotted;
@@ -271,6 +288,63 @@ label{
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;       
+}
+
+/** Red downward facing ribbon **/
+.ribbon{
+    margin: 3em;
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
+    /* Opera */ 
+    background-image: -o-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #FF0000), color-stop(1, #990000));
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: radial-gradient(circle farthest-side at center top, #FF0000 0%, #990000 100%);
+    width: 5em;
+    height: 10em;
+    position: relative;
+    border-top-right-radius: .2em;
+    border-top-left-radius: .2em;
+    margin: auto;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.ribbon:before{
+    content: "";
+    position: absolute;
+    bottom: -2.4em;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 2.5em solid #990000;
+    border-right: 2.5em solid transparent;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.ribbon:after{
+    content: "";
+    position: absolute;
+    bottom: -2.4em;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 2.5em solid #990000;
+    border-left: 2.5em solid transparent;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 /*--------ICOMOON-------*/
