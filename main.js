@@ -200,17 +200,21 @@ function pageInit(){
     var urlArr = window.location.href.toString().split("/");
     var currPage = "../"+urlArr[urlArr.length-2]+"/index.html";
         
+    console.log(currPage);
+    
     var navCirclesEle = document.getElementsByClassName("navCircle");
     
     var i;
     
-    for(i=0;i<navCirclesOrder;i++){
+    for(i=0;i<navCirclesOrder.length;i++){
         //Get rid of entry for current page
         if(navCirclesOrder[i]["href"] == currPage){
             navCirclesOrder.splice(i,1);
             break;
         }
     }
+    
+    console.log(navCirclesOrder);
     
     for(i=1;i<navCirclesEle.length;i++){ //skip first navCircle (#navCircle1)
         navCirclesEle[i].parentElement.href = navCirclesOrder[i-1]["href"];
