@@ -454,6 +454,10 @@ h1.title{
     opacity:0;
 }
 
+#navList.appear #navCircle1{
+    transition:all 0.5s ease;
+}
+
 #navList.disappear #navCircle1{
     transition:all 0.3s ease;
     
