@@ -316,6 +316,16 @@ p.subtitle{
     user-select: text;       
 }
 
+.flex-container{
+    display:inline-flex;
+    width:100%;
+}
+
+.flex-container.center{
+    justify-content: center;
+    align-content: space-around;
+}
+
 #main-content > *:not(.subtitle):not(.title):not(img){
     padding-left: 15px;
 }
@@ -728,6 +738,9 @@ p.subtitle{
 	padding-top:2%;
 	padding-bottom:1%;	
 }
+
+/*-----ABOUT ME-----*/
+
 
 /*---------GAMES--------*/
 .gameScreenshotHolder{
