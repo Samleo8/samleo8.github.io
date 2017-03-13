@@ -184,7 +184,7 @@ p.subtitle{
 }
 
 /* TODO: Use "flex" instead */
-
+/*
 .split{
     margin-right:auto;
     margin-left:auto;
@@ -215,10 +215,11 @@ p.subtitle{
 .split2, div div, .split3 div div{
 	width:auto;
 }
+*/
 
-#link-button-games{
-    padding:3% 5%;
-    font-size:24px;
+.link-button-showcase{
+    padding:20px 40px;
+    font-size:150%;
 }
 
 .gen-btn {
@@ -317,13 +318,16 @@ p.subtitle{
 }
 
 .flex-container{
-    display:inline-flex;
-    width:100%;
-}
+    list-style: none;
 
-.flex-container.center{
-    justify-content: center;
-    align-content: space-around;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 #main-content > *:not(.subtitle):not(.title):not(img){
@@ -740,22 +744,20 @@ p.subtitle{
 }
 
 /*-----ABOUT ME-----*/
+.about-showcase-button-holder a{
+    flex:1 300px;
+}
 
+@media all and (max-width: 1155px) {
+    .about-showcase-button-holder a:first-child{
+        flex:1 100%;
+    }
+}
 
 /*---------GAMES--------*/
 .gameScreenshotHolder{
     padding: 0;
     margin: 0;
-    list-style: none;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
 }
 
 .gameScreenshotHolder .gameHolder{
@@ -768,6 +770,12 @@ p.subtitle{
     text-align: center;
 }
 
+@media all and (min-width: 1145px) {
+    .gameScreenshotHolder .gameHolder.featured{
+        flex:1 100%;
+    }
+}
+
 .gameScreenshotHolder .gameHolder:hover {
     cursor: pointer;
     background: rgba(240,240,240,0.1);
@@ -775,6 +783,7 @@ p.subtitle{
 
 .gameHolder img{
     width:90%;
+    max-width: 850px;
 }
 
 .gameHolder div.gameTitle{

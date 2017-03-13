@@ -101,7 +101,8 @@ var gameLib = {
             "name":"Drugged Dreams",
             "filename":"DruggedDreams",
             "description":"Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place at Singapore Games Creation Competition (team effort) on the topic of 'Fighting Drugs'.",
-            "tags":["Action","Fighting"]
+            "tags":["Action","Fighting"],
+            featured: true
         }, //in the case where it's 1 row with three games, this game gets featured
         {
             "name":"Focus Fire - Enhanced",
@@ -122,7 +123,8 @@ var gameLib = {
             "filename":"SisyphusSheep",
             "url":"https://samleo8.github.io/SisyphusSheep/",
             "description":"Run for your life as you avoid the spikes on an endless treadmill!",
-            "tags":["Arcade","Endless","Sheep","Mobile Ready"]
+            "tags":["Arcade","Endless","Sheep","Mobile Ready"],
+            featured: true
         }
     ]
 }
@@ -277,7 +279,7 @@ function pageInit(){
         for(i=0;i<gameLib["flash"].length;i++){
             var gameInfo = gameLib["flash"][i];
             
-            out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder'>";
+            out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
                 out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
                 out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                 out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
@@ -299,7 +301,7 @@ function pageInit(){
         for(i=0;i<gameLib["html"].length;i++){
             var gameInfo = gameLib["html"][i];
             
-            out+="<a href='"+gameInfo["url"]+"' class='gameHolder' target='_blank'>";
+            out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
                 out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
                 out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                 out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
