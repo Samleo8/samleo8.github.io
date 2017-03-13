@@ -109,10 +109,36 @@ h1.title{
     background:#EEE;
     color:#066;
     
+    box-shadow: 0px 5px 20px 2px rgba(50,50,50,0.8);
     /*
     border-top-right-radius:20px;
     border-bottom-right-radius:20px;
     */
+}
+
+.subtitle{
+    margin-top:-32px;
+    margin-left:15px;
+    
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-top:10px;
+    padding-right:50px;
+    
+    background:rgba(141,211,107,0.8);
+    color:#066;
+    
+    box-shadow: inset 0px 8px 50px -20px rgb(0,0,0);
+    
+    /*
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    */
+}
+
+p.subtitle{
+    font-size:120%;
+    font-weight: 900;
 }
 
 .hr-divider{
@@ -123,7 +149,7 @@ h1.title{
     /*box-shadow:0px 0px 20px 1px #EEE;   */
 }
 
-.hr-divider.pad{   
+.hr-divider.pad, .hr-divider.pad-both{   
     margin-top:10px;
     margin-bottom:10px;
 }
@@ -290,6 +316,32 @@ h1.title{
     user-select: text;       
 }
 
+#main-content > *:not(.subtitle):not(.title):not(img){
+    padding-left: 15px;
+}
+
+#main-content .spacing{
+    display: block;
+    width:100%;
+    clear:both;
+    height:50px;
+}
+
+#main-content .spacing.tiny{
+    height:10px;
+}
+
+#main-content .spacing.small{
+    height:25px;
+}
+
+#main-content .spacing.medium{
+    height:25px;
+}
+
+#main-content .spacing.big, #main-content .spacing.large{
+    height:100px;
+}
 /** Red downward facing ribbon **/
 .ribbon{
     margin: 3em;
@@ -678,6 +730,130 @@ h1.title{
 }
 
 /*---------GAMES--------*/
+.gameScreenshotHolder{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.gameScreenshotHolder .gameHolder{
+    padding: 10px;
+    flex:1 350px;
+    margin-top:10px;
+    
+    transition: all 0.3s ease;
+    
+    text-align: center;
+}
+
+.gameScreenshotHolder .gameHolder:hover {
+    cursor: pointer;
+    background: rgba(240,240,240,0.1);
+}
+
+.gameHolder img{
+    width:90%;
+}
+
+.gameHolder div.gameTitle{
+    font-size: 150%;
+    margin-bottom: 10px;
+}
+
+.gameHolder div.gameDesc{
+    margin-left:10%;
+    width:80%;
+    font-size:80%;
+    color:#EEE;
+    margin-bottom: 15px;
+}
+
+
+.tag{
+    display:inline-block;
+    border:none;
+    border-radius:8px;
+    font-size:14px;
+    padding:5px 10px 5px 10px;
+    margin-bottom:12px;
+    margin-right:10px;
+    
+    /* Default */
+    background: rgb(58, 148, 14);
+    color: #EEE;
+    
+    /*Disable Selection*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tag.flash{
+    background:rgb(153, 0, 0);
+    color: #EEE;
+}
+
+.tag.html{
+    background:#e34f26;
+    color: #EEE;
+}
+
+.tag.shooting{
+    background:#f44336;
+    color: #EEE;
+}
+
+.tag.action{
+    background: #039be5;
+    color: #EEE;
+}
+
+.tag.fighting{
+    background:#0d47a1;
+    color: #EEE;
+}
+
+.tag.arcade{
+    background:#90caf9;
+    color: #000;
+}
+
+.tag.single-button{
+    background:#cddc39;
+    color: #000;
+}
+
+.tag.endless{
+    background:#ffb74d;
+    color: #000;
+}
+
+.tag.sheep{
+    background:#cfd8dc;
+    color: #000;
+}
+
+.tag.defence{
+    background:#80cbc4;
+    color: #000;
+}
+
+.tag.mobile-ready{
+    background: #66bb6a;
+    color: #000;
+}
 
 /*-----OPTIONS CIRCLE-----*/
 #optionsCircle{

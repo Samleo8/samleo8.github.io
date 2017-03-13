@@ -76,6 +76,57 @@ var navCirclesOrder = [
     }
 ];
 
+//Games Index
+var gameLib = {
+    "flash": [
+        {
+            "name":"Focus Fire - Original",
+            "filename":"FocusFireGame",
+            "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Original game used for eye-tracking research.",
+            "tags":["Shooting","Defence","Multi-tasking"]
+        },
+        {
+            "name":"Space Junk",
+            "filename":"SpaceJunk",
+            "description":"Game where you find 'Space Junk' amidst a confusing array of 'Satellites'. Original game used for eye-tracking research.",
+            "tags":["Arcade"]
+        },
+        {
+            "name":"Caged Bird",
+            "filename":"CagedBird",
+            "description":"Flappy Bird on steriods! Bounce back and forth the walls while avoiding the random falling spikes.",
+            "tags":["Arcade","Single Button","Endless"]
+        },
+        {
+            "name":"Drugged Dreams",
+            "filename":"DruggedDreams",
+            "description":"Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place at Singapore Games Creation Competition (team effort) on the topic of 'Fighting Drugs'.",
+            "tags":["Action","Fighting"]
+        }, //in the case where it's 1 row with three games, this game gets featured
+        {
+            "name":"Focus Fire - Enhanced",
+            "filename":"FocusFireHarder",
+            "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Game used for eye-tracking research, but with increased difficulty.",
+            "tags":["Shooting","Defence","Multi-tasking"]
+        },
+        {
+            "name":"Hard Core",
+            "filename":"HardCore",
+            "description":"Protect your core from incoming enemies, even as your shield decays with time! Game created for Ludum Dare competition, themed 'Only one'.",
+            "tags":["Arcade","Defence"]
+        },
+    ],
+    "html":[
+        {
+            "name":"Sisyphus Sheep",
+            "filename":"SisyphusSheep",
+            "url":"https://samleo8.github.io/SisyphusSheep/",
+            "description":"Run for your life as you avoid the spikes on an endless treadmill!",
+            "tags":["Arcade","Endless","Sheep","Mobile Ready"]
+        }
+    ]
+}
+
 //Page resize
 function pageChange(){
 	windowH = getBodyHeight();
@@ -202,7 +253,7 @@ function pageInit(){
         
     var navCirclesEle = document.getElementsByClassName("navCircle");
     
-    var i;
+    var i,j;
     
     for(i=0;i<navCirclesOrder.length;i++){
         //Get rid of entry for current page
@@ -216,6 +267,54 @@ function pageInit(){
         navCirclesEle[i].parentElement.href = navCirclesOrder[i-1]["href"];
         navCirclesEle[i].getElementsByClassName("menu-icon")[0].className += " "+navCirclesOrder[i-1]["icon"];
         navCirclesEle[i].getElementsByClassName("center")[0].innerHTML = navCirclesOrder[i-1]["name"];
+    }
+    
+    //Game screenshots setup
+    var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
+    if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined && gameScreenshotHolder.length==2){
+        out="";
+        //Starting with Flash first
+        for(i=0;i<gameLib["flash"].length;i++){
+            var gameInfo = gameLib["flash"][i];
+            
+            out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder'>";
+                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                out+="<div class='gameTagHolder'>";
+                    out+="<div class='tag flash'>Flash</div>";
+                for(j=0;j<gameInfo["tags"].length;j++){
+                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+                    
+                    out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                }
+                out+="</div>";
+            out+="</a>";
+        }
+        
+        gameScreenshotHolder[0].innerHTML = out;
+        
+        out = "";
+        //Then HTML
+        for(i=0;i<gameLib["html"].length;i++){
+            var gameInfo = gameLib["html"][i];
+            
+            out+="<a href='"+gameInfo["url"]+"' class='gameHolder' target='_blank'>";
+                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                out+="<div class='gameTagHolder'>";
+                    out+="<div class='tag html'>HTML5</div>";
+                for(j=0;j<gameInfo["tags"].length;j++){
+                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+                    
+                    out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                }
+                out+="</div>";
+            out+="</a>";
+        }
+        
+        gameScreenshotHolder[1].innerHTML = out;
     }
 }   
 

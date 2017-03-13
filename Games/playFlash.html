@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="../Images/favicon.ico">
+<title>Games</title>
+<style>
+/* FOR FLASH CONTENT */
+#flashContent{
+    position: relative;
+    width:100%;
+    height:600px;
+    text-align: center;
+}
+/*
+#flashContent object{
+    position: absolute;
+    width:800px;
+    height:600px;
+    margin:auto;
+}
+*/
+    
+#back-btn{
+    position:fixed;
+    width:250px;
+    height:250px;
+    border-radius:100%;
+    top:-15%;
+    right:-5%;
+    background:rgba(200, 200, 200, 0.6);
+    color:#333;
+    font-size:170%;
+    transition:all 0.3s ease;
+    cursor:pointer;
+}
+
+#back-btn:hover{
+    top:-14%;
+    right:-4%;
+    background:rgb(187, 187, 187);
+}
+
+#back-btn span{
+    position:absolute;
+    text-align:left;
+    bottom:25%;
+    left:25%;
+    width:100%;
+}
+</style>
+    
+<link href="../main.css" rel="stylesheet" type="text/css">
+    
+<noscript>
+    <style>
+    #noScriptShow{
+        display:inline-block;
+        height:100%;
+        width:100%;
+        position:fixed;
+        top:0;
+        bottom:0;
+        background:#066;
+        text-align:center;
+        z-index:2147483640; /* no mobile takes precedence */
+    }
+    #noScriptCircle{
+        width:300px;
+        height:300px;
+        padding:10px;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+        border-radius:1000px;
+        background:#EEE;
+        color:#066;
+        text-align:center;
+    }
+    #noScriptCircle div{
+        width:200px;
+        height:200px;	
+
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+    }
+    #noScriptCircle h1{
+        font-size:40px;
+        margin-top:20px;	
+        margin-bottom:5px;
+    }
+    </style>
+</noscript>
+<script src="../main.js"></script>
+<script src="../main.lib.js"></script>
+<script>
+window.onload = function(){
+    var gameName = window.location.href.split("playFlash.html?name=")[1];
+    
+    if(window.location.href.indexOf("playFlash.html?name=")!=-1 && gameName.length>0){        
+        //Preparing Flash content
+        var out = ''
+        out+='<object width="800" height="600" align="middle">';
+        out+='<param name="movie" value="'+gameName+'.swf" />';
+        out+='<embed  id="gameSwf" src="'+gameName+'.swf" width="800" height="600">'
+        out+='</object>';
+        
+        document.getElementById("flashContent").innerHTML = out;
+        
+        //Searching for the object co-relating to game name
+        console.log(gameLib["flash"]);
+        
+        var gameInfo;
+        
+        for(i=0;i<gameLib["flash"].length;i++){
+            if(gameLib["flash"][i]["filename"] == gameName){
+                gameInfo = gameLib["flash"][i];
+                break;
+            }
+        }
+        
+        //Name and description
+        document.title = gameInfo["name"];
+        
+        document.getElementsByClassName("title")[0].innerHTML = gameInfo["name"];
+        document.getElementsByClassName("subtitle")[0].innerHTML = gameInfo["description"];
+    }
+    else {
+        console.log("Unable to load game. Going back to previous page");
+        alert("Unable to load game. Going back to previous page");
+        
+        goBack();
+    }
+}
+
+function goBack(){
+    if(history.length>1){
+        history.go(-1);
+    }
+    else window.location = "../index.html";       
+}    
+</script>
+</head>
+<body>
+<!--Navigation-->
+<div id="navList" class="disappear">
+    <div class="navCircle circle circle-height disableSelect alt-colour" id="navCircle1" onclick="goBack();">
+        <span class="center">Back to<br>Site</span>
+    </div>
+</div>
+    
+<!--START MAIN-->
+<div id="main-content">
+    <h1 class="title"></h1>
+    <h3 class="subtitle"></h3>
+    <div></div>
+    <div id="flashContent"></div>    
+</div>
+
+<div></div>
+<!--END MAIN-->
+    
+<!--Options
+<div id="optionsCircle" class="circle circle-height disableSelect" onmouseover="optionsHover(this)" onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+    <span class="" id="optionsCircleContent">
+        <h1>Options</h1>
+	</span>
+</div>
+-->
+<!--Options Box
+<div id="optionsBox" class="invertedColor disableSelect">
+    <div id="optionsBoxHeader">
+        <div class="optionsTitle"><h1>Options</h1></div>
+        <div class="optionsIconsHolder">
+            <div class="optionsIcons"><span class="icon-home"></span></div>
+            <div class="optionsIcons"><span class="icon-reset"></span></div>
+        </div>
+    </div>
+    <hr>
+    <div id="optionsBoxContent">
+        <div id="optionsMenuHide" onClick="toggleOptions('menuHide',this)" class="options-btn unchecked">Show Menu at Start</div>
+        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle',this)" class="options-btn unchecked disabled">Tab-Style Menu</div>
+
+        <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+        <div id="optionsBoxHide" onClick="toggleOptions('boxHide',this)" class="options-btn unchecked">Hide options on launch</div>
+    </div>
+</div>
+-->
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>I-Focus</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>
