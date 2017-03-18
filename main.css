@@ -725,7 +725,7 @@ p.subtitle{
     margin-top:-10%;
 }
 
-/*--NAVIGATION HOME--*/
+/*---------NAVIGATION HOME---------*/
 #navListHome{
 	position:absolute;
 	height:85%;
@@ -772,7 +772,55 @@ p.subtitle{
 	padding-bottom:1%;	
 }
 
-/*-----ABOUT ME-----*/
+/*---------GENERIC CONTENT---------*/
+.table-of-contents{
+    /* Flex box container inherit */
+    text-align: center;
+    
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.table-of-contents-btn{
+    position: relative;
+    background:#EEE;
+    color:#066;
+    cursor:pointer; 
+    
+    width:400px;
+    
+    transition: 0.3s ease;
+}
+
+.table-of-contents-btn:hover{
+    color:black;
+}
+
+.table-of-contents-btn:after{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+    width:0%;
+    height:100%;
+    
+	background:rgba(141,211,107,0.25);
+}
+
+.table-of-contents-btn:hover:after{
+    width:100%;
+}
+
+
+/*---------ABOUT ME---------*/
 .about-showcase-button-holder a{
     flex:1 300px;
 }
@@ -783,13 +831,19 @@ p.subtitle{
     }
 }
 
+.about-section{
+    margin-bottom: 50px;
+}
+
 table.achievements-table{
     text-align: left;
     margin-left: 30px;
     border-collapse: collapse;
+    margin-bottom: 50px;
 }
 
 table.achievements-table tr th, table.achievements-table tr td{
+    vertical-align: text-top;
     padding: 5px;
     padding-left: 10px;
     border:1px solid #066;
@@ -807,7 +861,7 @@ table.achievements-table td:not(:first-child){
     padding-right: 35px;
 }
 
-table.achievements-table td:not(:last-child) div{
+table.achievements-table td div{
     padding-bottom: 5px;
 }
 
