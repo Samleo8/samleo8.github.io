@@ -1,4 +1,4 @@
-// PrioriTask Functions Library
+// Functions Library
 
 Array.prototype.reverse_sort = function(){
 	this.sort();
