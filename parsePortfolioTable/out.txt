@@ -1,116 +1,54 @@
 <table class="achievements-table">
 	<tr>
 		<th>Year</th>
-		<th>Course/Publication/Presentation</th>
-		<th>Achievement</th>
+		<th>Leadership Role</th>
 	</tr>
 	<tr>
-		<td>2011</td>
-		<td>iLeader June Camp</td>
-		<td>Participant</td>
+		<td> 2011</td>
+		<td>Class Management Committee - Facilities Secretary</td>
 	</tr>
 	<tr>
-		<td>2012</td>
-		<td>Stanford CS101 Online Computing Course</td>
-		<td> Certificate of Accomplishment</td>
+		<td> 2011</td>
+		<td>HCI Projects Competition - Leader</td>
 	</tr>
 	<tr>
-		<td>2012</td>
-		<td>InfoComm S'pore Youth Network Conference (inSYNC)   Participation/Presented to iDA</td>
+		<td> 2012</td>
+		<td>HCI Projects Competition - Leader </td>
 	</tr>
 	<tr>
-		<td>2012</td>
-		<td>Community Emergency Preparedness Programme</td>
-		<td> Participation</td>
+		<td> 2013</td>
+		<td>HCI Projects Competition - Leader</td>
 	</tr>
 	<tr>
-		<td>2012</td>
-		<td>Outward Bound Singapore (OBS)</td>
-		<td> Certificate of Completion </td>
+		<td> 2013</td>
+		<td>Class Management Committee - Class Chairman</td>
 	</tr>
 	<tr>
-		<td>2012</td>
-		<td>YDSP Science and Technology Camp (Naval Bots 2012)</td>
-		<td> Certificate of Participation</td>
+		<td> 2014</td>
+		<td>Class Management Committee - Class Chairman</td>
 	</tr>
 	<tr>
-		<td>2013</td>
-		<td>IOI Training Course @ NUS School of Computing (SoC)</td>
-		<td> Participation</td>
+		<td> 2014</td>
+		<td>HCI Projects Competition - Leader</td>
 	</tr>
 	<tr>
-		<td>2013</td>
-		<td> SSEF (Singapore Science and Engineering Fair) Exhibition (14 Mar)</td>
-		<td> Audience</td>
+		<td> 2014 </td>
+		<td>CCA EC3 ExCo - Chairman</td>
 	</tr>
 	<tr>
-		<td>2013</td>
-		<td> Scinemation (Stop Motion Competition)</td>
-		<td> Participation</td>
+		<td> 2014 </td>
+		<td>Research@YDSP Project - Leader</td>
 	</tr>
 	<tr>
-		<td>2013</td>
-		<td> HCI Engineering Week (Mobile Range Finder Workshop)</td>
-		<td> Participant</td>
+		<td> 2015 </td>
+		<td>Class Management Committee - Assistant CT Rep</td>
 	</tr>
 	<tr>
-		<td>2013</td>
-		<td> A*STAR Research Exposure Program</td>
-		<td> Participant </td>
+		<td> 2015 </td>
+		<td>Research@YDSP Project - Leader</td>
 	</tr>
 	<tr>
-		<td>2013</td>
-		<td> YDSP Science and Technology Camp (Dex Bots 2013) </td>
-		<td> 2nd Runner Up</td>
-	</tr>
-	<tr>
-		<td>2013</td>
-		<td> YDSP Science and Technology Camp (Zero Gravity 2013) </td>
-		<td> Champions</td>
-	</tr>
-	<tr>
-		<td>2013</td>
-		<td> NOI December Training Course @ NUS School of Computing (SoC)</td>
-		<td> Participation</td>
-	</tr>
-	<tr>
-		<td>2014</td>
-		<td> EDB-GSK Hwa Chong Economics Challenge</td>
-		<td> Participation</td>
-	</tr>
-	<tr>
-		<td>2014</td>
-		<td> YDSP World of Science (Computer Security)</td>
-		<td> Participant</td>
-	</tr>
-	<tr>
-		<td>2014</td>
-		<td> YDSP World of Science (Artificial Intelligence)</td>
-		<td> Participant</td>
-	</tr>
-	<tr>
-		<td>2014</td>
-		<td> YDSP Congress Presentation (Zero Gravity Camp)</td>
-		<td> Presented before GOH</td>
-	</tr>
-	<tr>
-		<td>2014</td>
-		<td> Research@YDSP Project (I-Focus)</td>
-		<td> Selected to present before GOH</td>
-	</tr>
-	<tr>
-		<td>2015</td>
-		<td> YDSP Congress Presentation (I-Focus)</td>
-		<td> Presented before GOH</td>
-	</tr>
-	<tr>
-		<td>2015</td>
-		<td>YDSP World of Science (Signal Processing)</td>
-		<td> Participant</td>
-	</tr>
-	<tr>
-		<td>2015</td>
-		<td> Research@YDSP Project (Light Direction Finder)</td>
-		<td> Project won SSEF Gold, selected  to represent SG at ISEF Finals</td>
+		<td> 2016</td>
+		<td>CCA InfoComm Robotics Society ExCo - Chairman </td>
 	</tr>
 </table>

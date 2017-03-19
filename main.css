@@ -254,25 +254,36 @@ p.subtitle{
 .gen-btn {
 	border: none;
 	background: none;
-	cursor: pointer;
-	padding: 25px 80px;
-	display: inline-block;
-	margin: 15px 30px;
-	letter-spacing: 1px;
-	font-family:"Museo300","Calibri","Arial",Sans-Serif;
-	font-weight: 700;
 	outline: none;
+    text-overflow: ellipsis;
+    
+	cursor: pointer;
 	position: relative;
+	display: inline-block;
+	
+    padding: 25px 80px;
+    margin: 15px 30px;
+	letter-spacing: 1px;
+	
+    font-family:"Museo300","Calibri","Arial",Sans-Serif;
+	font-weight: 700;
+    
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+}
+
+.gen-btn:hover{
+    text-overflow: ellipsis;
 }
 
 
 .gen-btn:after {
 	content: '';
 	position: absolute;
+    text-overflow: ellipsis;
 	z-index: -1;
+    
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
