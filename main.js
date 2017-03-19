@@ -300,7 +300,8 @@ function pageInit(){
     if(TCEle!=null && TCEle!=undefined){
         out='';
         for(i=0;i<tableOfContents.length;i++){
-            out+='<a href="#'+tableOfContents[i].toLowerCase().replaceAll(" ","-")+'" class="gen-btn table-of-contents-btn">';
+            var idName = tableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ","-");
+            out+='<a href="#'+idName+'" class="gen-btn table-of-contents-btn">';
             out+=tableOfContents[i];
             out+="</a>";
         }

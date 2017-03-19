@@ -72,6 +72,10 @@ String.prototype.replaceAll = function(find, replace){
     return this.replace(new RegExp(find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1"), 'g'), replace);
 }
 
+String.prototype.removeAll = function(find){
+    return this.replaceAll(find,"");
+}
+
 String.prototype.parseElement = function(){
     return getEle(this);
 }
