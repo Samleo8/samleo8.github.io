@@ -255,7 +255,6 @@ p.subtitle{
 	border: none;
 	background: none;
 	outline: none;
-    text-overflow: ellipsis;
     
 	cursor: pointer;
 	position: relative;
@@ -273,7 +272,9 @@ p.subtitle{
 	transition: all 0.3s;
 }
 
-.gen-btn:hover{
+.gen-btn, .gen-btn:hover, .gen-btn *, .gen-btn:hover *{
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
@@ -809,12 +810,12 @@ p.subtitle{
     background:#EEE;
     color:#066;
     cursor:pointer; 
-    padding:0px;
-    height:60px;
-    line-height: 60px;
+    padding: 0px 15px;
+    height:50px;
+    line-height: 50px;
     
-    width:250px;
-    flex: 1 250px;
+    width:200px;
+    flex: 1 190px;
     
     transition: 0.3s ease;
 }
@@ -855,6 +856,15 @@ table.achievements-table{
     margin-left: 30px;
     border-collapse: collapse;
     margin-bottom: 50px;
+    
+    max-width: 90%;
+}
+
+@media all and (max-width: 600px){
+    table.achievements-table{
+        margin-left: 5px;
+        max-width:100%;
+    }
 }
 
 table.achievements-table tr th, table.achievements-table tr td{
@@ -864,6 +874,8 @@ table.achievements-table tr th, table.achievements-table tr td{
     border:1px solid #066;
     background-color:rgb(238,238,238);
     color:#066;
+    
+    white-space: normal;
 }
 
 table.achievements-table tr th{
@@ -1159,12 +1171,13 @@ table.achievements-table td div{
     margin-left: 10px;
     margin-right: 10px;
     
-    flex: 1 200px;
-    width:200px;
+    flex: 1 180px;
+    width:180px;
     height:55px;
     line-height:55px; /* Vertical centering */
     
-    padding-left:55px;
+    padding-right:10px; 
+    padding-left:65px;
     
     /*
     padding:3%;
@@ -1178,6 +1191,10 @@ table.achievements-table td div{
     
     color:#066;
     background:rgb(141,211,107);
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .options-btn:hover{
