@@ -1,0 +1,45 @@
+<table class="achievements-table">
+	<tr>
+		<th>Year    Competition/Event   Achievement</th>
+	</tr>
+	<tr>
+		<td>2012</td>
+		<td>SGCC (Singapore Games Creation Competition)</td>
+		<td>Top 20</td>
+	</tr>
+	<tr>
+		<td>2012</td>
+		<td>InSYNC (Infocomm Singapore Youth Networking Conference)</td>
+		<td>Participant</td>
+	</tr>
+	<tr>
+		<td>2013</td>
+		<td>SGCC (Singapore Games Creation Competition)</td>
+		<td>Commendation Award</td>
+	</tr>
+	<tr>
+		<td>2014</td>
+		<td>SGCC (Singapore Games Creation Competition)</td>
+		<td>Consolation Award (4th)</td>
+	</tr>
+	<tr>
+		<td>2014</td>
+		<td>Splash Awards 2015</td>
+		<td>Grand Finalist (Top 5)</td>
+	</tr>
+	<tr>
+		<td>2014</td>
+		<td>Edusave EAGLES Award</td>
+		<td>Recipient</td>
+	</tr>
+	<tr>
+		<td>2015</td>
+		<td>NYAA Canada-Singapore Website Design Competition</td>
+		<td>3rd Prize</td>
+	</tr>
+	<tr>
+		<td>2015</td>
+		<td>Splash Awards 2015</td>
+		<td>Semi-Finalist</td>
+	</tr>
+</table>

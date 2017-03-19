@@ -5,11 +5,11 @@ int main(){
 	freopen("in.txt", "r", stdin);
 	freopen("out.txt", "w", stdout);
 	
-	int i;
 	char str[1000];
     
 	char* data;
 	char* string;
+    int first = 1;
     
 	printf("<table class=\"achievements-table\">\n");
 	while( gets(&str) ){
@@ -18,10 +18,12 @@ int main(){
         string = strdup(str);
         
         while ( (data = strsep(&string, "\t")) != NULL){
-            printf("\t\t<td>%s</td>\n", data);
+            if(first) printf("\t\t<th>%s</th>\n", data);
+            else printf("\t\t<td>%s</td>\n", data);
         }
         
 		printf("\t</tr>\n");
+        first = 0;
 	}
 
 	printf("</table>");
