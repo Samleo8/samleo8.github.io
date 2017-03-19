@@ -555,8 +555,8 @@ p.subtitle{
     transition:all 0.3s ease;
     transition-delay:0s;
     
-    top:-30%;
-    right:-30%;
+    top:-50%;
+    right:-50%;
     
     opacity:0;
 }
