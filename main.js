@@ -291,19 +291,21 @@ function pageInit(){
     
     //Table of Contents setup
     var tableOfContents = [];
-    a=document.querySelectorAll(".content-section h1");
+    var a = document.querySelectorAll(".content-section h1");
     for(i=0;i<a.length;i++){
-        s[i] =  JSON.parse(JSON.stringify(a[i].innerText.split("\n")[0]));
+        tableOfContents[i] =  JSON.parse(JSON.stringify(a[i].innerText.split("\n")[0]));
     };
     
     var TCEle = document.getElementsByClassName("table-of-contents")[0];
-    out='';
-    for(i=0;i<tableOfContents[pageName].length;i++){
-        out+='<a href="#'+tableOfContents[pageName][i].toLowerCase().replaceAll(" ","-")+'" class="gen-btn table-of-contents-btn">';
-        out+=tableOfContents[pageName][i];
-        out+="</a>";
+    if(TCEle!=null && TCEle!=undefined){
+        out='';
+        for(i=0;i<tableOfContents.length;i++){
+            out+='<a href="#'+tableOfContents[i].toLowerCase().replaceAll(" ","-")+'" class="gen-btn table-of-contents-btn">';
+            out+=tableOfContents[i];
+            out+="</a>";
+        }
+        TCEle.innerHTML = out;
     }
-    TCEle.innerHTML = out;
     
     //Game screenshots setup
     var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
