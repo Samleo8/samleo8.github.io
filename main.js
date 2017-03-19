@@ -129,6 +129,23 @@ var gameLib = {
     ]
 }
 
+//Table of contents
+/*
+    //Obtain array using this code:
+    s=[];a=document.querySelectorAll(".about-section h1");for(i=0;i<a.length;i++){ s[i] =  JSON.parse(JSON.stringify(a[i].innerText.split("\n")[0]));}; console.log(s);
+
+var tableOfContents = {
+    "about":[
+        "Educational Background",
+        "How I see myself",
+        "Interests and Creations",
+        "Academic Achievements",
+        "Project Involvement",
+        "CCA"
+    ]
+}
+*/
+
 //Page resize
 function pageChange(){
 	windowH = getBodyHeight();
@@ -251,7 +268,8 @@ function pageInit(){
     
     //Navigation Circles Ordering
     var urlArr = window.location.href.toString().split("/");
-    var currPage = "../"+urlArr[urlArr.length-2]+"/index.html";
+    var pageName = urlArr[urlArr.length-2];
+    var currPage = "../"+pageName+"/index.html";
         
     var navCirclesEle = document.getElementsByClassName("navCircle");
     
@@ -270,6 +288,22 @@ function pageInit(){
         navCirclesEle[i].getElementsByClassName("menu-icon")[0].className += " "+navCirclesOrder[i-1]["icon"];
         navCirclesEle[i].getElementsByClassName("center")[0].innerHTML = navCirclesOrder[i-1]["name"];
     }
+    
+    //Table of Contents setup
+    var tableOfContents = [];
+    a=document.querySelectorAll(".content-section h1");
+    for(i=0;i<a.length;i++){
+        s[i] =  JSON.parse(JSON.stringify(a[i].innerText.split("\n")[0]));
+    };
+    
+    var TCEle = document.getElementsByClassName("table-of-contents")[0];
+    out='';
+    for(i=0;i<tableOfContents[pageName].length;i++){
+        out+='<a href="#'+tableOfContents[pageName][i].toLowerCase().replaceAll(" ","-")+'" class="gen-btn table-of-contents-btn">';
+        out+=tableOfContents[pageName][i];
+        out+="</a>";
+    }
+    TCEle.innerHTML = out;
     
     //Game screenshots setup
     var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
