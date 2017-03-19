@@ -1,9 +1,23 @@
-Year    Competition/Event   Achievement
-2012	SGCC (Singapore Games Creation Competition)	Top 20
-2012	InSYNC (Infocomm Singapore Youth Networking Conference)	Participant
-2013	SGCC (Singapore Games Creation Competition)	Commendation Award
-2014	SGCC (Singapore Games Creation Competition)	Consolation Award (4th)
-2014	Splash Awards 2015	Grand Finalist (Top 5)
-2014	Edusave EAGLES Award	Recipient
-2015	NYAA Canada-Singapore Website Design Competition	3rd Prize
-2015	Splash Awards 2015	Semi-Finalist
+Year	Course/Publication/Presentation	Achievement
+2011	iLeader June Camp	Participant
+2012	Stanford CS101 Online Computing Course	 Certificate of Accomplishment
+2012	InfoComm S'pore Youth Network Conference (inSYNC)   Participation/Presented to iDA
+2012	Community Emergency Preparedness Programme	 Participation
+2012	Outward Bound Singapore (OBS)	 Certificate of Completion 
+2012	YDSP Science and Technology Camp (Naval Bots 2012)	 Certificate of Participation
+2013	IOI Training Course @ NUS School of Computing (SoC)	 Participation
+2013	 SSEF (Singapore Science and Engineering Fair) Exhibition (14 Mar)	 Audience
+2013	 Scinemation (Stop Motion Competition)	 Participation
+2013	 HCI Engineering Week (Mobile Range Finder Workshop)	 Participant
+2013	 A*STAR Research Exposure Program	 Participant 
+2013	 YDSP Science and Technology Camp (Dex Bots 2013) 	 2nd Runner Up
+2013	 YDSP Science and Technology Camp (Zero Gravity 2013) 	 Champions
+2013	 NOI December Training Course @ NUS School of Computing (SoC)	 Participation
+2014	 EDB-GSK Hwa Chong Economics Challenge	 Participation
+2014	 YDSP World of Science (Computer Security)	 Participant
+2014	 YDSP World of Science (Artificial Intelligence)	 Participant
+2014	 YDSP Congress Presentation (Zero Gravity Camp)	 Presented before GOH
+2014	 Research@YDSP Project (I-Focus)	 Selected to present before GOH
+2015	 YDSP Congress Presentation (I-Focus)	 Presented before GOH
+2015	YDSP World of Science (Signal Processing)	 Participant
+2015	 Research@YDSP Project (Light Direction Finder)	 Project won SSEF Gold, selected  to represent SG at ISEF Finals
