@@ -83,13 +83,15 @@ var gameLib = {
             "name":"Focus Fire - Original",
             "filename":"FocusFireGame",
             "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Original game used for eye-tracking research.",
-            "tags":["Shooting","Defence","Multi-tasking"]
+            "tags":["Shooting","Defence","Multi-tasking"],
+            "project":"ifocus"
         },
         {
             "name":"Space Junk",
             "filename":"SpaceJunk",
             "description":"Game where you find 'Space Junk' amidst a confusing array of 'Satellites'. Original game used for eye-tracking research.",
-            "tags":["Arcade"]
+            "tags":["Arcade"],
+            "project":"ifocus"
         },
         {
             "name":"Caged Bird",
@@ -108,7 +110,8 @@ var gameLib = {
             "name":"Focus Fire - Enhanced",
             "filename":"FocusFireHarder",
             "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Game used for eye-tracking research, but with increased difficulty.",
-            "tags":["Shooting","Defence","Multi-tasking"]
+            "tags":["Shooting","Defence","Multi-tasking"],
+            "project":"ifocus"
         },
         {
             "name":"Hard Core",
@@ -301,9 +304,9 @@ function pageInit(){
     
     //Table of Contents setup
     var tableOfContents = [];
-    var a = document.querySelectorAll(".content-section h1");
-    for(i=0;i<a.length;i++){
-        tableOfContents[i] =  JSON.parse(JSON.stringify(a[i].innerText.split("\n")[0]));
+    var contentTitles = document.querySelectorAll(".content-section h1");
+    for(i=0;i<contentTitles.length;i++){
+        tableOfContents[i] =  JSON.parse(JSON.stringify(contentTitles[i].innerText.split("\n")[0]));
     };
     
     var TCEle = document.getElementsByClassName("table-of-contents")[0];
@@ -311,6 +314,8 @@ function pageInit(){
         out='';
         for(i=0;i<tableOfContents.length;i++){
             var idName = tableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ","-");
+            contentTitles[i].parentNode.id = idName;
+            
             out+='<a href="#'+idName+'" class="gen-btn table-of-contents-btn">';
             out+=tableOfContents[i];
             out+="</a>";
