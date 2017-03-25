@@ -84,14 +84,14 @@ var gameLib = {
             "filename":"FocusFireGame",
             "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Original game used for eye-tracking research.",
             "tags":["Shooting","Defence","Multi-tasking"],
-            "project":"ifocus"
+            "project":"ifocus1"
         },
         {
             "name":"Space Junk",
             "filename":"SpaceJunk",
             "description":"Game where you find 'Space Junk' amidst a confusing array of 'Satellites'. Original game used for eye-tracking research.",
             "tags":["Arcade"],
-            "project":"ifocus"
+            "project":"ifocus2"
         },
         {
             "name":"Caged Bird",
@@ -111,7 +111,7 @@ var gameLib = {
             "filename":"FocusFireHarder",
             "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Game used for eye-tracking research, but with increased difficulty.",
             "tags":["Shooting","Defence","Multi-tasking"],
-            "project":"ifocus"
+            "project":"ifocus2"
         },
         {
             "name":"Hard Core",
@@ -321,6 +321,31 @@ function pageInit(){
             out+="</a>";
         }
         TCEle.innerHTML = out;
+    }
+    
+    var subContents = document.getElementsByClassName("sub-table-of-contents");
+    for(var j=0;j<subContents.length;j++){
+        var subTableOfContents = [];
+        var subContentTitles = subContents[j].parentNode.getElementsByTagName("h2");
+        
+        for(i=0;i<subContentTitles.length;i++){
+            subTableOfContents[i] =  JSON.parse(JSON.stringify(subContentTitles[i].innerText.split("\n")[0]));
+        };
+        
+        var TCEle = subContents[j];
+        if(TCEle!=null && TCEle!=undefined){
+            out='';
+
+            for(i=0;i<subTableOfContents.length;i++){
+                var idName = subTableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ","-");
+                subContentTitles[i].id = idName;
+
+                out+='<a href="#'+idName+'" class="gen-btn table-of-contents-btn">';
+                out+=subTableOfContents[i];
+                out+="</a>";
+            }
+            TCEle.innerHTML = out;
+        }
     }
     
     //Game screenshots setup
