@@ -828,7 +828,7 @@ p.subtitle{
     #navListHome ul a li:before{
         content: url(Images/homeBullet.png);
         position: absolute;
-        left:30px;
+        left:10px;
         top:0px;
     }
     
@@ -836,13 +836,26 @@ p.subtitle{
         content: url(Images/homeBullet.png);
         transform: scaleX(-1);
         position: absolute;
-        right:30px;
+        right:10px;
         top:0px;
     }
 }
 
 @media all and (max-width: 450px){
+    #navListHome ul a li:before{
+        content: url(Images/homeBullet.png);
+        position: absolute;
+        left:5px;
+        top:0px;
+    }
     
+    #navListHome ul a li:after{
+        content: url(Images/homeBullet.png);
+        transform: scaleX(-1);
+        position: absolute;
+        right:5px;
+        top:0px;
+    }
 }
 
 /*---------GENERIC CONTENT---------*/
