@@ -169,16 +169,26 @@ function pageChange(){
 	MCContent = document.getElementById("mainCircleContent");
 	
     if(MCCircle != null){
-        //positioning
-        MCContent.style.left = parseInt(MCCircle.offsetWidth-vMCWidth+vMCWidth*0.05)+"px";
-        //MCContent.style.top = parseInt(windowH*0.1+windowH*0.3)+"px";
-        MCContent.style.bottom = parseInt(windowH*0.3+windowH*0.1)+"px"
-        /*
-        fnt = 0.055*Math.min(windowH,windowW);
-        MCContent.style.fontSize = fnt+"px";
-        //*/
-        
-        MCContent.style.width = parseInt(vMCWidth*0.80)+"px";
+        var switchVar = MCCircle.getAttribute("switch-var");
+
+        if(switchVar!=null && switchVar.split("-")[0] == "width" && window.windowW<=parseInt(switchVar.split("-")[1])){
+            MCContent.style = '';
+        }
+        else if(switchVar!=null && switchVar.split("-")[0] == "height" && window.windowH<=parseInt(switchVar.split("-"))){
+            MCContent.style = '';
+        }
+        else{
+            //positioning
+            MCContent.style.left = parseInt(MCCircle.offsetWidth-vMCWidth+vMCWidth*0.05)+"px";
+            //MCContent.style.top = parseInt(windowH*0.1+windowH*0.3)+"px";
+            MCContent.style.bottom = parseInt(windowH*0.3+windowH*0.1)+"px"
+            /*
+            fnt = 0.055*Math.min(windowH,windowW);
+            MCContent.style.fontSize = fnt+"px";
+            //*/
+
+            MCContent.style.width = parseInt(vMCWidth*0.80)+"px";
+        }
     }
     /*Alternate Menu*/
     
@@ -370,6 +380,78 @@ function circlesCalibration(){
 		w = circles[i].offsetWidth;
 		circles[i].style.height = w+"px";
 	}   
+    
+    circles = getElementsByClass("circle-height-width");
+    for(i=0;i<circles.length;i++){
+		var switchVar = circles[i].getAttribute("switch-var");
+        circles[i].style = '';
+        
+        if(switchVar.split("-")[0] == "width" && window.windowW<=parseInt(switchVar.split("-")[1])){
+            w = circles[i].offsetWidth;
+            circles[i].style.height = w+"px";
+        }
+        else if(switchVar.split("-")[0] == "height" && window.windowH<=parseInt(switchVar.split("-")[1])){
+            w = circles[i].offsetWidth;
+            circles[i].style.height = w+"px";
+        }
+        else{       
+            h = circles[i].offsetHeight;
+            circles[i].style.width = h+"px";
+        }
+    }           
+    
+    circles = getElementsByClass("circle-width-height");
+    for(i=0;i<circles.length;i++){
+		var switchVar = circles[i].getAttribute("switch-var");
+        circles[i].style = '';
+        
+        if(switchVar.split("-")[0] == "width" && window.windowW<=switchVar.split("-")[1]){
+            h = circles[i].offsetHeight;
+            circles[i].style.width = h+"px";
+        }
+        else if(switchVar.split("-")[0] == "height" && window.windowH<=switchVar.split("-")[1]){
+            h = circles[i].offsetHeight;
+            circles[i].style.width = h+"px";
+        }
+        else{       
+            w = circles[i].offsetWidth;
+            circles[i].style.height = w+"px";
+        }
+    }
+    
+    circles = getElementsByClass("circle-height-none");
+    for(i=0;i<circles.length;i++){
+		var switchVar = circles[i].getAttribute("switch-var");
+        circles[i].style = '';
+        
+        if(switchVar.split("-")[0] == "width" && window.windowW<=parseInt(switchVar.split("-")[1])){
+            circles[i].style = '';    
+        }
+        else if(switchVar.split("-")[0] == "height" && window.windowH<=parseInt(switchVar.split("-")[1])){
+            circles[i].style = '';
+        }
+        else{       
+            h = circles[i].offsetHeight;
+            circles[i].style.width = h+"px";
+        }
+    }           
+    
+    circles = getElementsByClass("circle-width-none");
+    for(i=0;i<circles.length;i++){
+		var switchVar = circles[i].getAttribute("switch-var");
+        circles[i].style = '';
+        
+        if(switchVar.split("-")[0] == "width" && window.windowW<=switchVar.split("-")[1]){
+            circles[i].style = '';
+        }
+        else if(switchVar.split("-")[0] == "height" && window.windowH<=switchVar.split("-")[1]){
+            circles[i].style = '';
+        }
+        else{       
+            w = circles[i].offsetWidth;
+            circles[i].style.height = w+"px";
+        }
+    }
 }
 
 var keyCodes = {

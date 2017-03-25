@@ -724,17 +724,35 @@ p.subtitle{
 }
 
 #mainCircleHome span{
-	font-size:5vmin;
+	font-size:200%;
 	width:50%;
 	position:absolute;
 	margin:0;
 	padding:0;
 }
 
-#mainCircleHome em{
-    font-size:4.5vmin;
-    font-family:"Museo300","Calibri","Arial",Sans-Serif;
-    margin-top:-10%;
+@media all and (max-width: 840px){
+    #mainCircleHome{
+        width:150%;
+        top:-120px;
+        right:-25%;
+        border-radius:0px 0px 100% 100%;
+        height:300px;
+        z-index: 1000;
+        text-align: center;
+    }
+    
+    #mainCircleHome span{
+        width:55%;
+        font-size:150%;
+        bottom: 0px;
+        left: 22.5%;
+    }
+    
+    #mainCircleHome span h1, #mainCircleHome span p{
+        margin-top:10px;
+        margin-bottom:20px;
+    }
 }
 
 /*---------NAVIGATION HOME---------*/
@@ -744,18 +762,10 @@ p.subtitle{
 	width:45%;
 	top:7.5%;
 	right:0;
-	font-size:7vmin;
+	font-size:290%;
 }
 
 #navListHome ul{
-	/*
-	height:60%;
-	position:absolute;
-	margin-top:auto;
-	margin-bottom:auto;
-	top:0;
-	bottom:0;
-	/**/
     list-style-image:url(Images/homeBullet.png);
 }
 
@@ -782,6 +792,57 @@ p.subtitle{
 #navListHome ul li{
 	padding-top:2%;
 	padding-bottom:1%;	
+}
+
+@media all and (max-width: 840px){
+    #navListHome{
+        position:absolute;
+        width:100%;
+        top:25%;
+        right:25px;
+        font-size:250%;
+        text-align: center;
+    }
+
+    #navListHome ul{
+        list-style: none;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    
+    #navListHome ul a{
+        flex:1 100%;
+        width:100px;
+        height:60px;
+        padding: 10px 0px;
+        text-decoration:none;
+    }
+    
+    #navListHome ul a li:before{
+        content: url(Images/homeBullet.png);
+        position: absolute;
+        left:30px;
+        top:0px;
+    }
+    
+    #navListHome ul a li:after{
+        content: url(Images/homeBullet.png);
+        transform: scaleX(-1);
+        position: absolute;
+        right:30px;
+        top:0px;
+    }
+}
+
+@media all and (max-width: 450px){
+    
 }
 
 /*---------GENERIC CONTENT---------*/
