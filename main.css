@@ -203,16 +203,16 @@ p.subtitle{
     /*box-shadow:0px 0px 20px 1px #EEE;   */
 }
 
-.hr-divider.pad, .hr-divider.pad-both{   
+.pad, .pad-both{   
     margin-top:10px;
     margin-bottom:10px;
 }
 
-.hr-divider.pad-top{   
+.pad-top{   
     margin-top:10px;
 }
 
-.hr-divider.pad-bottom{   
+.pad-bottom{   
     margin-bottom:10px;
 }
 
