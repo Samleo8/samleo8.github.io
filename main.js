@@ -111,7 +111,7 @@ var gameLib = {
             "filename":"FocusFireHarder",
             "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Game used for eye-tracking research, but with increased difficulty.",
             "tags":["Shooting","Defence","Multi-tasking"],
-            "project":"ifocus2"
+            "project":"ifocus1"
         },
         {
             "name":"Hard Core",
@@ -350,52 +350,124 @@ function pageInit(){
     
     //Game screenshots setup
     var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
-    if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined && gameScreenshotHolder.length==2){
-        out="";
-        //Starting with Flash first
-        for(i=0;i<gameLib["flash"].length;i++){
-            var gameInfo = gameLib["flash"][i];
-            
-            out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
-                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
-                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
-                out+="<div class='gameTagHolder'>";
-                    out+="<div class='tag flash'>Flash</div>";
-                for(j=0;j<gameInfo["tags"].length;j++){
-                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
-                    
-                    out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
-                }
-                out+="</div>";
-            out+="</a>";
+    if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined){
+        if(gameScreenshotHolder[0].className.indexOf("games-main")!=-1){ //for main game page
+            out="";
+            //Starting with Flash first
+            for(i=0;i<gameLib["flash"].length;i++){
+                var gameInfo = gameLib["flash"][i];
+
+                out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                    out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                    out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                    out+="<div class='gameTagHolder'>";
+                        out+="<div class='tag flash'>Flash</div>";
+                    for(j=0;j<gameInfo["tags"].length;j++){
+                        var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+
+                        out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                    }
+                    out+="</div>";
+                out+="</a>";
+            }
+
+            gameScreenshotHolder[0].innerHTML = out;
+
+            out = "";
+            //Then HTML
+            for(i=0;i<gameLib["html"].length;i++){
+                var gameInfo = gameLib["html"][i];
+
+                out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                    out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                    out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                    out+="<div class='gameTagHolder'>";
+                        out+="<div class='tag html'>HTML5</div>";
+                    for(j=0;j<gameInfo["tags"].length;j++){
+                        var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+
+                        out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                    }
+                    out+="</div>";
+                out+="</a>";
+            }
+
+            gameScreenshotHolder[1].innerHTML = out;
         }
-        
-        gameScreenshotHolder[0].innerHTML = out;
-        
-        out = "";
-        //Then HTML
-        for(i=0;i<gameLib["html"].length;i++){
-            var gameInfo = gameLib["html"][i];
+        else{ //for research/other page which include these games
+            var outEle = {};
             
-            out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
-                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
-                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
-                out+="<div class='gameTagHolder'>";
-                    out+="<div class='tag html'>HTML5</div>";
-                for(j=0;j<gameInfo["tags"].length;j++){
-                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+            //Look for the project game in both HTML and Flash games
+            //Starting with Flash first
+            for(i=0;i<gameLib["flash"].length;i++){
+                var gameInfo = gameLib["flash"][i];
+
+                if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
+                    out = "";
                     
-                    out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                    out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                        out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                        out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                        out+="</div>";
+                    out+="</a>";
+                    
+                    if(outEle[gameInfo["project"].toString()] != null && 
+                    outEle[gameInfo["project"].toString()] != undefined) {
+                        outEle[gameInfo["project"].toString()] += out;
+                    }
+                    else{
+                        outEle[gameInfo["project"].toString()] = out;
+                    }
                 }
-                out+="</div>";
-            out+="</a>";
+            }
+
+            //Then HTML
+            for(i=0;i<gameLib["html"].length;i++){
+                var gameInfo = gameLib["html"][i];
+
+                if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
+                    out = "";
+                    out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                        out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                        out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                        out+="<div class='gameTagHolder'>";
+                            out+="<div class='tag html'>HTML5</div>";
+                        for(j=0;j<gameInfo["tags"].length;j++){
+                            var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+
+                            out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                        }
+                        out+="</div>";
+                    out+="</a>";
+                    
+                    if(outEle[gameInfo["project"].toString()] != null && 
+                    outEle[gameInfo["project"].toString()] != undefined) {
+                        outEle[gameInfo["project"].toString()] += out;
+                    }
+                    else{
+                        outEle[gameInfo["project"].toString()] = out;
+                    }
+                }
+            }
+            
+            console.log(outEle);
+            
+            for(var i in outEle){
+                if(!outEle.hasOwnProperty(i)) continue;
+                
+                console.log(i.toString());
+                var e = document.getElementsByClassName("games-"+i.toString());
+                for(var j=0;j<e.length;j++){
+                    e[j].innerHTML = outEle[i];
+                }
+            }
         }
-        
-        gameScreenshotHolder[1].innerHTML = out;
-    }
-}   
+    }   
+}
 
 function circlesCalibration(){
     //align circles to respect width/height
