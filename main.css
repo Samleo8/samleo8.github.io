@@ -331,6 +331,11 @@ p.subtitle{
 	transition: all 0.3s;
 }
 
+.link-button.pad{
+    padding-left:30px;
+    padding-right:30px;
+}
+
 .link-button:hover{
     background: #f58500;
     color:white;
