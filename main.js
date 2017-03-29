@@ -132,6 +132,15 @@ var gameLib = {
     ]
 }
 
+var galleryLib = {
+    "isef": [
+        {
+            "filename":"FocusFireGame",
+            "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Original game used for eye-tracking research."
+        }
+    ]
+}
+
 //Table of contents
 /*
     //Obtain array using this code:
@@ -467,7 +476,75 @@ function pageInit(){
             }
         }
     }   
+
+    //Gallery setup
+    
+    for(i=0;i<gameLib["flash"].length;i++){
+        var gameInfo = gameLib["flash"][i];
+
+        if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
+            out = "";
+
+            out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                out+="</div>";
+            out+="</a>";
+
+            if(outEle[gameInfo["project"].toString()] != null && 
+            outEle[gameInfo["project"].toString()] != undefined) {
+                outEle[gameInfo["project"].toString()] += out;
+            }
+            else{
+                outEle[gameInfo["project"].toString()] = out;
+            }
+        }
+    }
+
+    //Then HTML
+    for(i=0;i<gameLib["html"].length;i++){
+        var gameInfo = gameLib["html"][i];
+
+        if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
+            out = "";
+            out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                out+="<div class='gameTagHolder'>";
+                    out+="<div class='tag html'>HTML5</div>";
+                for(j=0;j<gameInfo["tags"].length;j++){
+                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+
+                    out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                }
+                out+="</div>";
+            out+="</a>";
+
+            if(outEle[gameInfo["project"].toString()] != null && 
+            outEle[gameInfo["project"].toString()] != undefined) {
+                outEle[gameInfo["project"].toString()] += out;
+            }
+            else{
+                outEle[gameInfo["project"].toString()] = out;
+            }
+        }
+    }
+
+    console.log(outEle);
+
+    for(var i in outEle){
+        if(!outEle.hasOwnProperty(i)) continue;
+
+        console.log(i.toString());
+        var e = document.getElementsByClassName("games-"+i.toString());
+        for(var j=0;j<e.length;j++){
+            e[j].innerHTML = outEle[i];
+        }
+    }
 }
+
 
 function circlesCalibration(){
     //align circles to respect width/height
