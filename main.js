@@ -135,9 +135,101 @@ var gameLib = {
 var galleryLib = {
     "isef": [
         {
-            "filename":"FocusFireGame",
-            "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Original game used for eye-tracking research."
-        }
+            "filename":"0.0.0.jpg",
+            "description":"The ISEF 2016 Team!"
+        },
+        {
+            "filename":"0.0.1.jpg",
+            "description":"The ISEF 2016 Team!"
+        },
+        {
+            "filename":"0.0.2.jpg",
+            "description":"Finding our names on the board"
+        },
+        {
+            "filename":"0.0.jpg",
+            "description":"About to draw the Singapore poster..."
+        },
+        {
+            "filename":"0.1.jpg",
+            "description":"Actually drawing the Singapore poster"
+        },
+        {
+            "filename":"0.2.jpg",
+            "description":"Casual photo"
+        },
+        {
+            "filename":"0.3.jpg",
+            "description":"Standing proud with our final product"
+        },
+        {
+            "filename":"0.4.jpg",
+            "description":"Standing proud with our final product"
+        },
+        {
+            "filename":"0.5.jpg",
+            "description":"Showing the Singapore poster at the opening ceremony"
+        },
+        {
+            "filename":"0.6.jpg",
+            "description":"Close up of our beautiful poster!"
+        },
+        {
+            "filename":"0.7.jpg",
+            "description":"Leaving the venue after judging.."
+        },
+        {
+            "filename":"0.8.jpg",
+            "description":"Pins, stickers and paraphernalia from companies who were interested in my project :)"
+        },
+        {
+            "filename":"0.9.jpg",
+            "description":"Close up of the IEEE and CERN pin"
+        },
+        {
+            "filename":"0.jpg",
+            "description":"The registration counter of the ISEF Exhibition Hall"
+        },
+        {
+            "filename":"1.jpg",
+            "description":"Origami from the origami museum at Narita airport"
+        },
+        {
+            "filename":"2.jpg",
+            "description":"Origami from the origami museum at Narita airport"
+        },
+        {
+            "filename":"3.jpg",
+            "description":"Beautiful skyline from the plane"
+        },
+        {
+            "filename":"4.jpg",
+            "description":"Roads in Arizona"
+        },
+        {
+            "filename":"5.jpg",
+            "description":"\"ART IS A GUARANTY OF SANITY\""
+        },
+        {
+            "filename":"6.jpg",
+            "description":"Food glorious food!"
+        },
+        {
+            "filename":"7.jpg",
+            "description":"Trip to Arizona Hills - Lego Octopus"
+        },
+        {
+            "filename":"8.jpg",
+            "description":"Trip to Arizona Hills - Cute porcelain turtle"
+        },
+        {
+            "filename":"9.jpg",
+            "description":"Trip to Arizona Hills - Art from the Arizonian copper mines"
+        },
+        {
+            "filename":"10.jpg",
+            "description":"Trip to Arizona Hills - 100% Pure Arizona silver"
+        },
     ]
 }
 
@@ -463,12 +555,9 @@ function pageInit(){
                 }
             }
             
-            console.log(outEle);
-            
             for(var i in outEle){
                 if(!outEle.hasOwnProperty(i)) continue;
                 
-                console.log(i.toString());
                 var e = document.getElementsByClassName("games-"+i.toString());
                 for(var j=0;j<e.length;j++){
                     e[j].innerHTML = outEle[i];
@@ -477,68 +566,35 @@ function pageInit(){
         }
     }   
 
-    //Gallery setup
-    
-    for(i=0;i<gameLib["flash"].length;i++){
-        var gameInfo = gameLib["flash"][i];
+    //Photo Gallery setup
+    for(var j in galleryLib){
+        if(!galleryLib.hasOwnProperty(j)) continue;
+        
+        var galleryInfo = galleryLib[j.toString()];
+        outEle[j.toString()] = "";
+        
+        console.log(galleryInfo);
+        
+        for(var i=0;i<galleryInfo.length;i++){
+            var photoInfo = galleryInfo[i];
 
-        if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
             out = "";
+            console.log(j.toString());
 
-            out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
-                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
-                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+            out+="<div class='photoHolder"+((photoInfo["featured"] == true)?" featured":"")+"'>";
+                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"'>";
+                out+="<div class='photoDesc'>"+photoInfo["description"]+"</div>";
                 out+="</div>";
             out+="</a>";
 
-            if(outEle[gameInfo["project"].toString()] != null && 
-            outEle[gameInfo["project"].toString()] != undefined) {
-                outEle[gameInfo["project"].toString()] += out;
-            }
-            else{
-                outEle[gameInfo["project"].toString()] = out;
-            }
+            outEle[j.toString()] += out;
         }
     }
-
-    //Then HTML
-    for(i=0;i<gameLib["html"].length;i++){
-        var gameInfo = gameLib["html"][i];
-
-        if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
-            out = "";
-            out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
-                out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
-                out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
-                out+="<div class='gameTagHolder'>";
-                    out+="<div class='tag html'>HTML5</div>";
-                for(j=0;j<gameInfo["tags"].length;j++){
-                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
-
-                    out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
-                }
-                out+="</div>";
-            out+="</a>";
-
-            if(outEle[gameInfo["project"].toString()] != null && 
-            outEle[gameInfo["project"].toString()] != undefined) {
-                outEle[gameInfo["project"].toString()] += out;
-            }
-            else{
-                outEle[gameInfo["project"].toString()] = out;
-            }
-        }
-    }
-
-    console.log(outEle);
 
     for(var i in outEle){
         if(!outEle.hasOwnProperty(i)) continue;
 
-        console.log(i.toString());
-        var e = document.getElementsByClassName("games-"+i.toString());
+        var e = document.getElementsByClassName("gallery-"+i.toString());
         for(var j=0;j<e.length;j++){
             e[j].innerHTML = outEle[i];
         }
