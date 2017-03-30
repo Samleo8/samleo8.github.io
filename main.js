@@ -438,7 +438,7 @@ function pageInit(){
             out='';
 
             for(i=0;i<subTableOfContents.length;i++){
-                var idName = subTableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ","-");
+                var idName = i.toString()+'-'+subTableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ","-"); //requires such unique id because the sub-content-titles tend to overlap
                 subContentTitles[i].id = idName;
 
                 out+='<a href="#'+idName+'" class="gen-btn table-of-contents-btn">';
