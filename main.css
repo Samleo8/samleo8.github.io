@@ -1001,10 +1001,15 @@ table.achievements-table td div{
     padding-bottom: 5px;
 }
 
-/*---------GAMES--------*/
+/*---------GAMES AND GALLERY--------*/
 .gameScreenshotHolder, .photoGallery{
+    transition: all 0.3s ease;
     padding: 0;
     margin: 0;
+}
+
+.gameScreenshotHolder *, .photoGallery *{
+    transition: all 0.3 ease;
 }
 
 .gameScreenshotHolder .gameHolder, .photoGallery .photoHolder{
@@ -1023,17 +1028,21 @@ table.achievements-table td div{
     }
 }
 
-.gameScreenshotHolder .gameHolder:hover {
+.gameScreenshotHolder .gameHolder:hover, .photoGallery .photoHolder:not(.fullView):hover{
     cursor: pointer;
     background: rgba(240,240,240,0.1);
 }
 
-.gameHolder img, .photoGallery img{
+.gameHolder img, .photoGallery .photoHolder:not(.fullView) img{
     width:90%;
     max-width: 850px;
 }
 
-.gameHolder div.gameTitle, .photoGallery div.photoTitle{
+.photoGallery .photoHolder.fullView img{
+    height:95%;
+}
+
+.gameHolder div.gameTitle{
     font-size: 150%;
     margin-bottom: 10px;
 }
@@ -1044,6 +1053,27 @@ table.achievements-table td div{
     font-size:80%;
     color:#EEE;
     margin-bottom: 15px;
+}
+
+.photoGallery div.photoDesc{
+    font-size: 100%;   
+}
+
+.photoGallery .photoHolder.fullView{
+    transition: all 0.3s ease;
+    
+    cursor:pointer;
+    
+    z-index: 10000;
+    
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: auto;
+    
+    background: rgba(0,0,0,0.9);
 }
 
 .tag{

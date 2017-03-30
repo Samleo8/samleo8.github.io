@@ -179,16 +179,16 @@ var galleryLib = {
             "description":"Leaving the venue after judging.."
         },
         {
+            "filename":"0.jpg",
+            "description":"The registration counter of the ISEF Exhibition Hall"
+        },
+        {
             "filename":"0.8.jpg",
             "description":"Pins, stickers and paraphernalia from companies who were interested in my project :)"
         },
         {
             "filename":"0.9.jpg",
             "description":"Close up of the IEEE and CERN pin"
-        },
-        {
-            "filename":"0.jpg",
-            "description":"The registration counter of the ISEF Exhibition Hall"
         },
         {
             "filename":"1.jpg",
@@ -572,14 +572,11 @@ function pageInit(){
         
         var galleryInfo = galleryLib[j.toString()];
         outEle[j.toString()] = "";
-        
-        console.log(galleryInfo);
-        
+            
         for(var i=0;i<galleryInfo.length;i++){
             var photoInfo = galleryInfo[i];
 
             out = "";
-            console.log(j.toString());
 
             out+="<div class='photoHolder"+((photoInfo["featured"] == true)?" featured":"")+"'>";
                 out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"'>";
@@ -598,6 +595,33 @@ function pageInit(){
         for(var j=0;j<e.length;j++){
             e[j].innerHTML = outEle[i];
         }
+    }
+    
+    //Add Event Listener for full-view photo
+    var e = document.getElementsByClassName("photoHolder");
+    for(var j=0;j<e.length;j++){
+        e[j].addEventListener("mouseup", function(ev){ photoToggleView(this) });
+    }
+}
+
+function photoToggleView(ele){
+    console.log(ele);
+    
+    //Need to change the width and height of the image...
+    var img = ele.getElementsByTagName("img")[0];
+    var r = img.width/img.height;
+    
+    if(ele.className.indexOf(" fullView")!=-1){
+        ele.className = ele.className.replaceAll(" fullView","");
+        
+    }
+    else{
+        ele.className += " fullView";
+        
+        /*
+        img.style.height = window.windowH;
+        img.style.width = img.height*r;
+        */
     }
 }
 
