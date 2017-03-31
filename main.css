@@ -1190,6 +1190,11 @@ table.achievements-table td div{
     color: #000;
 }
 
+.tag.puzzle{
+    background:#e4bdc3;
+    color:#000;
+}
+
 /*-----OPTIONS CIRCLE-----*/
 #optionsCircle{
 	height:140px;
