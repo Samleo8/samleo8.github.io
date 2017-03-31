@@ -128,7 +128,16 @@ var gameLib = {
             "description":"Run for your life as you avoid the spikes on an endless treadmill!",
             "tags":["Arcade","Endless","Sheep","Mobile Ready"],
             featured: true
-        }
+        },
+        {
+            "name":"PixArt",
+            "filename":"PixArt",
+            "url":"http://samleo.pancakeapps.com/PixArt/PixArt.html",
+            "description":"Colourful recreation of Japanese Nonogram puzzle.",
+            "tags":["Puzzle","Mobile Ready"],
+            featured: true
+        },
+        
     ]
 }
 
@@ -208,7 +217,7 @@ var galleryLib = {
         },
         {
             "filename":"5.jpg",
-            "description":"\"ART IS A GUARANTY OF SANITY\""
+            "description":"\" ART IS A GUARANTY OF SANITY \""
         },
         {
             "filename":"6.jpg",
@@ -230,25 +239,30 @@ var galleryLib = {
             "filename":"10.jpg",
             "description":"Trip to Arizona Hills - 100% Pure Arizona silver"
         },
+    ],
+    "ifocus":[
+        {
+            "filename":"0.jpg",
+            "description":"Setting up our presentation at the Research@YDSP event"
+        },
+        {
+            "filename":"1.jpg",
+            "description":"The Team"
+        },
+        {
+            "filename":"2.jpg",
+            "description":"Presenting to an interested member of public"
+        },
+        {
+            "filename":"3.jpg",
+            "description":"Presenting to the Guest of Honour, Mr Maliki Osman!"
+        },
+        {
+            "filename":"4.jpg",
+            "description":"Guest of Honour trying out our game"
+        }
     ]
 }
-
-//Table of contents
-/*
-    //Obtain array using this code:
-    s=[];a=document.querySelectorAll(".about-section h1");for(i=0;i<a.length;i++){ s[i] =  JSON.parse(JSON.stringify(a[i].innerText.split("\n")[0]));}; console.log(s);
-
-var tableOfContents = {
-    "about":[
-        "Educational Background",
-        "How I see myself",
-        "Interests and Creations",
-        "Academic Achievements",
-        "Project Involvement",
-        "CCA"
-    ]
-}
-*/
 
 //Page resize
 function pageChange(){
@@ -581,7 +595,7 @@ function pageInit(){
             out = "";
 
             out+="<div class='photoHolder"+((photoInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"' alt='"+gameInfo["description"]+"'>";
+                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"' alt='"+photoInfo["description"]+"'>";
                 out+="<div class='photoDesc'>"+photoInfo["description"]+"</div>";
                 out+="</div>";
             out+="</a>";

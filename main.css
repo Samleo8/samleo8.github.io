@@ -216,6 +216,19 @@ p.subtitle{
     margin-bottom:10px;
 }
 
+.pad-left{
+    margin-left:10px;   
+}
+
+.pad-right{
+    margin-right:10px;   
+}
+
+.pad-side-both{
+    margin-left:10px;
+    margin-right:10px;
+}
+
 .invertedColor, .circle{
 	background:#EEE;
 	color:#066;      
@@ -895,6 +908,26 @@ p.subtitle{
 /*---------GENERIC CONTENT---------*/
 .content-section{
     margin-bottom: 50px;
+}
+
+.content-section-split{
+    /* Flex box container inherit */
+    text-align: center;
+    
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.content-section-split div{
+    flex:1;
 }
 
 .table-of-contents, .sub-table-of-contents {
