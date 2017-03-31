@@ -451,7 +451,9 @@ function pageInit(){
     
     //Game screenshots setup
     var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
-    if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined){
+    var outEle = {};
+    
+    if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined && gameScreenshotHolder.length>0){
         if(gameScreenshotHolder[0].className.indexOf("games-main")!=-1){ //for main game page
             out="";
             //Starting with Flash first
@@ -459,7 +461,7 @@ function pageInit(){
                 var gameInfo = gameLib["flash"][i];
 
                 out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                     out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                     out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
                     out+="<div class='gameTagHolder'>";
@@ -481,7 +483,7 @@ function pageInit(){
                 var gameInfo = gameLib["html"][i];
 
                 out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                     out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                     out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
                     out+="<div class='gameTagHolder'>";
@@ -498,7 +500,6 @@ function pageInit(){
             gameScreenshotHolder[1].innerHTML = out;
         }
         else{ //for research/other page which include these games
-            var outEle = {};
             
             //Look for the project game in both HTML and Flash games
             //Starting with Flash first
@@ -509,7 +510,7 @@ function pageInit(){
                     out = "";
                     
                     out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                         out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                         out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
                         out+="</div>";
@@ -532,7 +533,7 @@ function pageInit(){
                 if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
                     out = "";
                     out+="<a href='"+gameInfo["url"]+"' target='_blank' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png'>";
+                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                         out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                         out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
                         out+="<div class='gameTagHolder'>";
@@ -566,6 +567,7 @@ function pageInit(){
         }
     }   
 
+    var outEle = {};
     //Photo Gallery setup
     for(var j in galleryLib){
         if(!galleryLib.hasOwnProperty(j)) continue;
@@ -579,7 +581,7 @@ function pageInit(){
             out = "";
 
             out+="<div class='photoHolder"+((photoInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"'>";
+                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"' alt='"+gameInfo["description"]+"'>";
                 out+="<div class='photoDesc'>"+photoInfo["description"]+"</div>";
                 out+="</div>";
             out+="</a>";

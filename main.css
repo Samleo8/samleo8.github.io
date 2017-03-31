@@ -401,6 +401,10 @@ p.subtitle{
     justify-content: space-around;
 }
 
+.flex-child{
+    flex:1;
+}
+
 #main-content > *:not(.subtitle):not(.title):not(img){
     padding-left: 15px;
 }
