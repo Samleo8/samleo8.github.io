@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PixArt Game</title>
+<link href="index.css" rel="stylesheet" type="text/css">
+<script src="index.js"></script>
+</head>
+<body>
+    <fieldset id="levelSelect" class="disableSelect">
+        <legend>LEVEL</legend>
+        Rows: <input type="number" id="gridR" min="1" maxlength="2" onKeyUp="pressKey(event)" value="6"/><br>
+        Cols: <input type="number" id="gridC" min="1" maxlength="2" onKeyUp="pressKey(event)" value="6"/><br>
+       <label for="challMode">Challenge Mode</label> <input id="challMode" type="checkbox" onChange="toggleMode(this.checked)"><br>
+    <input type="button" id="helpBtn" onclick="helpConfirm()" value="Help with Confirmed Rows/Columns" /> <input type="button" id="checkBtn" onclick="checkGridValid()" value="Check Grid" /><br>
+        <input type="button" id="inputBtn" onclick="genGrid()" value="GENERATE!" /> <input type="button" id="clearBtn" onclick="clearGrid()" value="Clear All" /> <input type="button" onClick="saveGrid();" value="Save your Current Solution!" />
+    </fieldset>
+    
+    <fieldset id="instructions">
+        <legend>INSTRUCTIONS</legend>
+        Left Click to toggle <span class="filled">Shading</span> of squares<br>
+        Right Click to toggle <span class="impossible">Impossible</span> &amp; <span class="confirmed">Confirmed squares</span><br>
+        Left Click on hint grid to confirm the row/column (all <span class="cleared">blanks</span> will be <span class="impossible">red</span> and <span class="filled">filled</span> will be <span class="confirmed">green</span>)<br>
+        Right Click on hint grid to clear the row/column<br>
+        Program will tell you when you have found the solution (now supports duplicate solutions).
+        
+        <script>
+        var i,x;
+        x = document.getElementsByClassName("impossible");
+        for(i=0;i<x.length;i++){
+            x[i].style.backgroundColor = impossible;
+        }
+
+        x = document.getElementsByClassName("filled");
+        for(i=0;i<x.length;i++){
+            x[i].style.backgroundColor = filled;
+        }
+
+        x = document.getElementsByClassName("confirmed");
+        for(i=0;i<x.length;i++){
+            x[i].style.backgroundColor = confirmed;
+        }
+
+        x = document.getElementsByClassName("cleared");
+        for(i=0;i<x.length;i++){
+            x[i].style.backgroundColor = cleared;
+        }
+        </script>
+    </fieldset>
+
+    <div id="output" class="disableSelect">
+
+    </div>
+</body>
+</html>
