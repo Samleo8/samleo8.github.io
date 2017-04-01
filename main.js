@@ -595,7 +595,7 @@ function pageInit(){
             out = "";
 
             out+="<div class='photoHolder"+((photoInfo["featured"] == true)?" featured":"")+"'>";
-                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"' alt='"+gameInfo["description"]+"'>";
+                out+="<img src='../Images/gallery/"+j.toString()+"/"+photoInfo["filename"]+"' alt='"+photoInfo["description"]+"'>";
                 out+="<div class='photoDesc'>"+photoInfo["description"]+"</div>";
                 out+="</div>";
             out+="</a>";
