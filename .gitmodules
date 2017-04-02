@@ -1,3 +1,6 @@
 [submodule "PrioriTask"]
         path = PrioriTask
         url = https://github.com/Samleo8/PrioriTask 
+[submodule "PixArt"]
+        path = PixArt
+        url = https://github.com/Samleo8/PixArt 
