@@ -24,6 +24,7 @@ var priority = new Array();
 var hmwkDateC = new Array("");
 var hmwkNameC = new Array("");
 
+
 //Subject
 var subjectName = new Array("English","Math","Chinese","Physics","Chemistry","Biology","Humanities","Others");
 var subjectClr = new Array("#FFFF6D","#FFC3FC","#FF667B","#6AFFDC","#FFC27E","#A3CF82","#B782FF","#CAEDFF");
