@@ -1,0 +1,3 @@
+[submodule "PrioriTask"]
+        path = PrioriTask
+        url = git://github.com/Samleo8/PrioriTask 
