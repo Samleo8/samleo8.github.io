@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Prioritise - Fixed Tasks</title>
+<link href="design_main_compact.css" type="text/css" rel="stylesheet">
+<script>
+var padd = 0.98;
+
+window.onload = function (){
+ 	document.body.style.height = document.documentElement.offsetHeight*padd+"px";
+	
+	initFixed();
+	
+}
+
+window.onresize = window.onscroll = function(){
+	document.body.style.height = document.documentElement.offsetHeight*padd+"px";	
+}
+
+</script>
+<!--SCROLLBAR-->
+<link type="text/css" href="Scrollbar/jscrollpane.css" rel="stylesheet" media="all" />
+<script src="Scrollbar/jQuery.js"></script> <!-- You can dl this first or cache it -->
+<script src="Scrollbar/jquery.jscrollpane.js"></script>
+<script type="text/javascript" src="Scrollbar/jquery.mousewheel.js"></script>
+</head>
+<body>
+<div id="header" style="display:none;">
+	PrioriTask <img src="Images/logo.png" />
+    <div id="prioritask_user" class="menu_button" data-icon="&#xe003" onClick="userMenu(event);" onMouseOver="openUserMenu(event);"  onMouseOut="closeUserMenu(event);" style="display:none;" >
+		GUEST
+        <div id="user_menu" style="display:none;" onMouseOver="openUserMenu(event);" onMouseOut="closeUserMenu(event);">
+            <a href="editProfile.html"><div id="user_edit">Edit Profile</div></a>
+            <a href="logout.html"><div id="user_logout">Logout</div></a>
+        </div>            	
+    </div>
+    <div id="schedule_time"><img src="Images/clock.png"><div id="schedule_time_time"></div></div>
+</div>
+<div id="body_prioritask">
+    <div id="main_prioritask">
+        <ul class="main_header" id="prioritising_header">
+            <a href="prioritise_homework_compact.html"><li>Homework</li></a>
+            <a href="prioritise_revision_compact.html"><li>Revision</li></a>
+            <a href="prioritise_fixedTasks_compact.html"><li id="prioritise_currPage">Fixed Tasks</li></a>
+        </ul>
+      <div id="prioritise_header">Fixed Tasks</div>
+        <div id="prioritise_add_btn" onClick="fixedNew();"><span id="prioritise_add_btn_txt">ADD FIXED TASK</span></div>
+        <div id="prioritise_section_fixed" class="prioritise_section" style="width:98%;">         
+            <!--ADD MENU-->
+            <div id="prioritise_add_fixed" class="hmwkPopupMenu" style="display:none;">
+                    <div><input type="text" id="fixed_name" /> <input type="checkbox" id="fixed_break" onClick="javascript:if(document.getElementById('fixed_break').checked){out='&lt;BREAK&gt;';dis=true;}else{out='';dis=false;}document.getElementById('fixed_name').value=out;document.getElementById('fixed_name').disabled=dis;"><label for="fixed_break">Break</label></div>
+                    <div>Day:
+                        <select id="daysOfWeek" onChange="getDayFixedTasks()">
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select>
+                    </div>
+                    <div>Time Start: 
+                        <select id="fixed_timings_hr_start">
+                        
+                        </select>
+                        <select id="fixed_timings_min_start">
+                        <option value="00">00</option>
+                        <option value="30">30</option>
+                        </select>
+                    </div>
+                    <div>Time End: 
+                        <select id="fixed_timings_hr_end">
+                        
+                        </select>
+                        <select id="fixed_timings_min_end">
+                            <option value="00">00</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                    <input type="button" onclick="makeFixedTasks()" value="Add"/> <input type="button" onclick="fixedNew()" value="Cancel"/>
+                </div>
+                
+            <!--EDIT MENU-->
+            <div id="prioritise_add_fixed_edit" class="hmwkPopupMenu" style="display:none;">
+                <div><input type="text" id="fixed_name_edit" /> <input type="checkbox" id="fixed_break_edit" onClick="javascript:if(document.getElementById('fixed_break_edit').checked){out='&lt;BREAK&gt;';dis=true;}else{out='';dis=false;}document.getElementById('fixed_name_edit').value=out;document.getElementById('fixed_name_edit').disabled=dis;"><label for="fixed_break_edit">Break</label></div>
+                <div>Day:
+                    <select id="daysOfWeekEdit" onChange="getDayFixedTasks()">
+                        <option value="1" id="daysOfWk_op1">Monday</option>
+                        <option value="2" id="daysOfWk_op2">Tuesday</option>
+                        <option value="3" id="daysOfWk_op3">Wednesday</option>
+                        <option value="4" id="daysOfWk_op4">Thursday</option>
+                        <option value="5" id="daysOfWk_op5">Friday</option>
+                        <option value="6" id="daysOfWk_op6">Saturday</option>
+                        <option value="7" id="daysOfWk_op7">Sunday</option>
+                    </select>
+                </div>
+                <div>Time Start: 
+                    <select id="fixed_timings_hr_start_edit">
+                    
+                    </select>
+                    <select id="fixed_timings_min_start_edit">
+                        <option value="00" id="fixed_timing_min_start_op00">00</option>
+                        <option value="30" id="fixed_timing_min_start_op30">30</option>
+                    </select>
+                </div>
+                <div>Time End: 
+                    <select id="fixed_timings_hr_end_edit">
+                    
+                    </select>
+                    <select id="fixed_timings_min_end_edit">
+                        <option value="00" id="fixed_timing_min_end_op00">00</option>
+                        <option value="30" id="fixed_timing_min_end_op30">30</option>
+                    </select>
+                </div>
+                <input type="button" value="Update" id="fixed_edit_done"/> <input type="button" onclick="fixedEditNew()" value="Cancel"/>
+            </div>
+                   
+            <div id="prioritise_fixed_main">
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Monday</div>
+                <div id="prioritise_fixed_tasks_1" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_1" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_1" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+                
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Tuesday</div>
+                <div id="prioritise_fixed_tasks_2" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_2" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_2" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+                
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Wednesday</div>
+                <div id="prioritise_fixed_tasks_3" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_3" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_3" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+                
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Thursday</div>
+                <div id="prioritise_fixed_tasks_4" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_4" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_4" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+                
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Friday</div>
+                <div id="prioritise_fixed_tasks_5" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_5" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_5" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+                
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Saturday</div>
+                <div id="prioritise_fixed_tasks_6" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_6" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_6" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+                
+                <div id="prioritise_fixed_header" class="prioritiseHeader">Sunday</div>
+                <div id="prioritise_fixed_tasks_7" class="prioritise_task_box prioritise_fixed_tasks_box">
+                    <div id="prioritise_fixed_tasks_time_7" class="prioritise_tasks_date">&lt;DATE&gt;<br></div>
+                    <div id="prioritise_fixed_tasks_tasks_7" class="prioritise_tasks_tasks">&lt;HOMEWORK&gt;</div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<a href="schedule_compact.html"><div id="schedule_link_btn" class="gen-btn big-redirect-button">Back to Schedule</div></a>
+</body>
+</html>
+
+<script src="PrioriTask.js"></script>
+<script src="PrioriTask.lib.js"></script>

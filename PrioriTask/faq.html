@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Schedule</title>
+<link href="design_main.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="Calendar/stylesheets/calendarview.css">
+<script src="html2canvas.js"></script>
+<script src="PrioriTask.lib.js"></script>
+<script src="PrioriTask.js"></script>
+<script src="sortAlgo2.js"></script>
+<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+<script>
+var padd = 0.98;
+
+window.onload = function (){
+ 	document.body.style.height = document.documentElement.offsetHeight*padd+"px";
+	
+	if(localStorage['timetableSaved']){
+		retrieveTimetableData();	
+	}
+	
+	var d = new Date();
+	var todayWkday = d.getDay()?d.getDay():7;
+	
+	if(todayWkday==6||todayWkday==7){
+		View = 2;
+		strtInd = strtWkendInd;
+	}
+	else{
+		View = 1;
+		strtInd = strtWkdayInd;
+	}
+	strtIndX = Math.max(strtInd,timeSessionIndex[nearestInterval()]);
+
+	scheduleTimelineShow();
+	window.setInterval(scheduleTime,1000);
+	
+	jiaks = (strtIndX%2==0)?strtIndX:strtIndX+1;
+	//console.log(jiaks);
+	if(jiaks>=endInd){
+		jiaks = endInd-2;
+	}
+
+	document.getElementById("time_"+Timetable[0][jiaks]).scrollIntoView();
+}
+
+window.onresize = window.onscroll = function(){
+	document.body.style.height = document.documentElement.offsetHeight*padd+"px";	
+}
+
+window.onclick = function(e){
+	document.getElementById("timelineChangeViewMenu").style.display = "none";
+}
+
+</script>
+<!--SCROLLBAR-->
+<link type="text/css" href="Scrollbar/jscrollpane.css" rel="stylesheet" media="all" />
+<script src="Scrollbar/jQuery.js"></script>
+<script src="Scrollbar/jquery.jscrollpane.js"></script>
+<script type="text/javascript" src="Scrollbar/jquery.mousewheel.js"></script>
+
+<!--TOOLTIP-->
+<!--
+<script type="text/javascript" src="Tooltip/opentip-jquery.js"></script>
+<script type="text/javascript" src="Tooltip/opentip-native-excanvas.js"></script>
+<script type="text/javascript" src="Tooltip/opentip-jsTooltip.js"></script>
+<link type="text/css" href="Tooltip/opentip-jsTooltip.css" rel="stylesheet" media="all" />
+-->
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="header">PrioriTask <img src="Images/logo.png" /></div>
+<div id="body_prioritask">
+    <div id="nav_bar">
+        <div id="profile">
+        	<img src="Images/eye%20icon.png" alt="Avatar" align="left" />
+            <div>
+                <?php echo $_SESSION['user'] ?><br />
+                <a href="editProfile.php">Edit Profile</a><br />
+                <a href="logout.php">Logout</a><br />
+            </div>
+        </div>
+        <div id="nav_btn">
+            <table>
+                <tr><td class="nav_btn"><img src="Images\schedule.png" /></td><td><a href="schedule.php">Schedule</a></td></tr>
+                <tr><td class="nav_btn"><img src="Images\prioritise.png" /></td><td><a href="prioritise.php">Prioritise</a></td></tr>
+                <tr><td class="nav_btn"><img src="Images\settings.png" /></td><td><a href="settings.php">Settings</a></td></tr>
+                <tr><td class="nav_btn"><img src="Images\downloads.png" /></td><td><a href="downloads.php">Downloads</a></td></tr>
+                <tr><td class="nav_btn"><img src="Images\faq.png" /></td><td><a href="faq.php">FAQ</a></td></tr>
+                <tr><td class="nav_btn"><img src="Images\contact.png" /></td><td><a href="contact.php">Contact</a></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="main_prioritask">
+   	  <div id="faq_header_main">FAQ</div>
+<div id="faq_main">
+	    	<div class="faq_header" id="faq_header_navigation">Navigation</div>
+            <div class="faq_main_body" id="faq_main_navigation">
+            	It is very easy to navigate through the software. The links to the main sections of the software are all on the left sidebar. The bold wording tells you what page you are currently on. The sidebar on the right displays upcoming events, and nearing due dates. These 2 sidebars will be visible no matter which part of the software you are in.
+                <div id="Accordion1" class="Accordion" tabindex="0">
+                  <div class="AccordionPanel">
+                    <div class="AccordionPanelTab">Schedule</div>
+                    <div class="AccordionPanelContent"> The first link, <em><strong>Schedule</strong></em>, brings you to your timetable.<br>
+                      <strong>Q:</strong> Can I change anything from this part of the software?<br>
+                      <strong>A:</strong> Not for now as we have yet to allow edits to the timetable. <em><strong>Schedule</strong></em> only shows you what plans you have made for the next few days. You can change your plans in the Prioritise section of the software. </div>
+                  </div>
+<div class="AccordionPanel">
+    <div class="AccordionPanelTab">Prioritise</div>
+                    <div class="AccordionPanelContent"> The second link, <em><strong>Prioritise</strong></em>, brings you to the place where you can change your schedule.<br>
+                      Adding and deleting events can be done here.<br>
+                      <hr>
+                      <strong>Q:</strong> Once I click the link to enter the <em><strong>Prioritise</strong></em> section, I see a head bar and some other buttons to enter certain categories. What is the purpose and what is the difference?<br>
+                      <br>
+                      <strong>A:</strong> The head bar has only 3 links: <em><strong>Tasks</strong></em>, <em><strong>Events</strong></em>, and <em><strong>Reminders</strong></em>.<br>
+                      <br>
+                      Things that you add under <em><strong>Tasks</strong></em> go through an algorithm so you can see your tasks sorted to fit your day in the <em><strong>Schedule</strong></em> section. <em><strong>Events</strong></em> are for events like tests and camps that will appear in the sidebar. If you want to be reminded about a certain event, add the event under <em><strong>Reminders</strong></em> section. <br>
+                      <br>
+                      Under <em><strong>Tasks</strong></em>, you should be able to see 3 box buttons which represent the different categories of tasks - <em><strong>Homework</strong></em>, <em><strong>Revision</strong></em> and <em><strong>Fixed Tasks/Breaks</strong></em>. The <em><strong>Homework</strong></em> section is for assignments such as worksheets which have a due date to meet. The <em><strong>Revision</strong></em> section is meant for revision of tests and certain topics, which allows you to set revision timings for a certain day. <em><strong>Revision</strong></em>s will be pushed to the next day if they cannot fit into the specified day. The <em><strong>Fixed Tasks/Breaks</strong></em> section are for tasks such as CCA and remedial that have a fixed timing and the program will assume it is a weekly task unless you delete it. You have the option to set the task as a break, such as time for dinner or a night out with friends.
+                      <p><strong>Q: </strong>How do I add or delete an item?<br>
+                        <br>
+                        <strong>A: </strong>After selecting a category to add an item in, just click the big blue <em><strong>Add</strong></em> button at the bottom of the screen and a window will open for you to add in the item. Once you are done, click the button saying <em><strong>Add</strong></em>, and it will be added to the list. <br>
+                        <br>
+                        To <strong>edit</strong> a task, simply click the <em><strong>wrench icon</strong></em> and a popup menu with the previously added fields will be there. Simply change the fields and click update. <br>
+                        To <strong>delete</strong> an item off the list, simply click the <em><strong>rubbish bin icon</strong></em> to delete it. <br>
+                        You can also click the <em><strong>tick icon</strong></em> to mark the item as <strong>complete</strong> so as to shift it to the list of completed items. </p>
+                    </div>
+                  </div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Settings</div>
+  <div class="AccordionPanelContent">The third link, <em><strong>Settings</strong></em>, brings you the place where you can change things like program features and how you are being reminded about the software to do certain things. Navigation is really simple. To enable a feature, for example the use of popup windows, just click the grey bubble to the right of the feature so that it turns green. A green bubble represents that the represented feature is enabled or currently in use.</div></div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Downloads</div>
+  <div class="AccordionPanelContent">The fourth link, <em><strong>Downloads</strong></em>, brings you to the page where you can download the software. (Currently work in progress)</div>
+</div>
+              </div>
+      </div>
+      <div class="faq_header" id="faq_header_others">Others</div>
+      <div class="faq_main_body" id="faq_main_others">
+            The software was made for a school project and is powered by a team of 4 -- 2 programmers, 1 designer and 1 publicity i/c. Unfortunately, our software has limitations. There may be incidents where the software isn't able to fit in each activity to your best interests but it would still show you how your day would be like without major differences. <br><br> If you do spot any bugs, please alert us under the <a href="contact.php">Contact</a> section.
+            </div>
+        </div>
+</div>
+    
+    <div id="reminder_col">
+    	<div class="reminder_header">Upcoming <em><strong>Events</strong></em></div>
+        <div class="reminder_body">
+        	<div class="reminder_date">1/1/1111 1111h</div>
+            <div class="reminder_task">Math Test</div>
+        </div>
+        <div class="reminder_header">Due Dates</div>
+        <div class="reminder_body">
+        	<div class="reminder_date">2/2/2222 2222h</div>
+            <div class="reminder_task">Math Exercise 12</div>
+            <div class="reminder_task">Math Exercise</div>
+            <div class="reminder_task">Worksheet</div>
+        </div>
+    </div> 
+</div>
+<script type="text/javascript">
+var Accordion1 = new Spry.Widget.Accordion("Accordion1");
+</script>
+</body>
+</html>
