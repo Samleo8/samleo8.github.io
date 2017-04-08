@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Keyboard Music!</title>
+<style type="text/css">
+span{
+	left:25%;	
+}
+div{
+	border:#000 1px solid;
+	position:absolute;
+	bottom:1px;
+	height:170px;
+	z-index:1;
+}
+span div{
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+	background:#FFF;
+}
+span span div{
+	height:84px;
+	bottom:86px;
+	background-image:url("black-key.png");
+	background-repeat:no-repeat;
+}
+.letterHelp{
+	text-transform:capitalize;
+	vertical-align:middle;
+	font-size:16px;
+	bottom:190px;
+	text-align:center;
+	border:none;
+	height:auto;
+}
+.keyboardHelp{
+	text-transform:capitalize;
+	vertical-align:middle;
+	font-size:16px;
+	font-weight:bold;
+	bottom:10px;
+	text-align:center;
+	border:none;
+	height:auto;
+}
+input[type=text]{
+	border:1px solid #000;
+	border-radius:5px;
+	height:1.5em;
+	width:23%;
+	padding-left:0.5em;
+}
+#music{
+	width:70%;
+}
+#splitType{
+	width:2em;
+}
+input[type=submit]{
+	margin-left:0.5em;
+}
+/*
+#k65 {
+	
+}
+#k83 {
+	position:absolute;
+	left:31px;
+}
+#k68 {
+	position:absolute;
+	left:51px;
+}
+#k70 {
+	position:absolute;
+	left:71px;
+}
+#k71 {
+	position:absolute;
+	left:91px;
+}
+#k72 {
+	position:absolute;
+	left:111px;
+}
+#k74 {
+	position:absolute;
+	left:131px;
+}
+#k75 {
+	position:absolute;
+	left:151px;
+}
+#k76 {
+	position:absolute;
+	left:171px;
+}
+#k186 {
+	position:absolute;
+	left:191px;
+}
+#k192, #k222 {
+	position:absolute;
+	left:211px;
+}
+*/
+</style>
+<script src="keyboardMusic.js"></script>
+</head>
+<body onkeydown="press(event)" onkeyup="resetKey(event)" onload="checkOS();">
+<p>
+  <noscript>
+  <strong>You need to activate javascript for this to work!!!</strong>
+  </noscript>
+Welcome to the amazing keyboard music app! Well, basically, it is a virtual music keyboard played with none other than your computer keyboard!</p>
+<p>How to play? Easy! Just use the keys in the middle row of your keyboard. You can also use the mouse to click and rollover, but of course, it would be impossible to properly play...</p>
+<p>You can use the bar below to type in notes and it will play the song for you! Choose how you want to split/separate the notes (leave it empty if you don't have a separation method)! Enjoy!</p>
+<p>
+  <input type="text" id="music" onkeyup="javascript:if(event.keyCode==13){setMusic(this.value)}" onfocus="disableKeyboard(true)" onblur="disableKeyboard(false);" />
+<span class="options">
+  Split Method <input type="text" maxlength="1" onfocus="disableKeyboard(true)" onblur="disableKeyboard(false);" onkeyup="javascript:if(event.keyCode==13){setMusic(document.getElementById('music').value)}" id="splitType" />
+</span>
+  <input type="submit" onclick="javascript:setMusic(document.getElementById('music').value);" value="Start Music!" />
+  <input type="submit" onclick="cancelMusic()" value="Stop Music!" />
+</p>
+<span>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k65" class="c"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k83" class="d"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k68" class="e"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k70" class="f"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k71" class="g"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k72" class="a"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k74" class="b"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k75" class="c1"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k76" class="d1"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k186" class="e1"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k222" class="f1"></div>
+    <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k13" class="g1"></div>
+	<span>
+		<div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k87" class="c#"></div>
+		<div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k69" class="d#"></div>
+        <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k84" class="f#"></div>
+        <div onmousedown="mouseDown(this.id)" onmouseup="mouseUp(this.id)" onmouseover="mouseDown(this.id)" onmouseout="mouseUp(this.id)" id="k89" class="g#"></div>
+	</span>
+</span>
+<p><strong style="text-decoration:underline;">Presets:</strong></p>
+<p>Mary had a Little Lamb: <input type="text" id="mMaryHadALittleLamb" value="EDCDEEEDDDEGGEDCDEEEEDDEDC" readonly="readonly" /><input type="submit" onclick="javascript:setMusic(document.getElementById('m'+this.id).value);" id="MaryHadALittleLamb" value="Start Music!" /></p>
+<p>Ode to Joy: <input type="text" value="EEFGGFEDCCDEEDDEEFGGFEDCCDEDCC" id="mOdeToJoy" readonly="readonly" /><input type="submit" onclick="javascript:setMusic(document.getElementById('m'+this.id).value);" id="OdeToJoy" value="Start Music!" /></p>
+<p>Random Song: <input type="text" value="DAFAEDAADDDAADDAAFAEEFAEDDAAED" id="mRanSong" readonly="readonly" /><input type="submit" onclick="javascript:setMusic(document.getElementById('m'+this.id).value);" id="RanSong" value="Start Music!" /></p>
+</body>
+</html>
