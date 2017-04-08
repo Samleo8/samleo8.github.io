@@ -4,3 +4,6 @@
 [submodule "PixArt"]
         path = PixArt
         url = https://github.com/Samleo8/PixArt
+[submodule "KeyboardMusic"]
+	path = KeyboardMusic
+	url = https://github.com/Samleo8/KeyboardMusic
