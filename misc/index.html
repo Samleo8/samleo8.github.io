@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="../Images/favicon.ico">
+<title>Miscellaneous</title>
+<link href="../main.css" rel="stylesheet" type="text/css">
+<noscript>
+    <style>
+    #noScriptShow{
+        display:inline-block;
+        height:100%;
+        width:100%;
+        position:fixed;
+        top:0;
+        bottom:0;
+        background:#066;
+        text-align:center;
+        z-index:2147483640; /* no mobile takes precedence */
+    }
+    #noScriptCircle{
+        width:300px;
+        height:300px;
+        padding:10px;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+        border-radius:1000px;
+        background:#EEE;
+        color:#066;
+        text-align:center;
+    }
+    #noScriptCircle div{
+        width:200px;
+        height:200px;	
+
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+    }
+    #noScriptCircle h1{
+        font-size:40px;
+        margin-top:20px;	
+        margin-bottom:5px;
+    }
+    </style>
+</noscript>
+<script src="../main.lib.js"></script>
+<script src="../main.js"></script>
+</head>
+<body>
+<!--Navigation-->
+<div id="navList" class="disappear">
+    <div class="navCircle circle circle-height disableSelect alt-colour" id="navCircle1">
+        <span class="center">Navigation<br>Menu</span>
+    </div>
+    <a><div class="navCircle circle circle-height alt-colour" id="navCircle2">
+        <span class="menu-icon"></span>
+        <span class="center"></span>
+    </div></a>
+    <a><div class="navCircle circle circle-height" id="navCircle3">
+        <span class="menu-icon"></span>
+        <span class="center"></span>
+    </div></a>
+    <a><div class="navCircle circle circle-height" id="navCircle4">
+        <span class="menu-icon"></span>
+        <span class="center"></span>
+    </div></a>
+    <a><div class="navCircle circle circle-height alt-colour" id="navCircle5">
+        <span class="menu-icon"></span>
+        <span class="center"></span>
+    </div></a>
+</div>
+
+<!--START MAIN-->
+<div id="main-content">
+    <h1 class="title">Miscellaneous</h1>
+    <h3 class="subtitle">
+        Besides programming and research, I have other small hobbies such as poetry and art, which are showcased here.
+    </h3>
+    
+    <div class="table-of-contents"></div>
+    
+    <div class="content-section">
+        <h1>Art</h1>
+    </div>
+    
+    <div class="spacing large"></div>
+</div>
+
+<div></div>
+<!--END MAIN-->
+    
+<!--Options-->
+<div id="optionsCircle" class="circle circle-height disableSelect" onmouseover="optionsHover(this)" onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+    <span class="" id="optionsCircleContent">
+        <h1>Options</h1>
+	</span>
+</div>
+
+<!--Options Box-->
+<div id="optionsBox" class="invertedColor disableSelect">
+    <div id="optionsBoxHeader">
+        <div class="optionsTitle"><h1>Options</h1></div>
+        <div class="optionsIconsHolder">
+            <div class="optionsIcons"><span class="icon-home"></span></div>
+            <div class="optionsIcons"><span class="icon-reset"></span></div>
+        </div>
+    </div>
+    <hr>
+    <div id="optionsBoxContent">
+        <div id="optionsMenuHide" onClick="toggleOptions('menuHide',this)" class="options-btn unchecked">Show Menu at Start</div>
+        <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle',this)" class="options-btn unchecked disabled">Tab-Style Menu</div>
+
+        <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+        <div id="optionsBoxHide" onClick="toggleOptions('boxHide',this)" class="options-btn unchecked">Hide options on launch</div>
+    </div>
+</div>
+    
+<!--Error Circles--->
+<div id="noScriptShow">
+    <div id="noScriptCircle" class="circle">
+    	<div>
+            <h1>Oops.</h1>
+            <p>This website will not work without JavaScript enabled.</p>
+            <p>Please enable JavaScript in your browser.</p>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>
