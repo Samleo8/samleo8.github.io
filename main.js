@@ -407,9 +407,7 @@ function pageInit(){
             navCircles[i].addEventListener("mouseout", navCircleUnhover, false);
         }
         
-        document.getElementById("navCircle1").onclick = function(){
-            toggleMenu();
-        };
+        document.getElementById("navCircle1").addEventListener("click",toggleMenu,false);
     }
     
     //Options Box Buttons
@@ -646,7 +644,40 @@ function pageInit(){
     }
     
     //Accordion Setup
-    var accEle = document.getElementsByClassName("");
+    var accEle = document.getElementsByClassName("accordion");
+    
+    for(var k=0;k<accEle.length;k++){
+        var accItemEle = accEle[k].getElementsByClassName("accordion-item");
+        
+        for(var i=0;i<accItemEle.length;i++){
+            //Set all to closed first
+            accItemEle[i].className = accItemEle[i].className.replaceAll(" closed","");
+            accItemEle[i].className = accItemEle[i].className.replaceAll(" open","");
+            accItemEle[i].className += " closed";
+            
+            //Add event listener to title for opening and closing
+            accTitle = accItemEle[i].getElementsByClassName("accordion-title")[0];
+            accTitle.addEventListener("click",function(){
+                var par = this.parentNode;
+                
+                if(par.className.indexOf(" open")!=-1){ //item is open, hence close it
+                    par.className = par.className.replaceAll(" open"," closed");
+                }
+                else{
+                    //item is closed
+                    //  1. open this item
+                    //  2. close all other items
+                    var accItemEleTemp = par.parentNode.getElementsByClassName("accordion-item");
+                    for(var j=0;j<accItemEleTemp.length;j++){
+                        if(par!=accItemEleTemp[j])
+                            accItemEleTemp[j].className = accItemEleTemp[j].className.replaceAll(" open"," closed");
+                    }
+                    
+                    par.className = par.className.replaceAll(" closed"," open");
+                }
+            });
+        }
+    }
 }
 
 function photoToggleView(ele){

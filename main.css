@@ -1199,10 +1199,6 @@ table.achievements-table td div{
     width:85%;
 }
 
-.accordion, .accordion *{
-    transition: all 0.3s ease;
-}
-
 .accordion-item{
     margin-top:5px;
 }
@@ -1211,35 +1207,55 @@ table.achievements-table td div{
     width:90%;
     height:60px;
     line-height:60px;
-    padding-left:20px;
-    color:#066;
-    background:rgba(141,211,107,0.8);
-    border-left: 5px rgba(255,255,255,0.8) solid;
+
     margin:0px;
     margin-bottom:2px;
+    padding-left:20px;
     
+    border-left: 5px rgba(255,255,255,0.8) solid;
+    
+    color:#066;
+    background:rgba(141,211,107,0.8);
+    
+    transition: all 0.3s ease;
     cursor:pointer;
 }
 
 .accordion-title:hover{
     width:95%;
+    
     border-left: 12px rgba(255,255,255,1) solid;
+    
     background:rgba(141,211,107,1);
+    
+    z-index: 10000;
 }
 
 .accordion-content{
     width:90%;
-    padding-top:5px; padding-bottom:10px;
+
     color:#066;
     background: #EEE;
+    
+    z-index: 0;
+    
+    transition: all 0.7s ease;
 }
 
 .closed .accordion-content{
-    height:0px;
+    height: 0px;
     opacity: 0;
+    z-index: 0;
+}
+
+.closed .accordion-content *{
+    display:none;
 }
 
 .open .accordion-content{
+    padding-top:5px;
+    padding-bottom:10px;
+    
     height:auto;
     opacity: 1;
 }
