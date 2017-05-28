@@ -1194,6 +1194,56 @@ table.achievements-table td div{
     color:#000;
 }
 
+/*-----ACCORDION-----*/
+.accordion{
+    width:85%;
+}
+
+.accordion, .accordion *{
+    transition: all 0.3s ease;
+}
+
+.accordion-item{
+    margin-top:5px;
+}
+
+.accordion-title{
+    width:90%;
+    height:60px;
+    line-height:60px;
+    padding-left:20px;
+    color:#066;
+    background:rgba(141,211,107,0.8);
+    border-left: 5px rgba(255,255,255,0.8) solid;
+    margin:0px;
+    margin-bottom:2px;
+    
+    cursor:pointer;
+}
+
+.accordion-title:hover{
+    width:95%;
+    border-left: 12px rgba(255,255,255,1) solid;
+    background:rgba(141,211,107,1);
+}
+
+.accordion-content{
+    width:90%;
+    padding-top:5px; padding-bottom:10px;
+    color:#066;
+    background: #EEE;
+}
+
+.closed .accordion-content{
+    height:0px;
+    opacity: 0;
+}
+
+.open .accordion-content{
+    height:auto;
+    opacity: 1;
+}
+
 /*-----OPTIONS CIRCLE-----*/
 #optionsCircle{
 	height:140px;

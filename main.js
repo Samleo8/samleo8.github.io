@@ -240,7 +240,7 @@ var galleryLib = {
             "description":"Trip to Arizona Hills - 100% Pure Arizona silver"
         },
     ],
-    "ifocus":[
+    "ifocus": [
         {
             "filename":"0.jpg",
             "description":"Setting up our presentation at the Research@YDSP event"
@@ -261,6 +261,32 @@ var galleryLib = {
             "filename":"4.jpg",
             "description":"Guest of Honour trying out our game"
         }
+    ],
+    "art": [
+        {
+            "filename":"merry_christmas.jpg",
+            "description":""
+        },
+        {
+            "filename":"bearing_fruit.png",
+            "description":""
+        },
+        {
+            "filename":"sheep.jpg",
+            "description":""
+        },
+        {
+            "filename":"panda.png",
+            "description":""
+        },
+        {
+            "filename":"koala.jpg",
+            "description":""
+        },
+        {
+            "filename":"plant.jpg",
+            "description":""
+        },
     ]
 }
 
@@ -618,6 +644,9 @@ function pageInit(){
     for(var j=0;j<e.length;j++){
         e[j].addEventListener("mouseup", function(ev){ photoToggleView(this) });
     }
+    
+    //Accordion Setup
+    var accEle = document.getElementsByClassName("");
 }
 
 function photoToggleView(ele){
