@@ -123,13 +123,19 @@ var gameLib = {
             "name":"Network Infector",
             "filename":"NetworkInfector",
             "description":"",
-            "tags":["Platform","Two-player","Competition"]
+            "tags":["Action","Defence","Competition"]
         },
         {
             "name":"Hard Core",
             "filename":"HardCore",
             "description":"Protect your core from incoming enemies, even as your shield decays with time! Game created for Ludum Dare competition, themed 'Only one'.",
             "tags":["Arcade","Defence","Competition"]
+        },
+        {
+            "name":"Let It Snow!",
+            "filename":"LetItSnow",
+            "description":"Defeat the elves by freezing them with falling snow. Christmas-inspired game originally meant as some Christmas present for my parents.",
+            "tags":["Arcade","Shooting","Defence"]
         }
     ],
     "html":[

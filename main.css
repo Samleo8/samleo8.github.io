@@ -1195,7 +1195,12 @@ table.achievements-table td div{
 }
 
 .tag.competition{
-    background:#333;
+    background:#444;
+    color:#EEE;
+}
+
+.tag.platform{
+    background:#ca0e59;
     color:#EEE;
 }
 
