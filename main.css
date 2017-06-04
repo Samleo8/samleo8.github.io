@@ -1194,6 +1194,11 @@ table.achievements-table td div{
     color:#000;
 }
 
+.tag.competition{
+    background:#333;
+    color:#EEE;
+}
+
 /*-----ACCORDION-----*/
 .accordion{
     width:85%;
