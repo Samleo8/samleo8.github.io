@@ -102,10 +102,10 @@ var gameLib = {
         {
             "name":"Drugged Dreams",
             "filename":"DruggedDreams",
-            "description":"Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place at Singapore Games Creation Competition (team effort) on the topic of 'Fighting Drugs'.",
-            "tags":["Action","Fighting"],
+            "description":"Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place (team effort) at Singapore Games Creation Competition 2014 (SGCC) on the topic of 'Fighting Drugs'.",
+            "tags":["Action","Fighting","Competition"],
             featured: true
-        }, //in the case where it's 1 row with three games, this game gets featured
+        }, //in the case where it's 1 row with three games, this game gets featured    
         {
             "name":"Focus Fire - Enhanced",
             "filename":"FocusFireHarder",
@@ -114,11 +114,23 @@ var gameLib = {
             "project":"ifocus1"
         },
         {
+            "name":"Nostalgia",
+            "filename":"Nostalgia",
+            "description":"Work together to collect the memories in this two-player platformer. Commendation Award at SGCC 2013 on the topic of 'Multi-generational bonding'.",
+            "tags":["Platform","Two-player","Competition"]
+        },
+        {
+            "name":"Network Infector",
+            "filename":"NetworkInfector",
+            "description":"",
+            "tags":["Platform","Two-player","Competition"]
+        },
+        {
             "name":"Hard Core",
             "filename":"HardCore",
             "description":"Protect your core from incoming enemies, even as your shield decays with time! Game created for Ludum Dare competition, themed 'Only one'.",
-            "tags":["Arcade","Defence"]
-        },
+            "tags":["Arcade","Defence","Competition"]
+        }
     ],
     "html":[
         {
