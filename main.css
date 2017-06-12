@@ -801,26 +801,28 @@ p.subtitle{
     }
 }
 
-.ismobile #mainCircleHome{
-    width:150%;
-    top:-120px;
-    right:-25%;
-    border-radius:0px 0px 100% 100%;
-    height:300px;
-    z-index: 1000;
-    text-align: center;
-}
+@media all and (orientation: portrait){
+    .ismobile #mainCircleHome{
+        width:150%;
+        top:-120px;
+        right:-25%;
+        border-radius:0px 0px 100% 100%;
+        height:300px;
+        z-index: 1000;
+        text-align: center;
+    }
 
-.ismobile #mainCircleHome span{
-    width:55%;
-    font-size:150%;
-    bottom: 0px;
-    left: 22.5%;
-}
+    .ismobile #mainCircleHome span{
+        width:55%;
+        font-size:150%;
+        bottom: 0px;
+        left: 22.5%;
+    }
 
-.ismobile #mainCircleHome span h1, #mainCircleHome span p{
-    margin-top:10px;
-    margin-bottom:20px;
+    .ismobile #mainCircleHome span h1, #mainCircleHome span p{
+        margin-top:10px;
+        margin-bottom:20px;
+    }
 }
 
 /*---------NAVIGATION HOME---------*/
@@ -910,49 +912,51 @@ p.subtitle{
     }
 }
 
-.ismobile #navListHome{
-    position:absolute;
-    width:100%;
-    top:25%;
-    right:25px;
-    font-size:250%;
-    text-align: center;
-}
+@media all and (orientation: portrait){
+    .ismobile #navListHome{
+        position:absolute;
+        width:100%;
+        top:25%;
+        right:25px;
+        font-size:250%;
+        text-align: center;
+    }
 
-.ismobile #navListHome ul{
-    list-style: none;
+    .ismobile #navListHome ul{
+        list-style: none;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
 
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
-}
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+    }
 
-.ismobile #navListHome ul a{
-    flex:1 100%;
-    width:100px;
-    height:60px;
-    padding: 10px 0px;
-    text-decoration:none;
-}
+    .ismobile #navListHome ul a{
+        flex:1 100%;
+        width:100px;
+        height:60px;
+        padding: 10px 0px;
+        text-decoration:none;
+    }
 
-.ismobile #navListHome ul a li:before{
-    content: url(Images/homeBullet.png);
-    position: absolute;
-    left:10px;
-    top:0px;
-}
+    .ismobile #navListHome ul a li:before{
+        content: url(Images/homeBullet.png);
+        position: absolute;
+        left:10px;
+        top:0px;
+    }
 
-.ismobile #navListHome ul a li:after{
-    content: url(Images/homeBullet.png);
-    transform: scaleX(-1);
-    position: absolute;
-    right:10px;
-    top:0px;
+    .ismobile #navListHome ul a li:after{
+        content: url(Images/homeBullet.png);
+        transform: scaleX(-1);
+        position: absolute;
+        right:10px;
+        top:0px;
+    }
 }
 
 /*---------GENERIC CONTENT---------*/
