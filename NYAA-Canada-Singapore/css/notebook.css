@@ -1,0 +1,17 @@
+.notebook{
+	visibility: visible;
+	display: block;
+	margin-top: 0px;
+}
+
+.notebook #main div img{
+	width:90%;
+}
+
+.tablet {
+	display: none;
+}
+
+.phone {
+	display: none;
+}
