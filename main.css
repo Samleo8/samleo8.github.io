@@ -1048,10 +1048,12 @@ p.subtitle{
     cursor:pointer;
     
     width:65px;
-    margin-left:3px;
+    margin-left:10px;
+    margin-right: 0px;
     padding:5px 10px;
     
     text-transform: capitalize;
+    float: right;
     
     background:#ffb300;
     color: #000;
