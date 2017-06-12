@@ -1039,17 +1039,24 @@ p.subtitle{
     width:100%;
 }
 
-.showcase-button{
+.showcase-button, .showcase-btn{
     display:inline-block;
-    border:none;
+    border:#c67100 1px solid;
     border-radius:8px;
     font-size:14px;
-    padding:5px 10px 5px 10px;
-    margin-bottom:12px;
-    margin-right:10px;
+    text-align: center;
+    cursor:pointer;
     
-    background:#ffb74d;
+    width:65px;
+    margin-left:3px;
+    padding:5px 10px;
+    
+    text-transform: capitalize;
+    
+    background:#ffb300;
     color: #000;
+    
+    transition: all 0.3s ease;
     
     /*Disable Selection*/
     -webkit-touch-callout: none;
@@ -1058,6 +1065,17 @@ p.subtitle{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.showcase-button.newline, .showcase-btn.newline{
+    margin-top:5px;
+    margin-left:0px;
+    display:block;
+}
+
+.showcase-button:hover, .showcase-btn:hover{
+    background:#ffc107;
+    color: #000;
 }
 
 /*---------ABOUT ME---------*/
