@@ -840,6 +840,7 @@ p.subtitle{
 	padding-bottom:1%;	
 }
 
+/* Mobile Responsiveness */
 @media all and (max-width: 840px){
     #navListHome{
         position:absolute;
@@ -887,21 +888,49 @@ p.subtitle{
     }
 }
 
-@media all and (max-width: 450px){
-    #navListHome ul a li:before{
-        content: url(Images/homeBullet.png);
-        position: absolute;
-        left:5px;
-        top:0px;
-    }
-    
-    #navListHome ul a li:after{
-        content: url(Images/homeBullet.png);
-        transform: scaleX(-1);
-        position: absolute;
-        right:5px;
-        top:0px;
-    }
+.ismobile #navListHome{
+    position:absolute;
+    width:100%;
+    top:25%;
+    right:25px;
+    font-size:250%;
+    text-align: center;
+}
+
+.ismobile #navListHome ul{
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.ismobile #navListHome ul a{
+    flex:1 100%;
+    width:100px;
+    height:60px;
+    padding: 10px 0px;
+    text-decoration:none;
+}
+
+.ismobile #navListHome ul a li:before{
+    content: url(Images/homeBullet.png);
+    position: absolute;
+    left:10px;
+    top:0px;
+}
+
+.ismobile #navListHome ul a li:after{
+    content: url(Images/homeBullet.png);
+    transform: scaleX(-1);
+    position: absolute;
+    right:10px;
+    top:0px;
 }
 
 /*---------GENERIC CONTENT---------*/

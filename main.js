@@ -376,8 +376,11 @@ function pageChange(){
 }
 
 function pageInit(){
-    if(window.mobilecheck()){
+    if(MobileCheck()){
         document.body.className = "ismobile";
+    }
+    else if(MobileAndTabletCheck()){
+        document.body.className = "istablet";
     }
 
     loadOptions();
