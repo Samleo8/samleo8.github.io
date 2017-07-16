@@ -206,6 +206,38 @@ var galleryLib = {
             "description":"Leaving the venue after judging.."
         },
         {
+            "filename":"0.8.jpg",
+            "description":"About to draw the Singapore poster..."
+        },
+        {
+            "filename":"0.9.jpg",
+            "description":"Actually drawing the Singapore poster"
+        },
+        {
+            "filename":"0.10.jpg",
+            "description":"ISEF Public day!"
+        },
+        {
+            "filename":"0.11.jpg",
+            "description":"At my booth"
+        },
+        {
+            "filename":"0.12.jpg",
+            "description":"Presenting to interested members of public"
+        },
+        {
+            "filename":"0.13.jpg",
+            "description":"Presenting to fellow ISEF Finalists from Luxembourg"
+        },
+        {
+            "filename":"0.14.jpg",
+            "description":"Presenting to fellow ISEF Finalists from Luxembourg"
+        },
+        {
+            "filename":"0.15.jpg",
+            "description":"Presenting to fellow ISEF Finalists from Luxembourg"
+        },
+        {
             "filename":"0.jpg",
             "description":"The registration counter of the ISEF Exhibition Hall"
         },
