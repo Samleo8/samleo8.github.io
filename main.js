@@ -210,6 +210,10 @@ var galleryLib = {
             "description":"The registration counter of the ISEF Exhibition Hall"
         },
         {
+            "filename":"0.15.jpg",
+            "description":"Inside the hall"
+        },
+        {
             "filename":"0.10.jpg",
             "description":"ISEF Public day!"
         },
