@@ -206,14 +206,6 @@ var galleryLib = {
             "description":"Leaving the venue after judging.."
         },
         {
-            "filename":"0.8.jpg",
-            "description":"About to draw the Singapore poster..."
-        },
-        {
-            "filename":"0.9.jpg",
-            "description":"Actually drawing the Singapore poster"
-        },
-        {
             "filename":"0.jpg",
             "description":"The registration counter of the ISEF Exhibition Hall"
         },
