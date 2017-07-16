@@ -230,10 +230,6 @@ var galleryLib = {
             "description":"Presenting to fellow ISEF Finalists from Luxembourg"
         },
         {
-            "filename":"0.15.jpg",
-            "description":"Presenting to fellow ISEF Finalists from Luxembourg"
-        },
-        {
             "filename":"0.8.jpg",
             "description":"Pins, stickers and paraphernalia from companies who were interested in my project :)"
         },
