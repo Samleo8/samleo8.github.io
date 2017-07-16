@@ -214,6 +214,10 @@ var galleryLib = {
             "description":"Actually drawing the Singapore poster"
         },
         {
+            "filename":"0.jpg",
+            "description":"The registration counter of the ISEF Exhibition Hall"
+        },
+        {
             "filename":"0.10.jpg",
             "description":"ISEF Public day!"
         },
@@ -236,10 +240,6 @@ var galleryLib = {
         {
             "filename":"0.15.jpg",
             "description":"Presenting to fellow ISEF Finalists from Luxembourg"
-        },
-        {
-            "filename":"0.jpg",
-            "description":"The registration counter of the ISEF Exhibition Hall"
         },
         {
             "filename":"0.8.jpg",
