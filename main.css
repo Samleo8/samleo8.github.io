@@ -1082,7 +1082,7 @@ p.subtitle{
 
 /*---------ABOUT ME---------*/
 .about-showcase-button-holder a{
-    flex:1 300px;
+    flex:1 500px;
 }
 
 @media all and (max-width: 1155px) {
