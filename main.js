@@ -155,7 +155,14 @@ var gameLib = {
             "tags":["Puzzle","Mobile Ready"],
             featured: true
         },
-        
+        {
+            "name":"Slitherie",
+            "filename":"Slitherie",
+            "url":"https://samleo8.github.io/Slitherie/",
+            "description":"Recreation of classic 'Snake' game with different foods and crazy levels.",
+            "tags":["Arcade"],
+            featured: true
+        },
     ]
 }
 
