@@ -100,13 +100,6 @@ var gameLib = {
             "tags":["Arcade","Single Button","Endless"]
         },
         {
-            "name":"Drugged Dreams",
-            "filename":"DruggedDreams",
-            "description":"Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place (team effort) at Singapore Games Creation Competition 2014 (SGCC) on the topic of 'Fighting Drugs'.",
-            "tags":["Action","Fighting","Competition"],
-            featured: true
-        }, //in the case where it's 1 row with three games, this game gets featured    
-        {
             "name":"Focus Fire - Enhanced",
             "filename":"FocusFireHarder",
             "description":"Multitasking game where you (a tank) attack and defend against oncoming enemy tanks. Game used for eye-tracking research, but with increased difficulty.",
@@ -120,16 +113,23 @@ var gameLib = {
             "tags":["Platform","Two-player","Competition"]
         },
         {
-            "name":"Network Infector",
-            "filename":"NetworkInfector",
-            "description":"",
-            "tags":["Action","Defence","Competition"]
-        },
-        {
             "name":"Hard Core",
             "filename":"HardCore",
             "description":"Protect your core from incoming enemies, even as your shield decays with time! Game created for Ludum Dare competition, themed 'Only one'.",
             "tags":["Arcade","Defence","Competition"]
+        },
+        {
+            "name":"Drugged Dreams",
+            "filename":"DruggedDreams",
+            "description":"Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place (team effort) at Singapore Games Creation Competition 2014 (SGCC) on the topic of 'Fighting Drugs'.",
+            "tags":["Action","Fighting","Competition"],
+            featured: true
+        }, //in the case where it's 1 row with three games, this game gets featured
+        {
+            "name":"Network Infector",
+            "filename":"NetworkInfector",
+            "description":"",
+            "tags":["Action","Defence","Competition"]
         }/*,
         {
             "name":"Let It Snow!",
