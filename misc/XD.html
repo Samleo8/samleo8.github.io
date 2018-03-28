@@ -7,8 +7,16 @@
 	}
 	</style>
 	<script>
-	var t = prompt("Rate of XD in ms:");
-	setInterval(spawnXD,t);
+	window.addEventListener("load",startSpawn,false);
+
+	function startSpawn(){
+		var t = prompt("Rate of XD in ms:");
+		setInterval(spawnXD,t);
+	}
+
+	function pauseSpawn(){
+
+	}
 
 	function spawnXD(){
 		var xd = document.createElement("div");
@@ -29,7 +37,7 @@
 		xd.style.fontSize = size+"px";
 
 		var x = size+Math.random()*(window.innerWidth-size);
-		var y = size+Math.random()*(window.inneHeight-size);
+		var y = size+Math.random()*(window.innerHeight-size);
 
 		xd.style.top = y+"px";
 		xd.style.left = x+"px";
