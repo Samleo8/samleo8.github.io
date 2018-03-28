@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+	div{
+		position: absolute;
+	}
+	</style>
+	<script>
+	var t = prompt("Rate of XD in ms:");
+	setInterval(spawnXD,t);
+
+	function spawnXD(){
+		var xd = document.createElement("div");
+		xd.innerHTML = (Math.random()>0.5)?"XD":"xd";
+
+		var rgb = "";
+		for(i=0;i<3;i++){
+			if(i) rgb += ",";
+			rgb += Math.floor(Math.random()*255);
+		}
+
+		xd.style.color = "rgb("+rgb+")";
+
+		var rot = Math.random()*360;
+		xd.style.transform = "rotate("+rot+"deg)"
+
+		var size = 10*Math.ceil(1+Math.random()*6);
+		xd.style.fontSize = size+"px";
+
+		var x = size+Math.random()*(window.innerWidth-size);
+		var y = size+Math.random()*(window.inneHeight-size);
+
+		xd.style.top = y+"px";
+		xd.style.left = x+"px";
+
+		document.body.appendChild(xd);
+	}
+
+	function removeXD(){
+
+	}
+	</script>
+</head>
+<body>
+</body>
+</html>
