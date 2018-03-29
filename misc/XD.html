@@ -10,7 +10,10 @@
 	window.addEventListener("load",startSpawn,false);
 
 	function startSpawn(){
-		var t = prompt("Rate of XD in ms:");
+		var t;
+		do{
+			t = prompt("Rate of XD in ms:");
+		} while(t<=0 || t>=5000 || isNaN(parseInt(t)));
 		setInterval(spawnXD,t);
 	}
 
