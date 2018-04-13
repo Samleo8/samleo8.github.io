@@ -5,7 +5,7 @@ var Game = function(){
 	this.gameArea;
 
 	this.player = 0;
-	this.playerColor = ["blue", "red"];
+	this.playerColor = ["orange", "green"];
 
 	this.animation = false;
 	this.dropDelay = 100;
@@ -24,15 +24,15 @@ var Game = function(){
 
 		this.totalPiecesDropped=0;
 		this.animation = false;
-		
-		//Generate board array		
+
+		//Generate board array
 		for(i=0;i<this.cols;i++){
 			this.board[i] = [];
 			for(j=0;j<this.rows;j++){
 				this.board[i][j] = -1;
 			}
 		}
-		
+
 		//Create Game Area
 		var gA = document.getElementById("game_area");
 		if(gA != null){
@@ -51,8 +51,8 @@ var Game = function(){
 
 		this.gameArea.appendChild(title);
 
-		//Dynamically Generate Table for board	
-		var table = document.createElement("table");		
+		//Dynamically Generate Table for board
+		var table = document.createElement("table");
 		for(j=0;j<this.rows;j++){
 			var tr = document.createElement("tr");
 			for(i=0;i<this.cols;i++){
@@ -64,7 +64,7 @@ var Game = function(){
 				td.appendChild(pc);
 
 				var self = this;
-							
+
 			td.addEventListener("mouseup",function(){
 				if(self.animation == false){
 					var x = this.id.split("_")[1];
@@ -86,20 +86,28 @@ var Game = function(){
 			}
 			table.appendChild(tr);
 		}
-	
-		//50 is the size of each table cell. 1 is border size. Note that there's a need to account for border 1px for the pieces inside the table cell.
-		table.style.width = (this.cols*53+1)+"px"; 				table.style.height = (this.rows*53+1)+"px";	
 
 		this.gameArea.appendChild(table);
 
 		//Create Options part
 		var optionsEle = document.createElement("div");
 		optionsEle.className = "options-container";
-		
-		optionsEle.innerHTML = "<div class='options-animation'>Animation Speed : </div> <div class='options-player'>Player : <span id='player-indicator' class='piece "+this.playerColor[this.player]+"'></span> </div>";
+
+		optionsEle.innerHTML = "<div class='options-animation'>Animation : <span class='checkbox'><input type='checkbox' checked='checked' /><span class='checkmark'></span></span></div>";
+
+		optionsEle.innerHTML += "<div class='options-player'>Player : <span id='player-indicator' class='piece "+this.playerColor[this.player]+"'></span> </div>";
+
 		this.gameArea.appendChild(optionsEle);
 
-		self.gameArea.style.height = (180+(this.rows*53+1))+"px";
+		var chBx = optionsEle.getElementsByTagName("input")[0];
+		chBx.checked = true;
+		this.animationEnabled = true;
+		
+		chBx.addEventListener("change",function(){
+			self.animationEnabled = !self.animationEnabled;
+		});
+
+		//self.gameArea.style.height = (180+(this.rows*53+1))+"px";
 	}
 
 	this.dropPiece = function(x,y){
@@ -115,9 +123,9 @@ var Game = function(){
 			this.board[x][y-1] = this.player;
 
 			this.checkEndGame(x,y-1);
-			
+
 			var oldPlayer = this.player;
-			
+
 			this.player = (this.player)?0:1;
 			document.getElementById("player-indicator").className = document.getElementById("player-indicator").className.replaceAll(" "+this.playerColor[oldPlayer]," "+this.playerColor[this.player]);
 
@@ -128,9 +136,9 @@ var Game = function(){
 	if(y){
 			this.colorCell(x,y-1,"empty",this.playerColor[this.player]);
 	}
-	
+
 			var self = this;
-			
+
 			setTimeout(function(){
 				self.dropPiece(x,y+1)
 			}, self.dropDelay);
@@ -143,13 +151,13 @@ var Game = function(){
 		}
 
 		var ele = document.getElementById("piece_"+x+"_"+y);
-		
+
 		ele.className = ele.className.replaceAll(" "+color_from," "+color_to);
 	}
 
 	this.checkEndGame = function(x,y){
 		this.totalPiecesDropped++;
-		
+
 		console.log(x+","+y);
 		x = parseInt(x);
 		y = parseInt(y);
@@ -176,7 +184,7 @@ var Game = function(){
 			this.gameOver(true);
 			return;
 		}
-				
+
 		//Check Horizontal
 		cnt = 1;
 		for(i=1;i<4;i++){
@@ -201,7 +209,7 @@ var Game = function(){
 			this.gameOver(true);
 			return;
 		}
-	
+
 		//Check Diagonal (UP-LEFT/DOWN-RIGHT)
 		cnt = 1;
 		for(i=1;i<4;i++){
@@ -226,7 +234,7 @@ var Game = function(){
 			this.gameOver(true);
 			return;
 		}
-		
+
 		//Check Diagonal (UP-RIGHT/DOWN-LEFT)
 		cnt = 1;
 		for(i=1;i<4;i++){
@@ -251,13 +259,13 @@ var Game = function(){
 			this.gameOver(true);
 			return;
 		}
-		
+
 		if(this.totalPiecesDropped>=this.rows*this.cols){
 			this.gameOver(false);
 			return;
 		}
 	}
-	
+
 	this.gameOver = function(win){ //win (true) or draw (false)?
 		if(win){
 			this.message("Player "+parseInt(this.player+1)+" ("+this.playerColor[this.player].toUpperCase()+") wins!");
