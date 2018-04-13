@@ -12,4 +12,4 @@
 	url = https://github.com/Samleo8/Slitherie.git
 [submodule "Connect4"]
 	path = Connect4
-	url = /Connect4
+	url = https://github.com/Samleo8/Connect4.git
