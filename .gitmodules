@@ -10,3 +10,6 @@
 [submodule "Slitherie"]
 	path = Slitherie
 	url = https://github.com/Samleo8/Slitherie.git
+[submodule "Connect4"]
+	path = Connect4
+	url = /Connect4
