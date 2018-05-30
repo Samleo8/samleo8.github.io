@@ -96,7 +96,7 @@ var gameLib = {
         {
             "name":"Caged Bird",
             "filename":"CagedBird",
-            "description":"Flappy Bird on steriods! Bounce back and forth the walls while avoiding the random falling spikes.",
+            "description":"Flappy Bird on steriods! Bounce back and forth the walls while avoiding the random falling spikes. Check out the (better) HTML version below!",
             "tags":["Arcade","Single Button","Endless"]
         },
         {
@@ -139,6 +139,14 @@ var gameLib = {
         }*/
     ],
     "html":[
+        {
+            "name":"Soaring Sheep",
+            "filename":"SoaringSheep",
+            "url":"https://samleo8.github.io/SoaringSheep/",
+            "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
+            "tags":["Arcade","Endless","Sheep","Mobile Ready","Single Button"],
+            featured: true
+        },
         {
             "name":"Sisyphus Sheep",
             "filename":"SisyphusSheep",
@@ -342,25 +350,25 @@ var galleryLib = {
 //Page resize
 function pageChange(){
 	windowH = getBodyHeight();
-	windowW = getBodyWidth();	
-	
+	windowW = getBodyWidth();
+
 	circlesCalibration();
-    
+
     var optionsCircle = document.getElementById("optionsCircle");
-    
+
     if(optionsCircle.className.indexOf("hover")!=-1){
         optionsOriWidth = document.getElementById("optionsCircle").offsetHeight/(3/2);
     }
     else {
         optionsOriWidth = document.getElementById("optionsCircle").offsetHeight;
     }
-    
+
 	//other elements on page
 	vMCWidth = windowW*(100-58)*0.01; //visible main circle width
 	//document.getElementById("bs").style.width = vMCWidth+"px";
 	MCCircle = document.getElementById("mainCircleHome");
 	MCContent = document.getElementById("mainCircleContent");
-	
+
     if(MCCircle != null){
         var switchVar = MCCircle.getAttribute("switch-var");
 
@@ -384,21 +392,21 @@ function pageChange(){
         }
     }
     /*Alternate Menu*/
-    
-    
+
+
     //Concept Circles
     if(document.getElementById("conceptIntro")!=null){
         var conCirs = getElementsByClass("conceptCircle");
         var conCirWidth = conCirs[0].offsetWidth;
         var overallWidth = window.innerWidth;
         var pad = (overallWidth-conCirs.length*conCirWidth)/(conCirs.length+1);
-        
+
         //trace(conCirWidth+" "+overallWidth+" "+pad);
-        
+
         for(i=0;i<conCirs.length;i++){
             conCirs[i].style.left = parseInt(pad*parseInt(i+1)+conCirWidth*i)+"px";
         }
-        
+
         document.getElementById("conceptIntro").style.height = parseInt(30+conCirs[0].offsetHeight+20)+"px";
         if(document.getElementById("conceptIntro").className.indexOf("aboutpg")!=-1){
                document.getElementById("conceptIntro").style.height = parseInt(50+conCirs[0].offsetHeight+60)+"px";
@@ -415,7 +423,7 @@ function pageInit(){
     }
 
     loadOptions();
-    
+
     //Options Box Hide
     if(options["hideOnLaunch"]){
         document.getElementById("optionsBox").className += " disappear";
@@ -423,19 +431,19 @@ function pageInit(){
     else{
         document.getElementById("optionsBox").className = " appear";
     }
-    
+
     //Add Event Listeners
     navList = document.getElementById("navList");
     if(navList!=null){
         if(options["menuHide"] || !options["hideOnLaunch"]){
             if(navList.className.indexOf("disappear")==-1){
-                navList.className = navList.className.replaceAll("appear center","disappear");   
+                navList.className = navList.className.replaceAll("appear center","disappear");
             }
         }
         else{
             navList.className = navList.className.replaceAll("disappear","appear center");
         }
-        
+
         if(options["tabbedMenu"]){
             if(navList.className.indexOf("alt-nav")==-1){
                 navList.className+=" alt-nav";
@@ -444,41 +452,41 @@ function pageInit(){
         else{
             navList.className = navList.className.replaceAll(" alt-nav","");
         }
-        
+
         if(navList.className.indexOf("disappear")==-1){
             document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
         }
         else{
             document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
         }
-        
+
         //Create Mouseover & Mouseout events for Menu
         navCircles = getElementsByClass("navCircle");
         for(i=0;i<navCircles.length;i++){
             navCircles[i].addEventListener("mouseover", navCircleHover, false);
             navCircles[i].addEventListener("mouseout", navCircleUnhover, false);
         }
-        
+
         document.getElementById("navCircle1").addEventListener("click",toggleMenu,false);
     }
-    
+
     //Options Box Buttons
     if(document.getElementById("mainCircleHome")==null)
         getEle(".optionsIcons .icon-home")[0].addEventListener("click",function(){
             window.location.href = "../index.html"
         },false);
 
-    getEle(".optionsIcons .icon-reset")[0].addEventListener("click",resetOptions,false);    
-    
+    getEle(".optionsIcons .icon-reset")[0].addEventListener("click",resetOptions,false);
+
     //Navigation Circles Ordering
     var urlArr = window.location.href.toString().split("/");
     var pageName = urlArr[urlArr.length-2];
     var currPage = "../"+pageName+"/index.html";
-        
+
     var navCirclesEle = document.getElementsByClassName("navCircle");
-    
+
     var i,j;
-    
+
     for(i=0;i<navCirclesOrder.length;i++){
         //Get rid of entry for current page
         if(navCirclesOrder[i]["href"] == currPage){
@@ -486,43 +494,43 @@ function pageInit(){
             break;
         }
     }
-    
+
     for(i=1;i<navCirclesEle.length;i++){ //skip first navCircle (#navCircle1)
         navCirclesEle[i].parentElement.href = navCirclesOrder[i-1]["href"];
         navCirclesEle[i].getElementsByClassName("menu-icon")[0].className += " "+navCirclesOrder[i-1]["icon"];
         navCirclesEle[i].getElementsByClassName("center")[0].innerHTML = navCirclesOrder[i-1]["name"];
     }
-    
+
     //Table of Contents setup
     var tableOfContents = [];
     var contentTitles = document.querySelectorAll(".content-section h1");
     for(i=0;i<contentTitles.length;i++){
         tableOfContents[i] =  JSON.parse(JSON.stringify(contentTitles[i].innerText.split("\n")[0]));
     };
-    
+
     var TCEle = document.getElementsByClassName("table-of-contents")[0];
     if(TCEle!=null && TCEle!=undefined){
         out='';
         for(i=0;i<tableOfContents.length;i++){
             var idName = tableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ","-");
             contentTitles[i].parentNode.id = idName;
-            
+
             out+='<a href="#'+idName+'" class="gen-btn table-of-contents-btn">';
             out+=tableOfContents[i];
             out+="</a>";
         }
         TCEle.innerHTML = out;
     }
-    
+
     var subContents = document.getElementsByClassName("sub-table-of-contents");
     for(var j=0;j<subContents.length;j++){
         var subTableOfContents = [];
         var subContentTitles = subContents[j].parentNode.getElementsByTagName("h2");
-        
+
         for(i=0;i<subContentTitles.length;i++){
             subTableOfContents[i] =  JSON.parse(JSON.stringify(subContentTitles[i].innerText.split("\n")[0]));
         };
-        
+
         var TCEle = subContents[j];
         if(TCEle!=null && TCEle!=undefined){
             out='';
@@ -538,11 +546,11 @@ function pageInit(){
             TCEle.innerHTML = out;
         }
     }
-    
+
     //Game screenshots setup
     var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
     var outEle = {};
-    
+
     if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined && gameScreenshotHolder.length>0){
         if(gameScreenshotHolder[0].className.indexOf("games-main")!=-1){ //for main game page
             out="";
@@ -590,7 +598,7 @@ function pageInit(){
             gameScreenshotHolder[1].innerHTML = out;
         }
         else{ //for research/other page which include these games
-            
+
             //Look for the project game in both HTML and Flash games
             //Starting with Flash first
             for(i=0;i<gameLib["flash"].length;i++){
@@ -598,15 +606,15 @@ function pageInit(){
 
                 if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
                     out = "";
-                    
+
                     out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
                         out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                         out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                         out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
                         out+="</div>";
                     out+="</a>";
-                    
-                    if(outEle[gameInfo["project"].toString()] != null && 
+
+                    if(outEle[gameInfo["project"].toString()] != null &&
                     outEle[gameInfo["project"].toString()] != undefined) {
                         outEle[gameInfo["project"].toString()] += out;
                     }
@@ -635,8 +643,8 @@ function pageInit(){
                         }
                         out+="</div>";
                     out+="</a>";
-                    
-                    if(outEle[gameInfo["project"].toString()] != null && 
+
+                    if(outEle[gameInfo["project"].toString()] != null &&
                     outEle[gameInfo["project"].toString()] != undefined) {
                         outEle[gameInfo["project"].toString()] += out;
                     }
@@ -645,26 +653,26 @@ function pageInit(){
                     }
                 }
             }
-            
+
             for(var i in outEle){
                 if(!outEle.hasOwnProperty(i)) continue;
-                
+
                 var e = document.getElementsByClassName("games-"+i.toString());
                 for(var j=0;j<e.length;j++){
                     e[j].innerHTML = outEle[i];
                 }
             }
         }
-    }   
+    }
 
     var outEle = {};
     //Photo Gallery setup
     for(var j in galleryLib){
         if(!galleryLib.hasOwnProperty(j)) continue;
-        
+
         var galleryInfo = galleryLib[j.toString()];
         outEle[j.toString()] = "";
-            
+
         for(var i=0;i<galleryInfo.length;i++){
             var photoInfo = galleryInfo[i];
 
@@ -688,30 +696,30 @@ function pageInit(){
             e[j].innerHTML = outEle[i];
         }
     }
-    
+
     //Add Event Listener for full-view photo
     var e = document.getElementsByClassName("photoHolder");
     for(var j=0;j<e.length;j++){
         e[j].addEventListener("mouseup", function(ev){ photoToggleView(this) });
     }
-    
+
     //Accordion Setup
     var accEle = document.getElementsByClassName("accordion");
-    
+
     for(var k=0;k<accEle.length;k++){
         var accItemEle = accEle[k].getElementsByClassName("accordion-item");
-        
+
         for(var i=0;i<accItemEle.length;i++){
             //Set all to closed first
             accItemEle[i].className = accItemEle[i].className.replaceAll(" closed","");
             accItemEle[i].className = accItemEle[i].className.replaceAll(" open","");
             accItemEle[i].className += " closed";
-            
+
             //Add event listener to title for opening and closing
             accTitle = accItemEle[i].getElementsByClassName("accordion-title")[0];
             accTitle.addEventListener("click",function(){
                 var par = this.parentNode;
-                
+
                 if(par.className.indexOf(" open")!=-1){ //item is open, hence close it
                     par.className = par.className.replaceAll(" open"," closed");
                 }
@@ -724,7 +732,7 @@ function pageInit(){
                         if(par!=accItemEleTemp[j])
                             accItemEleTemp[j].className = accItemEleTemp[j].className.replaceAll(" open"," closed");
                     }
-                    
+
                     par.className = par.className.replaceAll(" closed"," open");
                 }
             });
@@ -734,18 +742,18 @@ function pageInit(){
 
 function photoToggleView(ele){
     console.log(ele);
-    
+
     //Need to change the width and height of the image...
     var img = ele.getElementsByTagName("img")[0];
     var r = img.width/img.height;
-    
+
     if(ele.className.indexOf(" fullView")!=-1){
         ele.className = ele.className.replaceAll(" fullView","");
-        
+
     }
     else{
         ele.className += " fullView";
-        
+
         /*
         img.style.height = window.windowH;
         img.style.width = img.height*r;
@@ -761,18 +769,18 @@ function circlesCalibration(){
 		h = circles[i].offsetHeight;
 		circles[i].style.width = h+"px";
 	}
-	
+
 	circles = getElementsByClass("circle-width");
 	for(i=0;i<circles.length;i++){
 		w = circles[i].offsetWidth;
 		circles[i].style.height = w+"px";
-	}   
-    
+	}
+
     circles = getElementsByClass("circle-height-width");
     for(i=0;i<circles.length;i++){
 		var switchVar = circles[i].getAttribute("switch-var");
         circles[i].style = '';
-        
+
         if(switchVar.split("-")[0] == "width" && window.windowW<=parseInt(switchVar.split("-")[1])){
             w = circles[i].offsetWidth;
             circles[i].style.height = w+"px";
@@ -781,17 +789,17 @@ function circlesCalibration(){
             w = circles[i].offsetWidth;
             circles[i].style.height = w+"px";
         }
-        else{       
+        else{
             h = circles[i].offsetHeight;
             circles[i].style.width = h+"px";
         }
-    }           
-    
+    }
+
     circles = getElementsByClass("circle-width-height");
     for(i=0;i<circles.length;i++){
 		var switchVar = circles[i].getAttribute("switch-var");
         circles[i].style = '';
-        
+
         if(switchVar.split("-")[0] == "width" && window.windowW<=switchVar.split("-")[1]){
             h = circles[i].offsetHeight;
             circles[i].style.width = h+"px";
@@ -800,41 +808,41 @@ function circlesCalibration(){
             h = circles[i].offsetHeight;
             circles[i].style.width = h+"px";
         }
-        else{       
+        else{
             w = circles[i].offsetWidth;
             circles[i].style.height = w+"px";
         }
     }
-    
+
     circles = getElementsByClass("circle-height-none");
     for(i=0;i<circles.length;i++){
 		var switchVar = circles[i].getAttribute("switch-var");
         circles[i].style = '';
-        
+
         if(switchVar.split("-")[0] == "width" && window.windowW<=parseInt(switchVar.split("-")[1])){
-            circles[i].style = '';    
+            circles[i].style = '';
         }
         else if(switchVar.split("-")[0] == "height" && window.windowH<=parseInt(switchVar.split("-")[1])){
             circles[i].style = '';
         }
-        else{       
+        else{
             h = circles[i].offsetHeight;
             circles[i].style.width = h+"px";
         }
-    }           
-    
+    }
+
     circles = getElementsByClass("circle-width-none");
     for(i=0;i<circles.length;i++){
 		var switchVar = circles[i].getAttribute("switch-var");
         circles[i].style = '';
-        
+
         if(switchVar.split("-")[0] == "width" && window.windowW<=switchVar.split("-")[1]){
             circles[i].style = '';
         }
         else if(switchVar.split("-")[0] == "height" && window.windowH<=switchVar.split("-")[1]){
             circles[i].style = '';
         }
-        else{       
+        else{
             w = circles[i].offsetWidth;
             circles[i].style.height = w+"px";
         }
@@ -849,7 +857,7 @@ var keyCodes = {
 function keyboardShortcuts(){
     var e = window.event;
     var code = e.keyCode || e.which;
-    
+
     if(code == keyCodes["toggleMenu"]){
         toggleMenu();
     }
@@ -866,20 +874,20 @@ function navCircleHover(){
 
 function navCircleUnhover(){
     //use "this" to access element being hovered over.
-    
+
 }
 
 function toggleMenu(){
     closeOptions();
-            
+
     if(navList.className.indexOf("disappear")!=-1){
         navList.className = navList.className.replaceAll("disappear","appear center");
         document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
     }
     else{
-        navList.className = navList.className.replaceAll("appear center","disappear");   
+        navList.className = navList.className.replaceAll("appear center","disappear");
         document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
-    }    
+    }
 }
 
 /*------OPTIONS------*/
@@ -896,9 +904,9 @@ function optionsUnhover(obj){
 }
 
 function optionsClick(obj){
-    navList.className = navList.className.replaceAll("appear center","disappear");   
+    navList.className = navList.className.replaceAll("appear center","disappear");
     document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
-    
+
 	optionsBox = document.getElementById("optionsBox");
     if(optionsBox.className.indexOf(" disappear")!=-1){
 		openOptions();
@@ -907,16 +915,16 @@ function optionsClick(obj){
 }
 
 function openOptions(){
-	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" disappear"," appear");	
+	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" disappear"," appear");
 }
 
 function closeOptions(){
-	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" appear"," disappear");	
+	document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" appear"," disappear");
 }
 
 function resetOptions(){
     if(!confirm("Are you sure you want to reset options?")) return;
-    
+
     //Remove after live demo
     options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; options["menuHide"] = true;
     saveOptions();
@@ -926,9 +934,9 @@ function resetOptions(){
 function toggleOptions(opt,ele){
     if(ele!=null)
         if(ele.className.indexOf("disabled")!=-1) return;
-    
+
 	if(opt == 'boxHide'){
-        options["hideOnLaunch"] = !options["hideOnLaunch"];   
+        options["hideOnLaunch"] = !options["hideOnLaunch"];
     }
     else if(opt == 'welcomeHide'){
         options["welcomeHide"] = !options["welcomeHide"];
@@ -938,7 +946,7 @@ function toggleOptions(opt,ele){
     }
     else if(opt == 'menuTypeToggle'){
         options["tabbedMenu"] = !options["tabbedMenu"];
-            
+
         if(navList!=null){
             if(options["tabbedMenu"]){
                 if(navList.className.indexOf("alt-nav")==-1){
@@ -948,11 +956,11 @@ function toggleOptions(opt,ele){
             else{
                 navList.className = navList.className.replaceAll(" alt-nav","");
             }
-            
+
             var tt = setTimeout(function(){ pageChange(); clearTimeout(tt);},500);
         }
     }
-    
+
     checkOptions();
     saveOptions();
 }
@@ -967,7 +975,7 @@ function loadOptions(){
         }
     }
     else trace("Local Storage not available! Unable to load options!");
-    
+
     checkOptions();
 }
 
@@ -982,19 +990,19 @@ function checkOptions(){
     document.getElementById("optionsBoxHide").checked = options["hideOnLaunch"];
     document.getElementById("optionsMenuHide").checked = !options["menuHide"];
     document.getElementById("optionsMenuType").checked = options["tabbedMenu"];
-    
+
     var optionsBtns = getElementsByClass("options-btn");
     for(var i=0;i<optionsBtns.length;i++){
         var ele = optionsBtns[i];
         if(ele.id == "closeOptionsBtn") continue;
-        
+
         if(ele.checked) btnCheck(ele.id);
         else btnUncheck(ele.id);
     }
     //trace("");
 }
 
-function btnUncheck(id){    
+function btnUncheck(id){
     var ele = document.getElementById(id);
     ele.checked = false;
     if(ele.className.indexOf("unchecked")==-1){
@@ -1009,7 +1017,7 @@ function btnCheck(id){
     var ele = document.getElementById(id);
     ele.checked = true;
     ele.className = ele.className.replaceAll("unchecked","checked");
-    
+
     if(ele.id == "optionsBoxHide") btnEnable("optionsMenuHide");
 }
 
@@ -1050,7 +1058,7 @@ function pauseVideo(){
 }
 
 function clearVideo(){
-    clearInterval(vidTimer);   
+    clearInterval(vidTimer);
 }
 
 function toggleVideo(){
@@ -1058,7 +1066,7 @@ function toggleVideo(){
         playVid(this);
         return;
     }
-        
+
     if(this.paused) playVid(this);
     else pauseVid(this);
 }
@@ -1076,10 +1084,10 @@ function toggleReflections(){
         this.className+=" active";
         originalStyles["left"] = this.style.left;
         originalStyles["width"] = this.style.width;
-        
+
         originalText = contentDiv.innerHTML;
         this.removeAttribute("style");
-        
+
         var reflectionsTxt = "";
         contentDiv.innerHTML = "Loading Reflections...";
         //get reflections via ajax
@@ -1087,13 +1095,13 @@ function toggleReflections(){
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('GET', title, false);
             xmlhttp.send();
-            
+
             var respTxt = xmlhttp.responseText.split('\n');
-            
+
             for(var i=0;i<respTxt.length;i++){
                 reflectionsTxt+= "<p>"+respTxt[i]+"</p>";
             }
-            
+
             contentDiv.innerHTML = reflectionsTxt;
         }
         catch(e){
@@ -1101,15 +1109,15 @@ function toggleReflections(){
         }
     }
     else{
-        this.className = this.className.replaceAll(" active","");    
+        this.className = this.className.replaceAll(" active","");
         contentDiv.innerHTML = originalText;
         this.style.left = originalStyles["left"];
         this.style.width = originalStyles["width"];
-        
+
     }
 }
 
-/*-----SCROLLING------*/    
+/*-----SCROLLING------*/
 var tick;
 var scrollTime = 100; //milliseconds
 var scrollDist = 6; //pixels
@@ -1118,11 +1126,11 @@ var scrollDir;
 
 function scrollAreaFire(id){
     if(!options["scrollAreaEnabled"]) return;
-    
+
 	scrollDir = id.split("scroll")[1].toLowerCase();
     tick = setInterval(beginScrolling,scrollTime);
 }
-    
+
 function beginScrolling(){
 	switch(scrollDir){
 		case "up":
@@ -1139,7 +1147,7 @@ function beginScrolling(){
 			break;
 	}
 }
-    
+
 function stopScrolling(){
     clearInterval(tick);
 }
