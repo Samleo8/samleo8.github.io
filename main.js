@@ -140,14 +140,6 @@ var gameLib = {
     ],
     "html":[
         {
-            "name":"Soaring Sheep",
-            "filename":"SoaringSheep",
-            "url":"https://samleo8.github.io/SoaringSheep/",
-            "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
-            "tags":["Arcade","Endless","Sheep","Mobile Ready","Single Button"],
-            featured: true
-        },
-        {
             "name":"Sisyphus Sheep",
             "filename":"SisyphusSheep",
             "url":"https://samleo8.github.io/SisyphusSheep/",
@@ -156,20 +148,26 @@ var gameLib = {
             featured: true
         },
         {
+            "name":"Soaring Sheep",
+            "filename":"SoaringSheep",
+            "url":"https://samleo8.github.io/SoaringSheep/",
+            "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
+            "tags":["Arcade","Endless","Sheep","Mobile Ready","Single Button"],
+            featured: true
+        },
+        {
             "name":"PixArt",
             "filename":"PixArt",
             "url":"https://samleo8.github.io/PixArt/",
             "description":"Colourful recreation of Japanese Nonogram puzzle.",
-            "tags":["Puzzle","Mobile Ready"],
-            featured: true
+            "tags":["Puzzle","Mobile Ready"]
         },
         {
             "name":"Slitherie",
             "filename":"Slitherie",
             "url":"https://samleo8.github.io/Slitherie/",
             "description":"Recreation of classic 'Snake' game with different foods and crazy levels.",
-            "tags":["Arcade"],
-            featured: true
+            "tags":["Arcade"]
         },
     ]
 }
