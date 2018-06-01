@@ -31,7 +31,7 @@
 html{
 	width:100%;
 	height:100%;
-	padding:0;	
+	padding:0;
 	margin:0;
 	font-family:"Museo300","Calibri","Arial",Sans-Serif;
 	color:#EEE;
@@ -40,7 +40,7 @@ html{
 }
 
 *, input[type="button"],input[type="submit"],input[type="reset"]{
-	font-family:"Museo300","Calibri","Arial",Sans-Serif;	
+	font-family:"Museo300","Calibri","Arial",Sans-Serif;
 }
 
 body{
@@ -64,7 +64,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .soft-border-underline{
-    padding-bottom:0px; 
+    padding-bottom:0px;
     border-bottom:1px dotted #EEE;
 }
 
@@ -93,14 +93,14 @@ h1,h2,h3,h4,h5,h6{
 .text-center{
     text-align:center;
 }
-    
+
 .hidden:not(.scrollArea){
     display:none;
 }
 
 img{
     border:0px;
-	outline:none;	
+	outline:none;
 }
 
 a{
@@ -116,11 +116,11 @@ a:hover{
 
 
 .bold-500{
-    font-family:"Museo500","Calibri","Arial",Sans-Serif;   
+    font-family:"Museo500","Calibri","Arial",Sans-Serif;
 }
 
 b, strong, .bold, .bold-700{
-    font-family:"Museo700","Calibri","Arial",Sans-Serif;   
+    font-family:"Museo700","Calibri","Arial",Sans-Serif;
 }
 
 .font-tiny{
@@ -153,15 +153,15 @@ label{
 
 h1.title{
     font-size: 300%;
-    
+
     padding-bottom:10px;
     padding-left:20px;
     padding-top:25px;
     padding-right:50px;
-    
+
     background:#EEE;
     color:#066;
-    
+
     box-shadow: 0px 5px 20px 2px rgba(50,50,50,0.8);
     /*
     border-top-right-radius:20px;
@@ -172,17 +172,17 @@ h1.title{
 .subtitle{
     margin-top:-32px;
     margin-left:15px;
-    
+
     padding-bottom:10px;
     padding-left:20px;
     padding-top:10px;
     padding-right:50px;
-    
+
     background:rgba(141,211,107,0.8);
     color:#066;
-    
+
     box-shadow: inset 0px 8px 50px -20px rgb(0,0,0);
-    
+
     /*
     border-top-right-radius:20px;
     border-bottom-right-radius:20px;
@@ -202,25 +202,25 @@ p.subtitle{
     /*box-shadow:0px 0px 20px 1px #EEE;   */
 }
 
-.pad, .pad-both{   
+.pad, .pad-both{
     margin-top:10px;
     margin-bottom:10px;
 }
 
-.pad-top{   
+.pad-top{
     margin-top:10px;
 }
 
-.pad-bottom{   
+.pad-bottom{
     margin-bottom:10px;
 }
 
 .pad-left{
-    margin-left:10px;   
+    margin-left:10px;
 }
 
 .pad-right{
-    margin-right:10px;   
+    margin-right:10px;
 }
 
 .pad-side-both{
@@ -230,11 +230,11 @@ p.subtitle{
 
 .invertedColor, .circle{
 	background:#EEE;
-	color:#066;      
+	color:#066;
 }
 
 .circle{
-	border-radius:100%;	
+	border-radius:100%;
 	position:fixed;
     box-sizing:content-box;
 	text-align:center;
@@ -263,7 +263,7 @@ p.subtitle{
     margin-left:-1%;
 }
 .split div:first-child{
-    margin-left:0;   
+    margin-left:0;
 }
 
 .split:not(.gameSplit) div:last-child, .gameSplit div div, .gameSplit a:last-child div{
@@ -271,7 +271,7 @@ p.subtitle{
 }
 
 .split2 div{
-    width:49%;   
+    width:49%;
 }
 
 .split3 div{
@@ -292,18 +292,18 @@ p.subtitle{
 	border: none;
 	background: none;
 	outline: none;
-    
+
 	cursor: pointer;
 	position: relative;
 	display: inline-block;
-	
+
     padding: 25px 80px;
     margin: 15px 30px;
 	letter-spacing: 1px;
-	
+
     font-family:"Museo300","Calibri","Arial",Sans-Serif;
 	font-weight: 700;
-    
+
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -321,7 +321,7 @@ p.subtitle{
 	position: absolute;
     text-overflow: ellipsis;
 	z-index: -1;
-    
+
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -332,12 +332,12 @@ p.subtitle{
 	overflow: hidden;
 	background:rgb(141,211,107);
 	color:rgba(0,30,30,0.8);
-	
+
 	text-align:center;
 	margin-left:4%;
 	padding-left:0;
 	padding-right:0;
-	
+
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -397,7 +397,7 @@ p.subtitle{
     -khtml-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
-    user-select: text;       
+    user-select: text;
 }
 
 .flex-container{
@@ -446,17 +446,17 @@ p.subtitle{
 /** Red downward facing ribbon **/
 .ribbon{
     margin: 3em;
-    /* IE10 Consumer Preview */ 
+    /* IE10 Consumer Preview */
     background-image: -ms-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
-    /* Mozilla Firefox */ 
+    /* Mozilla Firefox */
     background-image: -moz-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
-    /* Opera */ 
+    /* Opera */
     background-image: -o-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
-    /* Webkit (Safari/Chrome 10) */ 
+    /* Webkit (Safari/Chrome 10) */
     background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #FF0000), color-stop(1, #990000));
-    /* Webkit (Chrome 11+) */ 
+    /* Webkit (Chrome 11+) */
     background-image: -webkit-radial-gradient(center top, circle farthest-side, #FF0000 0%, #990000 100%);
-    /* W3C Markup, IE10 Release Preview */ 
+    /* W3C Markup, IE10 Release Preview */
     background-image: radial-gradient(circle farthest-side at center top, #FF0000 0%, #990000 100%);
     width: 5em;
     height: 10em;
@@ -464,7 +464,7 @@ p.subtitle{
     border-top-right-radius: .2em;
     border-top-left-radius: .2em;
     margin: auto;
-    
+
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -479,7 +479,7 @@ p.subtitle{
     height: 0;
     border-top: 2.5em solid #990000;
     border-right: 2.5em solid transparent;
-    
+
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -494,7 +494,7 @@ p.subtitle{
     height: 0;
     border-top: 2.5em solid #990000;
     border-left: 2.5em solid transparent;
-    
+
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -504,13 +504,13 @@ p.subtitle{
 /* TODO: Switch to material */
 @font-face {
     font-family: 'icomoon';
-    
-    src:url('Fonts/icomoon.eot');
-	src:url('fonts/icomoon.svg') format('svg');
-    src:url('Fonts/icomoon.eot') format('embedded-opentype'),
-		url('Fonts/icomoon.woff') format('woff'),
-		url('Fonts/icomoon.ttf') format('truetype');
-    
+
+    src:url('Fonts/icomoon/icomoon.eot');
+	src:url('fonts/icomoon/icomoon.svg') format('svg');
+    src:url('Fonts/icomoon/icomoon.eot') format('embedded-opentype'),
+		url('Fonts/icomoon/icomoon.woff') format('woff'),
+		url('Fonts/icomoon/icomoon.ttf') format('truetype');
+
     font-weight: normal;
 	font-style: normal;
 }
@@ -564,6 +564,16 @@ p.subtitle{
 	content: "\e611";
 }
 
+.icon-android:before {
+  content: "\e900";
+}
+.icon-apple:before {
+  content: "\e901";
+}
+.icon-web:before {
+  content: "\e902";
+}
+
 /*-------NAVIGATION GLOBAL--------*/
 #navList{
 	position:fixed;
@@ -575,14 +585,14 @@ p.subtitle{
     height:550px;
     width:550px;
     transition:all 0.5s ease;
-    
+
 }
 
 #navList.disappear{
     width:225px;
     height:225px;
     transition:all 0.3s ease;
-    
+
     top:-55px;
     right: -50px;
 }
@@ -600,10 +610,10 @@ p.subtitle{
 #navList.disappear .navCircle:not(#navCircle1){
     transition:all 0.3s ease;
     transition-delay:0s;
-    
+
     top:-50%;
     right:-50%;
-    
+
     opacity:0;
 }
 
@@ -613,7 +623,7 @@ p.subtitle{
 
 #navList.disappear #navCircle1{
     transition:all 0.3s ease;
-    
+
     opacity:1;
     font-size:180%;
     margin:0;
@@ -627,7 +637,7 @@ p.subtitle{
 }
 
 .navCircle:hover{
-    background-color:rgb(238,238,238); 
+    background-color:rgb(238,238,238);
 }
 
 .navCircle.alt-colour{
@@ -643,7 +653,7 @@ p.subtitle{
     font-size: 90%;
 }
 
-#navCircle1{    
+#navCircle1{
     height:225px;
     width:225px;
     top:0; bottom:0; left: 0; right: 0; margin: auto;
@@ -654,7 +664,7 @@ p.subtitle{
 
 #navCircle2{
     height:255px;
-    width:255px; 
+    width:255px;
     top: 5px;
     right: 0px;
     font-size:150%;
@@ -667,7 +677,7 @@ p.subtitle{
     right: 95px;
     font-size: 130%;
 }
-   
+
 #navCircle4{
     height: 140px;
     width: 140px;
@@ -787,14 +797,14 @@ p.subtitle{
         z-index: 1000;
         text-align: center;
     }
-    
+
     #mainCircleHome span{
         width:55%;
         font-size:150%;
         bottom: 0px;
         left: 22.5%;
     }
-    
+
     #mainCircleHome span h1, #mainCircleHome span p{
         margin-top:10px;
         margin-bottom:20px;
@@ -841,7 +851,7 @@ p.subtitle{
 
 #navListHome ul a li span.center{
     height:80%;
-}   
+}
 
 #navListHome ul a{
     text-decoration:none;
@@ -855,13 +865,13 @@ p.subtitle{
 }
 
 #navListHome ul a:hover li{
-    opacity:1;   
+    opacity:1;
     color:orange;
 }
 
 #navListHome ul li{
 	padding-top:2%;
-	padding-bottom:1%;	
+	padding-bottom:1%;
 }
 
 /* Mobile Responsiveness */
@@ -887,7 +897,7 @@ p.subtitle{
         -webkit-flex-flow: row wrap;
         justify-content: space-around;
     }
-    
+
     #navListHome ul a{
         flex:1 100%;
         width:100px;
@@ -895,14 +905,14 @@ p.subtitle{
         padding: 10px 0px;
         text-decoration:none;
     }
-    
+
     #navListHome ul a li:before{
         content: url(Images/homeBullet.png);
         position: absolute;
         left:10px;
         top:0px;
     }
-    
+
     #navListHome ul a li:after{
         content: url(Images/homeBullet.png);
         transform: scaleX(-1);
@@ -967,7 +977,7 @@ p.subtitle{
 .content-section-split{
     /* Flex box container inherit */
     text-align: center;
-    
+
     list-style: none;
 
     display: -webkit-box;
@@ -987,7 +997,7 @@ p.subtitle{
 .table-of-contents, .sub-table-of-contents {
     /* Flex box container inherit */
     text-align: center;
-    
+
     list-style: none;
 
     display: -webkit-box;
@@ -1004,14 +1014,14 @@ p.subtitle{
     position: relative;
     background:#EEE;
     color:#066;
-    cursor:pointer; 
+    cursor:pointer;
     padding: 0px 15px;
     height:50px;
     line-height: 50px;
-    
+
     width:200px;
     flex: 1 190px;
-    
+
     transition: 0.3s ease;
 }
 
@@ -1031,7 +1041,7 @@ p.subtitle{
     z-index: 1;
     width:0%;
     height:100%;
-    
+
 	background:rgba(84, 255, 0, 0.25);
 }
 
@@ -1046,20 +1056,20 @@ p.subtitle{
     font-size:14px;
     text-align: center;
     cursor:pointer;
-    
+
     width:65px;
     margin-left:10px;
     margin-right: 0px;
     padding:5px 10px;
-    
+
     text-transform: capitalize;
     float: right;
-    
+
     background:#ffb300;
     color: #000;
-    
+
     transition: all 0.3s ease;
-    
+
     /*Disable Selection*/
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1096,7 +1106,7 @@ table.achievements-table{
     margin-left: 30px;
     border-collapse: collapse;
     margin-bottom: 50px;
-    
+
     max-width: 90%;
 }
 
@@ -1114,7 +1124,7 @@ table.achievements-table tr th, table.achievements-table tr td{
     border:1px solid #066;
     background-color:rgb(238,238,238);
     color:#066;
-    
+
     white-space: normal;
 }
 
@@ -1147,21 +1157,34 @@ table.achievements-table td div{
     padding: 10px;
     flex:1 350px;
     margin-top:10px;
-    
+
     transition: all 0.3s ease;
-    
+
     text-align: center;
 }
 
 @media all and (min-width: 1145px) {
-    .gameScreenshotHolder .gameHolder.featured, , .photoGallery .photoHolder.featured{
+    .gameScreenshotHolder .gameHolder.featured, .photoGallery .photoHolder.featured{
         flex:1 100%;
     }
 }
 
-.gameScreenshotHolder .gameHolder:hover, .photoGallery .photoHolder:not(.fullView):hover{
+.gameScreenshotHolder:not(.gameMobileScreenshotHolder) .gameHolder:hover, .photoGallery .photoHolder:not(.fullView):hover, .gameMobileScreenshotHolder .gameHolder a:hover{
     cursor: pointer;
     background: rgba(240,240,240,0.1);
+}
+
+/* Mobile Screenshot Holder*/
+.gameMobileScreenshotHolder .gameIconHolder{
+	margin-bottom:20px;
+}
+
+.gameMobileScreenshotHolder .gameHolder a{
+	font-size: 40px;
+	padding:10px;
+	margin-left:5px;
+	margin-right:5px;
+	border-radius: 10px;
 }
 
 .gameHolder img, .photoGallery .photoHolder:not(.fullView) img{
@@ -1187,23 +1210,23 @@ table.achievements-table td div{
 }
 
 .photoGallery div.photoDesc{
-    font-size: 100%;   
+    font-size: 100%;
 }
 
 .photoGallery .photoHolder.fullView{
     transition: all 0.3s ease;
-    
+
     cursor:pointer;
-    
+
     z-index: 10000;
-    
+
     position: fixed;
     top:0;
     bottom: 0;
     left:0;
     right:0;
     margin: auto;
-    
+
     background: rgba(0,0,0,0.9);
 }
 
@@ -1215,11 +1238,11 @@ table.achievements-table td div{
     padding:5px 10px 5px 10px;
     margin-bottom:12px;
     margin-right:10px;
-    
+
     /* Default */
     background: rgb(58, 148, 14);
     color: #EEE;
-    
+
     /*Disable Selection*/
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1237,6 +1260,11 @@ table.achievements-table td div{
 .tag.html{
     background:#e34f26;
     color: #EEE;
+}
+
+.tag.mobile{
+    background: #66bb6a;
+    color: #000;
 }
 
 .tag.shooting{
@@ -1316,15 +1344,15 @@ table.achievements-table td div{
     margin:0px;
     margin-bottom:2px;
     padding-left:20px;
-    
+
     border-left: 5px rgba(255,255,255,0.8) solid;
-    
+
     color:#066;
     background:rgba(141,211,107,0.8);
-    
+
     transition: all 0.3s ease;
     cursor:pointer;
-    
+
     /* DISABLE SELECT */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1336,11 +1364,11 @@ table.achievements-table td div{
 
 .accordion-title:hover{
     width:95%;
-    
+
     border-left: 12px rgba(255,255,255,1) solid;
-    
+
     background:rgba(141,211,107,1);
-    
+
     z-index: 10000;
 }
 
@@ -1349,9 +1377,9 @@ table.achievements-table td div{
 
     color:#066;
     background: #EEE;
-    
+
     z-index: 0;
-    
+
     transition: all 0.7s ease;
 }
 
@@ -1368,7 +1396,7 @@ table.achievements-table td div{
 .open .accordion-content{
     padding-top:5px;
     padding-bottom:10px;
-    
+
     height:auto;
     opacity: 1;
 }
@@ -1421,14 +1449,14 @@ table.achievements-table td div{
 	margin:auto;
     transition:all 0.6s ease;
     z-index:9000;
-    
+
     background:#EEE;
 
-    /* Glow effect */ 
+    /* Glow effect */
 	-moz-box-shadow: 0px 0px 100px 8px #EEE;
 	-webkit-box-shadow: 0px 0px 100px 8px #EEE;
-	box-shadow: 0px 0px 100px 8px #EEE;	
-    
+	box-shadow: 0px 0px 100px 8px #EEE;
+
     /* Disable Highlight Selection */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1455,19 +1483,19 @@ table.achievements-table td div{
 
 #optionsBoxHeader div.optionsTitle h1{
 	margin-bottom:0;
-    font-size:36px;    
+    font-size:36px;
 }
 
 #optionsBoxHeader .optionsIconsHolder{
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 30px;
-    
+
     width: 70px;
     height: 40px;
     margin-top: 20px;
     position: relative;
-    
+
     display: inline-flex;
     float: right;
 }
@@ -1479,10 +1507,10 @@ table.achievements-table td div{
 #optionsBoxHeader .optionsIcons span{
     transition: all 0.3s ease;
     color:#066;
-    
+
     position: absolute;
     bottom: 0px;
-    
+
     text-align: center;
 }
 
@@ -1512,7 +1540,7 @@ table.achievements-table td div{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    
+
     margin-top:-15px;
 }
 
@@ -1521,35 +1549,35 @@ table.achievements-table td div{
     position:relative;
     transition:all 0.3s ease;
     display:inline-block;
-    
+
     font-size:105%;
     text-align:center;
-    
+
     margin-top:15px;
     margin-left: 10px;
     margin-right: 10px;
-    
+
     flex: 1 180px;
     width:180px;
     height:55px;
     line-height:55px; /* Vertical centering */
-    
-    padding-right:10px; 
+
+    padding-right:10px;
     padding-left:65px;
-    
+
     /*
     padding:3%;
     padding-left:10%;
     width:35%;
     height:5%;
-    
+
     margin-left:0.5%;
     margin-right:1%;
     */
-    
+
     color:#066;
     background:rgb(141,211,107);
-    
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1571,9 +1599,9 @@ table.achievements-table td div{
     top:0;
     left:0;
 	width:55px;
-    
+
     line-height:55px; /* Has to be slightly higher for proper centering */
-    
+
     background:rgba(0,0,0,0.10);
 }
 
@@ -1590,18 +1618,18 @@ table.achievements-table td div{
 #closeOptionsBtn{
     font-family:"Museo300","Calibri","Arial",Sans-Serif;
     border:3px solid #066;
-    
+
     /*
     For the close options button, must have different styling for buttons to look right...
     - Flex must have flex-basis equal to the width
     - Height and width must be 6px smaller because of 3px borders
-    */ 
+    */
     flex: 1 249px;
     line-height: 49px;
     width:249px;
     height:49px;
     padding: 0;
-    
+
     background:#EEE;
     color:#066;
     cursor:pointer;
@@ -1619,26 +1647,26 @@ table.achievements-table td div{
 /*----OPTIONS BOX MOBILE SUPPORT----*/
 @media all and (max-width: 1115px){
     /* When the buttons begin to become a single column, the closeOptionsBtn must be flushed to the bottom */
-    
+
     #optionsBox{
         height:370px;
     }
-    
+
     #optionsBoxContent{
         margin-top: -10px;
     }
-    
+
     #optionsBoxContent #closeOptionsBtn{
         order: 1;
     }
 }
 
-@media all and (max-width:510px){    
+@media all and (max-width:510px){
     #optionsBoxContent .options-btn{
         font-size: 12px;
     }
-    
+
     #optionsBoxContent #closeOptionsBtn{
         order: 1;
-    }    
+    }
 }

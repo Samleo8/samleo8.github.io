@@ -168,7 +168,20 @@ var gameLib = {
             "url":"https://samleo8.github.io/Slitherie/",
             "description":"Recreation of classic 'Snake' game with different foods and crazy levels.",
             "tags":["Arcade"]
-        },
+        }
+    ],
+    "mobile":[
+        {
+            "name":"Soaring Sheep [BETA]",
+            "filename":"SoaringSheep",
+            "url":{
+                    "android":"https://play.google.com/store/apps/details?id=io.samleo.SoaringSheep",
+                    "web":"https://samleo8.github.io/SoaringSheep/"
+            },
+            "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
+            "tags":["Arcade","Endless","Sheep","Mobile Ready","Single Button"],
+            featured: true
+        }
     ]
 }
 
@@ -594,6 +607,33 @@ function pageInit(){
             }
 
             gameScreenshotHolder[1].innerHTML = out;
+
+            out = "";
+            //Finally, Mobile
+            for(i=0;i<gameLib["mobile"].length;i++){
+                var gameInfo = gameLib["mobile"][i];
+
+                out+="<div class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                    out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
+                    out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                    out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                    out+="<div class='gameIconHolder'>";
+                        for(j in gameInfo["url"]){
+                            out+="<a href='"+gameInfo["url"][j]+"' class='icon-"+j.toString()+"' target='_blank'></a>"
+                        }
+                    out+="</div>";
+                    out+="<div class='gameTagHolder'>";
+                        out+="<div class='tag mobile'>Mobile</div>";
+                    for(j=0;j<gameInfo["tags"].length;j++){
+                        var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+
+                        out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
+                    }
+                    out+="</div>";
+                out+="</a>";
+            }
+
+            gameScreenshotHolder[2].innerHTML = out;
         }
         else{ //for research/other page which include these games
 
