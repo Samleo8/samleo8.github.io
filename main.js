@@ -179,7 +179,7 @@ var gameLib = {
                     "web":"https://samleo8.github.io/SoaringSheep/"
             },
             "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
-            "tags":["Arcade","Endless","Sheep","Mobile Ready","Single Button"],
+            "tags":["Arcade","Endless","Sheep","Single Button"],
             featured: true
         }
     ]
