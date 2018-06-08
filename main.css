@@ -546,6 +546,10 @@ p.subtitle{
 	content: "\e609";
 }
 
+#navList.alt-nav .icon-web:before {
+  content: "\e902";
+}
+
 .options-btn.unchecked:before, .icon-unchecked:before {
     font-family: 'icomoon';
 	content: "\e606";
@@ -569,9 +573,6 @@ p.subtitle{
 }
 .icon-apple:before {
   content: "\e901";
-}
-.icon-web:before {
-  content: "\e902";
 }
 
 /*-------NAVIGATION GLOBAL--------*/

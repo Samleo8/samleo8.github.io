@@ -35,9 +35,9 @@ var options = {
     "scrollAreaEnabled":true,
     "scrollAreaHidden":false,
     "eyeCursorEnabled":true,
-    "hideOnLaunch":false,
+    "hideOnLaunch":true,
     "welcomeHide":false,
-    "menuHide":false,
+    "menuHide":true,
     "tabbedMenu":false
 }
 
