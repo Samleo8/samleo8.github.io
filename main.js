@@ -172,7 +172,7 @@ var gameLib = {
     ],
     "mobile":[
         {
-            "name":"Soaring Sheep [BETA]",
+            "name":"Soaring Sheep",
             "filename":"SoaringSheep",
             "url":{
                     "android":"https://play.google.com/store/apps/details?id=io.samleo8.SoaringSheep",
@@ -564,17 +564,22 @@ function pageInit(){
 
     if(gameScreenshotHolder!=null && gameScreenshotHolder!=undefined && gameScreenshotHolder.length>0){
         if(gameScreenshotHolder[0].className.indexOf("games-main")!=-1){ //for main game page
-            out="";
-            //Starting with Flash first
-            for(i=0;i<gameLib["flash"].length;i++){
-                var gameInfo = gameLib["flash"][i];
+            out = "";
+            //First Mobile
+            for(i=0;i<gameLib["mobile"].length;i++){
+                var gameInfo = gameLib["mobile"][i];
 
-                out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                out+="<div class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
                     out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                     out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                     out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
+                    out+="<div class='gameIconHolder'>";
+                        for(j in gameInfo["url"]){
+                            out+="<a href='"+gameInfo["url"][j]+"' class='icon-"+j.toString()+"' target='_blank'></a>"
+                        }
+                    out+="</div>";
                     out+="<div class='gameTagHolder'>";
-                        out+="<div class='tag flash'>Flash</div>";
+                        out+="<div class='tag mobile'>Mobile</div>";
                     for(j=0;j<gameInfo["tags"].length;j++){
                         var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
 
@@ -608,22 +613,17 @@ function pageInit(){
 
             gameScreenshotHolder[1].innerHTML = out;
 
-            out = "";
-            //Finally, Mobile
-            for(i=0;i<gameLib["mobile"].length;i++){
-                var gameInfo = gameLib["mobile"][i];
+            out="";
+            //Then Flash
+            for(i=0;i<gameLib["flash"].length;i++){
+                var gameInfo = gameLib["flash"][i];
 
-                out+="<div class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                out+="<a href='playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
                     out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
                     out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
                     out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
-                    out+="<div class='gameIconHolder'>";
-                        for(j in gameInfo["url"]){
-                            out+="<a href='"+gameInfo["url"][j]+"' class='icon-"+j.toString()+"' target='_blank'></a>"
-                        }
-                    out+="</div>";
                     out+="<div class='gameTagHolder'>";
-                        out+="<div class='tag mobile'>Mobile</div>";
+                        out+="<div class='tag flash'>Flash</div>";
                     for(j=0;j<gameInfo["tags"].length;j++){
                         var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
 
@@ -638,31 +638,8 @@ function pageInit(){
         else{ //for research/other page which include these games
 
             //Look for the project game in both HTML and Flash games
-            //Starting with Flash first
-            for(i=0;i<gameLib["flash"].length;i++){
-                var gameInfo = gameLib["flash"][i];
 
-                if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
-                    out = "";
-
-                    out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
-                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
-                        out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
-                        out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
-                        out+="</div>";
-                    out+="</a>";
-
-                    if(outEle[gameInfo["project"].toString()] != null &&
-                    outEle[gameInfo["project"].toString()] != undefined) {
-                        outEle[gameInfo["project"].toString()] += out;
-                    }
-                    else{
-                        outEle[gameInfo["project"].toString()] = out;
-                    }
-                }
-            }
-
-            //Then HTML
+            //HTML First
             for(i=0;i<gameLib["html"].length;i++){
                 var gameInfo = gameLib["html"][i];
 
@@ -679,6 +656,30 @@ function pageInit(){
 
                             out+="<div class='tag "+clsNm+"'>"+gameInfo["tags"][j]+"</div>";
                         }
+                        out+="</div>";
+                    out+="</a>";
+
+                    if(outEle[gameInfo["project"].toString()] != null &&
+                    outEle[gameInfo["project"].toString()] != undefined) {
+                        outEle[gameInfo["project"].toString()] += out;
+                    }
+                    else{
+                        outEle[gameInfo["project"].toString()] = out;
+                    }
+                }
+            }
+
+            //Then Flash
+            for(i=0;i<gameLib["flash"].length;i++){
+                var gameInfo = gameLib["flash"][i];
+
+                if(gameInfo["project"]!=null && gameInfo["project"]!=undefined && gameInfo["project"]!=false && gameInfo["project"]!="false" && gameInfo["project"]!="none"){
+                    out = "";
+
+                    out+="<a href='../games/playFlash.html?name="+gameInfo["filename"]+"' class='gameHolder"+((gameInfo["featured"] == true)?" featured":"")+"'>";
+                        out+="<img src='../Images/GameScreenshots/"+gameInfo["filename"]+".png' alt='"+gameInfo["name"]+"'>";
+                        out+="<div class='gameTitle'>"+gameInfo["name"]+"</div>";
+                        out+="<div class='gameDesc'>"+gameInfo["description"]+"</div>";
                         out+="</div>";
                     out+="</a>";
 

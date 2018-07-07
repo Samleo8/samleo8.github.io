@@ -546,7 +546,7 @@ p.subtitle{
 	content: "\e609";
 }
 
-#navList.alt-nav .icon-web:before {
+#navList.alt-nav .icon-web:before, .gameMobileScreenshotHolder .icon-web:before{
   content: "\e902";
 }
 
@@ -567,7 +567,6 @@ p.subtitle{
 .icon-keyboard:before {
 	content: "\e611";
 }
-
 .icon-android:before {
   content: "\e900";
 }
