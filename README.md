@@ -1,10 +1,11 @@
 # samleo8.github.io
 
-Personal Website containing previous programming works worthy to be published.
+Personal portfolio [website](https://samleo8.github.io) containing previous [web](https://samleo8.github.io/web) and [game](https://samleo8.github.io/games) programming, [research](https://samleo8.github.io/research) and [miscellaneous](https://samleo8.github.io/misc) works worthy to be published.
 
+## Prominent works:
 
-Some works:
+Soaring Sheep Game: [Web/Mobile](https://samleo.github.io/SisyphusSheep/) | [Android Store](https://play.google.com/store/apps/details?id=io.samleo8.SoaringSheep&hl=en)
 
-[Sisyphus Sheep Game] https://samleo.github.io/SisyphusSheep/ (Mobile-ready)
+[Sisyphus Sheep Game](https://samleo.github.io/SisyphusSheep/) (Mobile-ready)
 
-[Eye-tracking website]https://samleo.github.io/eye-tracking-website/ (Web-only)
+[Eye-tracking website](https://samleo.github.io/eye-tracking-website/) (Web-only)
