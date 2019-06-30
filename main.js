@@ -70,8 +70,8 @@ var navCirclesOrder = [
         "icon": "icon-web"
     },
     {
-        "name": "Misc",
-        "href": "../misc/index.html",
+        "name": "Art",
+        "href": "../art/index.html",
         "icon": "icon-misc"
     }
 ];
