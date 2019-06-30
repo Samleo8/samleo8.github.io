@@ -1,6 +1,6 @@
 # samleo8.github.io
 
-Personal portfolio [website](https://samleo8.github.io) containing previous [web](https://samleo8.github.io/web) and [game](https://samleo8.github.io/games) programming, [research](https://samleo8.github.io/research) and [miscellaneous](https://samleo8.github.io/misc) works worthy to be published.
+Personal portfolio [website](https://samleo8.github.io) containing previous [web](https://samleo8.github.io/web) and [game](https://samleo8.github.io/games) programming, [research](https://samleo8.github.io/research) and [art](https://samleo8.github.io/art) works worthy to be published.
 
 ## Prominent works:
 
