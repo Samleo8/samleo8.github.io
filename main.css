@@ -573,6 +573,9 @@ p.subtitle{
 .icon-apple:before {
   content: "\e901";
 }
+.icon-telegram:before {
+  content: "\e903";
+}
 
 /*-------NAVIGATION GLOBAL--------*/
 #navList{

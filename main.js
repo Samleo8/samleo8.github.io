@@ -176,7 +176,8 @@ var gameLib = {
             "filename":"SoaringSheep",
             "url":{
                     "android":"https://play.google.com/store/apps/details?id=io.samleo8.SoaringSheep",
-                    "web":"https://samleo8.github.io/SoaringSheep/"
+                    "web":"https://samleo8.github.io/SoaringSheep/",
+                    "telegram":"https://telegram.me/SamStudiosBot?game=SoaringSheep"					
             },
             "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags":["Arcade","Endless","Sheep","Single Button"],
