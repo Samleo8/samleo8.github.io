@@ -182,6 +182,18 @@ var gameLib = {
             "description":"Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags":["Arcade","Endless","Sheep","Single Button"],
             featured: true
+        },
+        {
+            "name":"Sisyphus Sheep",
+            "filename":"SisyphusSheep",
+            "url":{
+                    "android":"https://play.google.com/store/apps/details?id=io.samleo8.SisyphusSheep",
+                    "web":"https://samleo8.github.io/SisyphusSheep/",
+                    "telegram":"https://telegram.me/SamStudiosBot?game=SisyphusSheep"					
+            },
+            "description":"Run to the end of the treadmill. Avoid the spikes. Score points. Repeat.",
+            "tags":["Arcade","Endless","Sheep", "Treadmill"],
+            featured: true
         }
     ]
 }
