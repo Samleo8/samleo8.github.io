@@ -852,6 +852,10 @@ p.subtitle{
     list-style-image:url(Images/homeBullet.png);
 }
 
+#navListHome li.github{
+    list-style-image: url(Images/github_icon.png);
+}
+
 #navListHome ul a li span.center{
     height:80%;
 }
