@@ -286,7 +286,7 @@ function pageInit(){
         var out = "";
         var titleCmp = gamesTitle[i].replaceAll(" ","");
         //out+="<span>";
-            out+="<img src ='../Images/GameScreenshots/"+titleCmp+".png' />";
+            out+="<img src ='../images/GameScreenshots/"+titleCmp+".png' />";
         //out+="</span>";
         out+="<div class='gameTitle'>"+gamesTitle[i]+"</div>";
         gameDiv.innerHTML = out;

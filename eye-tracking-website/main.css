@@ -2,24 +2,24 @@
 /* CSS Document */
 @font-face{
 	font-family:"Museo300";
-	src:url(Fonts/Museo300.otf);
+	src:url(fonts/Museo300.otf);
 }
 @font-face{
 	font-family:"Museo500";
-	src:url(Fonts/Museo500.otf);
+	src:url(fonts/Museo500.otf);
 }
 @font-face{
 	font-family:"Museo700";
-	src:url(Fonts/Museo700.otf);
+	src:url(fonts/Museo700.otf);
 }
 @font-face{
 	font-family:"Museo900";
-	src:url(Fonts/Museo900.otf);
+	src:url(fonts/Museo900.otf);
 }
 
 @font-face{
 	font-family:"Sansation";
-	src:url(Fonts/SansationLight.ttf);
+	src:url(fonts/SansationLight.ttf);
 }
 /*------------ERRORS-----------*/
 #noScriptShow, #mobileShow, #mobileShowCircle{
@@ -324,11 +324,11 @@ label{
 		url('fonts/icomoon.woff?jo5ey2') format('woff'),
 		url('fonts/icomoon.ttf?jo5ey2') format('truetype');
     */
-    src:url('Fonts/icomoon.eot');
+    src:url('fonts/icomoon.eot');
 	src:url('fonts/icomoon.svg') format('svg');
-    src:url('Fonts/icomoon.eot') format('embedded-opentype'),
-		url('Fonts/icomoon.woff') format('woff'),
-		url('Fonts/icomoon.ttf') format('truetype');
+    src:url('fonts/icomoon.eot') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype');
     
     font-weight: normal;
 	font-style: normal;
@@ -626,7 +626,7 @@ label{
 	top:0;
 	bottom:0;
 	/**/
-	list-style-image:url(Images/homeBullet.png);
+	list-style-image:url(images/homeBullet.png);
 }
 
 #navListHome ul a li span.center{
@@ -1211,21 +1211,21 @@ figcaption {
 
 #scrollUp{
 	top:0;
-    cursor:url(Images/arrow-up.png) 15 15, n-resize;
+    cursor:url(images/arrow-up.png) 15 15, n-resize;
 }
 
 #scrollDown{
 	height:13%;
 	bottom:0;
-	cursor:url(Images/arrow-down.png) 15 15, s-resize;
+	cursor:url(images/arrow-down.png) 15 15, s-resize;
 }	
 
 #scrollLeft{
 	left:0;	
-    cursor:url(Images/arrow-left.png) 15 15, w-resize;
+    cursor:url(images/arrow-left.png) 15 15, w-resize;
 }
 
 #scrollRight{
 	right:0;
-    cursor:url(Images/arrow-right.png) 15 15, e-resize;
+    cursor:url(images/arrow-right.png) 15 15, e-resize;
 }	

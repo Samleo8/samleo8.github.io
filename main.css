@@ -2,24 +2,24 @@
 /* CSS Document */
 @font-face{
 	font-family:"Museo300";
-	src:url(Fonts/Museo300.otf);
+	src:url(fonts/Museo300.otf);
 }
 @font-face{
 	font-family:"Museo500";
-	src:url(Fonts/Museo500.otf);
+	src:url(fonts/Museo500.otf);
 }
 @font-face{
 	font-family:"Museo700";
-	src:url(Fonts/Museo700.otf);
+	src:url(fonts/Museo700.otf);
 }
 @font-face{
 	font-family:"Museo900";
-	src:url(Fonts/Museo900.otf);
+	src:url(fonts/Museo900.otf);
 }
 
 @font-face{
 	font-family:"Sansation";
-	src:url(Fonts/SansationLight.ttf);
+	src:url(fonts/SansationLight.ttf);
 }
 
 /*------------ERRORS-----------*/
@@ -505,11 +505,11 @@ p.subtitle{
 @font-face {
     font-family: 'icomoon';
 
-    src:url('Fonts/icomoon/icomoon.eot');
+    src:url('fonts/icomoon/icomoon.eot');
 	src:url('fonts/icomoon/icomoon.svg') format('svg');
-    src:url('Fonts/icomoon/icomoon.eot') format('embedded-opentype'),
-		url('Fonts/icomoon/icomoon.woff') format('woff'),
-		url('Fonts/icomoon/icomoon.ttf') format('truetype');
+    src:url('fonts/icomoon/icomoon.eot') format('embedded-opentype'),
+		url('fonts/icomoon/icomoon.woff') format('woff'),
+		url('fonts/icomoon/icomoon.ttf') format('truetype');
 
     font-weight: normal;
 	font-style: normal;
@@ -849,11 +849,11 @@ p.subtitle{
 }
 
 #navListHome ul{
-    list-style-image:url(Images/homeBullet.png);
+    list-style-image:url(images/homeBullet.png);
 }
 
 #navListHome li.github{
-    list-style-image: url(Images/github_icon.png);
+    list-style-image: url(images/github_icon.png);
 }
 
 #navListHome ul a li span.center{
@@ -914,14 +914,14 @@ p.subtitle{
     }
 
     #navListHome ul a li:before{
-        content: url(Images/homeBullet.png);
+        content: url(images/homeBullet.png);
         position: absolute;
         left:10px;
         top:0px;
     }
 
     #navListHome ul a li:after{
-        content: url(Images/homeBullet.png);
+        content: url(images/homeBullet.png);
         transform: scaleX(-1);
         position: absolute;
         right:10px;
@@ -961,14 +961,14 @@ p.subtitle{
     }
 
     .ismobile #navListHome ul a li:before{
-        content: url(Images/homeBullet.png);
+        content: url(images/homeBullet.png);
         position: absolute;
         left:10px;
         top:0px;
     }
 
     .ismobile #navListHome ul a li:after{
-        content: url(Images/homeBullet.png);
+        content: url(images/homeBullet.png);
         transform: scaleX(-1);
         position: absolute;
         right:10px;

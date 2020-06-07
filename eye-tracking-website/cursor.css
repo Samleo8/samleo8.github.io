@@ -1,5 +1,5 @@
 .hidden-cursor,#main-content, #mainCircleHome, #optionsBox{
-    cursor:url(Images/dot.png) 4 3.5,crosshair;
+    cursor:url(images/dot.png) 4 3.5,crosshair;
 }
 
 .cursor{
