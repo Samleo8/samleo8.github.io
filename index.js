@@ -516,7 +516,7 @@ function pageInit() {
     var contentTitles = document.querySelectorAll(".content-section h1");
     for (i = 0; i < contentTitles.length; i++) {
         tableOfContents[i] = JSON.parse(JSON.stringify(contentTitles[i].innerText.split("\n")[0]));
-    };
+    }
 
     var TCEle = document.getElementsByClassName("table-of-contents")[0];
     if (TCEle != null && TCEle != undefined) {
@@ -569,7 +569,7 @@ function pageInit() {
                 var gameInfo = gameLib["mobile"][i];
 
                 out += "<div class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                out += "<img src='../Images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
                 out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                 out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                 out += "<div class='gameIconHolder'>";
@@ -596,7 +596,7 @@ function pageInit() {
                 var gameInfo = gameLib["html"][i];
 
                 out += "<a href='" + gameInfo["url"] + "' target='_blank' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                out += "<img src='../Images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
                 out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                 out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                 out += "<div class='gameTagHolder'>";
@@ -618,7 +618,7 @@ function pageInit() {
                 var gameInfo = gameLib["flash"][i];
 
                 out += "<a href='playFlash.html?name=" + gameInfo["filename"] + "' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                out += "<img src='../Images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
                 out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                 out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                 out += "<div class='gameTagHolder'>";
@@ -644,7 +644,7 @@ function pageInit() {
                 if (gameInfo["project"] != null && gameInfo["project"] != undefined && gameInfo["project"] != false && gameInfo["project"] != "false" && gameInfo["project"] != "none") {
                     out = "";
                     out += "<a href='" + gameInfo["url"] + "' target='_blank' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                    out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                    out += "<img src='../Images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
                     out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                     out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                     out += "<div class='gameTagHolder'>";
@@ -674,7 +674,7 @@ function pageInit() {
                     out = "";
 
                     out += "<a href='../games/playFlash.html?name=" + gameInfo["filename"] + "' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                    out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                    out += "<img src='../Images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
                     out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                     out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                     out += "</div>";
@@ -714,7 +714,7 @@ function pageInit() {
             out = "";
 
             out += "<div class='photoHolder" + ((photoInfo["featured"] == true) ? " featured" : "") + "'>";
-            out += "<img src='../images/gallery/" + j.toString() + "/" + photoInfo["filename"] + "' alt='" + photoInfo["description"] + "'>";
+            out += "<img src='../Images/gallery/" + j.toString() + "/" + photoInfo["filename"] + "' alt='" + photoInfo["description"] + "'>";
             out += "<div class='photoDesc'>" + photoInfo["description"] + "</div>";
             out += "</div>";
             out += "</a>";
