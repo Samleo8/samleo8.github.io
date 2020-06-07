@@ -108,7 +108,6 @@
         <p>
             From Spring 2020 to mid-Summer 2020, I undertook this small research project under Carnegie Mellon University's <a href="https://www.ri.cmu.edu/robotics-groups/human-and-robot-partners-lab/">Human And Robot Partners (HARP) Lab</a>. Here, I briefly evaluated various state-of-the-art methods for multi-view 3D human pose estimation, and sought to adapt the most suitable one for use on a dataset which the lab had collected prior. The intended end-goal of the project was to automatically and accurately generate ground-truth data for this dataset, for use as part of a larger project by the HARP Lab. 
         </p>
-
         <p>
             After initial literature review, I found the 
             <a href="https://github.com/karfly/learnable-triangulation-pytorch" target="_blank">
@@ -122,32 +121,50 @@
             </a> at the time (April 2019) based on Average MPJPE. It uses an interesting and novel multi-stage approach which involves unprojecting heatmaps into 3D in order to increase accuracy.
         </p>
 
+        <h2 class="less-margin-bottom">
+            <span class="soft-border-underline">Testing on CMU dataset (using network pretrained on H36M)</span>
+        </h2>
         <p>
             As the writers of the paper only provided the code for testing and training on the 
-            <a href="http://vision.imar.ro/human3.6m/" target="_blank">Human 3.6M dataset</a> 
+            <a href="http://vision.imar.ro/human3.6m/" target="_blank">Human 3.6M dataset (H36M)</a> 
             (and not the <a href="domedb.perception.cs.cmu.edu" target="_blank">CMU Panoptic Studio dataset</a>), 
             the main bulk of the project involved porting over the code for evaluation and training on the CMU Panoptic Studio
             dataset. This was no easy task as it not only required an understanding of the code base, but also the algorithm itself. In fact, multiple members of the computer vision community had requested the authors of the paper to provide code which would allow for testing and evaluation of the CMU dataset, but there was no code provided.
         </p>
 
         <p>Eventually, I was able to successfully test Iskakov et. al.'s <a href="#harp-volumetric-references-1">[1]</a>
-            volumetric triangulation algorithm on the CMU Panoptic Studio dataset, using pretrained weights from the
+            volumetric triangulation algorithm on the CMU Panoptic Studio dataset, using pretrained weights trained on the
             Human3.6M dataset. Evaluation results are shown on my Github repository
-            <a href="https://github.com/Samleo8/learnable-triangulation-pytorch/blob/master/CMU_EVAL_RESULTS.md" target="_blank"> here</a>, with some images provided below.
-
+            <a href="https://github.com/Samleo8/learnable-triangulation-pytorch/blob/master/CMU_EVAL_RESULTS.md" target="_blank"> here</a>, with some images provided below. 
             <div id="gallery-harp-volumetric-1" class="photoGallery flex-container gallery-harp-volumetric-1">
-
             </div>
         </p>
 
-        <p>This was a semester-long research project done under the mentorship of <a href="https://www.ri.cmu.edu/ri-people/abhijat-biswas/">Mr Abhijat Biswas</a>, and faculty direction of <a href="https://hennyadmoni.com/">Prof Henny Admoni</a>.</p>
+        <p>It is notable that due to the limitations of the Human 3.6M dataset (which does not have views where part of the
+            body is occluded), the network pretained on H36M is not robust to partial-view occlusions. I hypothesised
+            that if I were to train the network on the CMU dataset and purposely include partially-occluded views, the
+            algorithm would be robust against occlusions in some views. This would be the next stage of the project: training of the CMU dataset.
+        </p>
         
         <h2 class="less-margin-bottom">
-            <span class="soft-border-underline">References</span>
+            <span class="soft-border-underline">
+                Currently trainign
+            </span>
+        </h2>
+        
+        <p>Training on the CMU dataset</p>
+
+
+        <h2 class="less-margin-bottom">
+            <span class="soft-border-underline">References and Acknowledgements</span>
         </h2>
             <p id="harp-volumetric-references-1">
                 [1]  K. Iskakov, E. Burkov, V. Lempitsky, and Y. Malkov, “Learnable triangulation of human pose,” in <i>International Conference on Computer Vision (ICCV), 2019</i>
             </p>
+
+            <p>This was a semester-long research project done under the mentorship of <a
+            href="https://www.ri.cmu.edu/ri-people/abhijat-biswas/">Mr Abhijat Biswas</a>, and faculty direction of <a
+            href="https://hennyadmoni.com/">Prof Henny Admoni</a>.</p>
     </div>
 
     <div class="content-section">

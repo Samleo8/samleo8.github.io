@@ -197,11 +197,20 @@ var gameLib = {
 
 var galleryLib = {
     "harp-volumetric-1": [{
-            "filename": "eval0.png",
-            "description": "Results of test on the CMU Panoptic dataset"
-        }, {
-            "filename": "eval1.png",
-            "description": "Results of test on the CMU Panoptic dataset"
+            "filename": "eval0_full.png",
+            "description": "Testing on the CMU Panoptic dataset - no occlusions"
+        },
+        {
+            "filename": "eval1_full.png",
+            "description": "Testing on the CMU Panoptic dataset - no occlusions"
+        },
+        {
+            "filename": "eval0_partial.png",
+            "description": "Testing on the CMU Panoptic dataset - partial occlusions"
+        },
+        {
+            "filename": "eval1_partial.png",
+            "description": "Testing on the CMU Panoptic dataset - partial occlusions"
         },
     ],
     "isef": [{
