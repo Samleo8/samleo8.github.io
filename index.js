@@ -533,13 +533,13 @@ function pageInit() {
     }
 
     var subContents = document.getElementsByClassName("sub-table-of-contents");
-    for (var j = 0; j < subContents.length; j++) {
+    for (j = 0; j < subContents.length; j++) {
         var subTableOfContents = [];
         var subContentTitles = subContents[j].parentNode.getElementsByTagName("h2");
 
         for (i = 0; i < subContentTitles.length; i++) {
             subTableOfContents[i] = JSON.parse(JSON.stringify(subContentTitles[i].innerText.split("\n")[0]));
-        };
+        }
 
         var TCEleSub = subContents[j];
         if (TCEleSub != null && TCEleSub != undefined) {
