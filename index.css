@@ -576,6 +576,21 @@ p.subtitle{
 .icon-telegram:before {
   content: "\e903";
 }
+.icon-unity:before {
+    content: "\e904";
+}
+.icon-resume:before {
+    content: "\e923";
+}
+.icon-email:before {
+    content: "\e905";
+}
+.icon-github:before {
+    content: "\eab0";
+}
+.icon-stackoverflow:before {
+    content: "\ead0";
+}
 
 /*-------NAVIGATION GLOBAL--------*/
 #navList{
