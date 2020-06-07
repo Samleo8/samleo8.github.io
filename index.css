@@ -546,7 +546,7 @@ p.subtitle{
 	content: "\e609";
 }
 
-#navList.alt-nav .icon-web:before, .gameMobileScreenshotHolder .icon-web:before{
+#navList.alt-nav .icon-web:before, .gameMobileScreenshotHolder .icon-web:before, a.icon-web:before, a.icon-website:before{
   content: "\e902";
 }
 
