@@ -196,6 +196,14 @@ var gameLib = {
 }
 
 var galleryLib = {
+    "harp-volumetric-1": [{
+            "filename": "eval0.png",
+            "description": "Results of test on the CMU Panoptic dataset"
+        }, {
+            "filename": "eval1.png",
+            "description": "Results of test on the CMU Panoptic dataset"
+        },
+    ],
     "isef": [{
             "filename": "0.0.0.jpg",
             "description": "The ISEF 2016 Team!"
