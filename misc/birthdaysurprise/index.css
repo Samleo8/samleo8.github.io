@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+/* Fonts */
+@font-face {
+    font-family: "Museo300";
+    src: url(fonts/Museo300.otf);
+}
+
+@font-face {
+    font-family: "Museo500";
+    src: url(fonts/Museo500.otf);
+}
+
+@font-face {
+    font-family: "Museo700";
+    src: url(fonts/Museo700.otf);
+}
+
+@font-face {
+    font-family: "Museo900";
+    src: url(fonts/Museo900.otf);
+}
+
+@font-face {
+    font-family: "Sansation";
+    src: url(fonts/SansationLight.ttf);
+}
+
+
+/*-------GLOBALS--------*/
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Museo300", "Calibri", "Arial", Sans-Serif;
+    color: #EEE;
+    background: rgb(255, 84, 121);
+    overflow-x: hidden;
+}
+
+*,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    font-family: "Museo300", "Calibri", "Arial", Sans-Serif;
+}
+
+body {
+    width: 99%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Museo500", "Calibri", "Arial", Sans-Serif;
+}
+
+.light {
+    font-family: "Museo300", "Calibri", "Arial", Sans-Serif;
+}
+
+.border-underline {
+    padding-bottom: 0px;
+    border-bottom: 1px solid #EEE;
+}
+
+.soft-border-underline {
+    padding-bottom: 0px;
+    border-bottom: 1px dotted #EEE;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.soft-underline {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.less-margin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.less-margin-top {
+    margin-top: 5px;
+}
+
+.less-margin-bottom {
+    margin-bottom: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden:not(.scrollArea) {
+    display: none;
+}
+
+img {
+    border: 0px;
+    outline: none;
+}
+
+a {
+    transition: all 0.3s ease;
+    color: #FF8F19;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+a:hover {
+    color: #FFD269;
+}
+
+
+.bold-500 {
+    font-family: "Museo500", "Calibri", "Arial", Sans-Serif;
+}
+
+b,
+strong,
+.bold,
+.bold-700 {
+    font-family: "Museo700", "Calibri", "Arial", Sans-Serif;
+}
+
+.font-tiny {
+    font-size: 60%;
+}
+
+.font-small {
+    font-size: 80%;
+}
+
+.font-normal,
+.font-regular {
+    font-size: 100%;
+}
+
+.font-big,
+.font-large {
+    font-size: 120%;
+}
+
+.font-bigger,
+.font-larger {
+    font-size: 150%;
+}
+
+.font-huge {
+    font-size: 200%;
+}
+
+label {
+    cursor: pointer;
+}
