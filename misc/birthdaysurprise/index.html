@@ -1,12 +1,27 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="shortcut icon" href="../../images/favicon.ico">
-<title>Happy Birthday!</title>
-<link href="index.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+        <title>Happy Birthday!</title>
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <script src="index.lib.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Next and previous buttons -->
+            <a class="prev controls-btn" onclick="plusSlide(-1)">
+                <span>&#10094;</span>
+            </a>
+            <a class="next controls-btn" onclick="plusSlide(1)">
+                <span>&#10095;</span>
+            </a>
+        </div>
+
+        <audio id="bgmusic" loop>
+            <source src="audio/loop.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </body>
 </html>
