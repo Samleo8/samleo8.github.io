@@ -1,9 +1,9 @@
 [submodule "PrioriTask"]
-        path = PrioriTask
-        url = https://github.com/Samleo8/PrioriTask 
+	path = PrioriTask
+	url = https://github.com/Samleo8/PrioriTask 
 [submodule "PixArt"]
-        path = PixArt
-        url = https://github.com/Samleo8/PixArt
+	path = PixArt
+	url = https://github.com/Samleo8/PixArt
 [submodule "KeyboardMusic"]
 	path = KeyboardMusic
 	url = https://github.com/Samleo8/KeyboardMusic
@@ -13,3 +13,8 @@
 [submodule "Connect4"]
 	path = Connect4
 	url = https://github.com/Samleo8/Connect4.git
+[submodule "misc/birthdaysurprise"]
+	path = misc/birthdaysurprise
+	url = git@github.com:Samleo8/YitaoSurprise.git
+[submodule "PrioriTask/"]
+	url = git@github.com:Samleo8/PrioriTask.git
