@@ -1186,9 +1186,17 @@ a.icon-website:before {
     }
 }
 
+#resume-pdf-container-wrapper {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+}
+
 #resume-pdf-container {
+    position: absolute;
     width: 1000px;
     height: 1000px;
+    max-width: 95%;
 }
 
 table.achievements-table {
