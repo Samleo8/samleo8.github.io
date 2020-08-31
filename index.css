@@ -1186,6 +1186,10 @@ a.icon-website:before {
     }
 }
 
+#resume-pdf-container {
+    height: 800px;
+}
+
 table.achievements-table {
     text-align: left;
     margin-left: 30px;
