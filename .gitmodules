@@ -16,3 +16,6 @@
 [submodule "misc/birthdaysurprise"]
 	path = misc/birthdaysurprise
 	url = git@github.com:Samleo8/YitaoSurprise.git
+[submodule "resumecv"]
+	path = resumecv
+	url = git@github.com:Samleo8/resumecv.git
