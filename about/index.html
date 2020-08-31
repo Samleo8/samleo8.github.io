@@ -138,7 +138,7 @@
             <div class="hr-divider pad-bottom"></div>
         </h1>
             <div id="resume-pdf-container">
-                
+
             </div>
         </div>
 
@@ -795,10 +795,19 @@
     <script src='../pdfobject.js'></script>
     <script>
         var options = {
-            fallbackLink: '<p>This browser does not support inline PDFs. Please download the PDF to view it:<a href="../resumecv/resume_samuel_leong.pdf" target="_blank">Download PDF</a></p>'
+            fallbackLink: '<p>This browser does not support inline PDFs. Please download the PDF to view it: <a href = "../resumecv/resume_samuel_leong.pdf" target = "_blank">Download PDF</a></p>',
+            pdfOpenParams: {
+                view: 'FitH',
+                scrollbar: '1',
+                toolbar: '1',
+                statusbar: '1',
+                messages: '0',
+                navpanes: '0'
+            },
         };
 
         PDFObject.embed("../resumecv/resume_samuel_leong.pdf", "#resume-pdf-container", options);
+
     </script>
 </body>
 
