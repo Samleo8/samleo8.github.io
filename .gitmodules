@@ -16,9 +16,6 @@
 [submodule "misc/birthdaysurprise"]
 	path = misc/birthdaysurprise
 	url = https://github.com/Samleo8/YitaoSurprise.git
-[submodule "misc/christmassurprise"]
-	path = misc/christmassurprise
-	url = https://github.com/Samleo8/YitaoSurpriseChristmas.git
 [submodule "resumecv"]
 	path = resumecv
 	url = https://github.com/Samleo8/resumecv.git
