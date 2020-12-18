@@ -1,21 +1,24 @@
 [submodule "PrioriTask"]
 	path = PrioriTask
-	url = git@github.com:Samleo8/PrioriTask.git 
+	url = https://github.com/Samleo8/PrioriTask.git 
 [submodule "PixArt"]
 	path = PixArt
-	url = git@github.com:Samleo8/PixArt.git
+	url = https://github.com/Samleo8/PixArt.git
 [submodule "KeyboardMusic"]
 	path = KeyboardMusic
-	url = git@github.com:Samleo8/KeyboardMusic.git
+	url = https://github.com/Samleo8/KeyboardMusic.git
 [submodule "Slitherie"]
 	path = Slitherie
-	url = git@github.com:Samleo8/Slitherie.git
+	url = https://github.com/Samleo8/Slitherie.git
 [submodule "Connect4"]
 	path = Connect4
-	url = git@github.com:Samleo8/Connect4.git
+	url = https://github.com/Samleo8/Connect4.git
 [submodule "misc/birthdaysurprise"]
 	path = misc/birthdaysurprise
-	url = git@github.com:Samleo8/YitaoSurprise.git
+	url = https://github.com/Samleo8/YitaoSurprise.git
+[submodule "misc/christmassurprise"]
+	path = misc/christmassurprise
+	url = https://github.com/Samleo8/YitaoSurpriseChristmas.git
 [submodule "resumecv"]
 	path = resumecv
-	url = git@github.com:Samleo8/resumecv.git
+	url = https://github.com/Samleo8/resumecv.git
