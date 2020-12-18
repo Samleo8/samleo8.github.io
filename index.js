@@ -364,6 +364,10 @@ var galleryLib = {
             "description": ""
         },
         {
+            "filename": "peacefulreflections.jpg",
+            "description": ""
+        },
+        {
             "filename": "sheep.jpg",
             "description": ""
         },
