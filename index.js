@@ -366,13 +366,13 @@ var galleryLib = {
         {
             "filename": "peacefulreflections.jpg",
             "description": ""
+        }, 
+        {
+            "filename": "roadbytheriver.jpg",
+            "description": ""
         },
         {
             "filename": "sheep.jpg",
-            "description": ""
-        }, 
-        {
-            "filename": "bubblingbrook.jpg",
             "description": ""
         },
         {
