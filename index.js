@@ -370,6 +370,10 @@ var galleryLib = {
         {
             "filename": "sheep.jpg",
             "description": ""
+        }, 
+        {
+            "filename": "bubblingbrook.jpg",
+            "description": ""
         },
         {
             "filename": "panda.png",
