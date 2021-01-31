@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <title>CMU 16-311 Intro to Robotics</title>
+    <link href="../../index.css" rel="stylesheet" type="text/css">
+    <noscript>
+  <style>
+  	#noScriptShow{
+		display:inline-block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		top:0;
+		bottom:0;
+		background:#066;
+		text-align:center;
+		z-index:2147483640; /* no mobile takes precedence */
+	}
+	#noScriptCircle{
+		width:300px;
+		height:300px;
+		padding:10px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		border-radius:1000px;
+		background:#EEE;
+		color:#066;
+		text-align:center;
+	}
+	#noScriptCircle div{
+		width:200px;
+		height:200px;
+
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin:auto;
+	}
+	#noScriptCircle h1{
+		font-size:40px;
+		margin-top:20px;
+		margin-bottom:5px;
+	}
+  </style>
+</noscript>
+    <script src="../../index.lib.js"></script>
+    <script src="../../index.js"></script>
+</head>
+
+<body>
+    <!--START MAIN-->
+    <div id="main-content">
+        <h1 class="title">CMU 16-311 Intro to Robotics</h1>
+        <h3 class="subtitle">
+            Hi, my name is Samuel Leong, and this is my website for HW0, embedded in my actual personal website. 
+        </h3>
+
+        <div class="table-of-contents"></div>
+
+        <div class="content-section">
+            <h1>My Personal Website</h1>
+            <div class="text-center flex-container about-showcase-button-holder">
+                <a href="../../index.html" class="link-button gen-btn link-button-showcase">
+                    Link to parent website
+                </a>
+                <a href="https://github.com/Samleo8/" target="_blank" class="link-button gen-btn link-button-showcase">
+                    Link to Github
+                </a>
+                <a href="../../research/index.html" class="link-button gen-btn link-button-showcase">
+                    Research showcase
+                </a>
+                <a href="../../games/index.html" class="link-button gen-btn link-button-showcase">
+                    Game showcase
+                </a>
+                <a href="../../art/index.html" class="link-button gen-btn link-button-showcase">
+                    Art showcase
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h1>When I think of a robot...</h1>
+            Inspired by the <a href="https://www.youtube.com/watch?v=8BtDuzu2WeI" target="_blank">CMU ball bot</a>
+
+            <h2>Sensing</h2>
+            Robot is equipped with cameras as visual eyes, as well as microphones as ears to detect the sounds around
+            it. It has a GPS for localisation, as well as a RADAR sensor on top of its head for odometry in all
+            conditions. It's motors are equipped with passive feedback touch sensors, so that it knows when it bangs
+            into something, and the force with which it moves. It also has a gyroscope for balance.
+
+            <h2>Planning</h2>
+            Planning is done in the CPU in the center of its body. It would use a state-of-the-art SLAM algorithms
+            (possibly developed at CMU) to localise itself in an unknown environment (and map it), using the various
+            sensors described above.
+
+            <h2>Acting</h2>
+            The robot's single ball motor allows it to move, and it also has arms that it can use to pick things up, or
+            get things out of it's way. 3 stabilising legs are available for it when it needs to be stationary.
+        </div>
+
+        <div class="content-section">
+            <h1>Favourite Real Robot</h1>
+            <div class="text-center flex-container about-showcase-button-holder">
+                <a href="https://www.anybotics.com/anymal-legged-robot/" target="_blank" class="link-button gen-btn link-button-showcase">
+                    ANYmal by ETH Zurich
+                </a>
+            </div>
+            It's most recent research article was especially interesting. The quadreped robot is now able to walk across any terrain without any external sensors like gyroscopes or cameras, and relying only on the feedback of the motors in the legs. 
+        </div>
+
+        <!--Error Circles--->
+        <div id="noScriptShow">
+            <div id="noScriptCircle" class="circle">
+                <div>
+                    <h1>Oops.</h1>
+                    <p>This website will not work without JavaScript enabled.</p>
+                    <p>Please enable JavaScript in your browser.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Options-->
+        <div id="optionsCircle" class="circle circle-height disableSelect hidden" onmouseover="optionsHover(this)"
+            onmouseout="optionsUnhover(this)" onclick="optionsClick(this)">
+            <span class="" id="optionsCircleContent">
+                <h1>Options</h1>
+            </span>
+        </div>
+
+        <!--Options Box-->
+        <div id="optionsBox" class="invertedColor disableSelect">
+            <div id="optionsBoxHeader">
+                <div class="optionsTitle"><h1>Options</h1>
+                </div>
+                <div class="optionsIconsHolder">
+                    <div class="optionsIcons"><span class="icon-home"></span></div>
+                    <div class="optionsIcons"><span class="icon-reset"></span></div>
+                </div>
+            </div>
+            <hr>
+            <div id="optionsBoxContent">
+                <div id="optionsMenuHide" onClick="toggleOptions('menuHide',this)" class="options-btn unchecked">Show
+                    Menu
+                    at Start</div>
+                <div id="optionsMenuType" onClick="toggleOptions('menuTypeToggle',this)"
+                    class="options-btn unchecked disabled">
+                    Tab-Style Menu</div>
+
+                <div class="options-btn" id="closeOptionsBtn" onClick="closeOptions()">Close and Save</div>
+                <div id="optionsBoxHide" onClick="toggleOptions('boxHide',this)" class="options-btn unchecked">Hide
+                    options
+                    on launch</div>
+            </div>
+        </div>
+</body>
+
+</html>
