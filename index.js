@@ -59,8 +59,8 @@ var navCirclesOrder = [{
         "icon": "icon-games"
     },
     {
-        "name": "Research",
-        "href": "../research/index.html",
+        "name": "Projects",
+        "href": "../projects/index.html",
         "icon": "icon-research"
     },
     {
@@ -658,7 +658,7 @@ function pageInit() {
             }
 
             gameScreenshotHolder[2].innerHTML = out;
-        } else { //for research/other page which include these games
+        } else { //for projects/other page which include these games
 
             //Look for the project game in both HTML and Flash games
 
