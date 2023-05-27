@@ -1,4 +1,4 @@
-//options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; saveOptions(); window.location.href = "../index.html"
+// options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; saveOptions(); window.location.href = "../index.html"
 
 /*---------DOCUMENT READY---------*/
 var domReady = function (callback) {
@@ -45,7 +45,7 @@ window.onresize = function () {
     pageChange();
 }
 
-//Variables
+// Variables
 var optionsOriWidth;
 var navList;
 var navCirclesOrder = [{
@@ -75,7 +75,7 @@ var navCirclesOrder = [{
     }
 ];
 
-//Games Index
+// Games Index
 var gameLib = {
     "flash": [{
             "name": "Focus Fire - Original",
@@ -122,7 +122,7 @@ var gameLib = {
             "description": "Fighting game where you control a ninja warrior, Senshi, to fend off enemies. 4th place (team effort) at Singapore Games Creation Competition 2014 (SGCC) on the topic of 'Fighting Drugs'.",
             "tags": ["Action", "Fighting", "Competition"],
             featured: true
-        }, //in the case where it's 1 row with three games, this game gets featured
+        }, // in the case where it's 1 row with three games, this game gets featured
         {
             "name": "Network Infector",
             "filename": "NetworkInfector",
@@ -140,7 +140,7 @@ var gameLib = {
     "html": [{
             "name": "Sisyphus Sheep",
             "filename": "SisyphusSheep",
-            "url": "https://samleo8.github.io/SisyphusSheep/",
+            "url": "https:// samleo8.github.io/SisyphusSheep/",
             "description": "Run for your life as you avoid the spikes on an endless treadmill!",
             "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready"],
             featured: true
@@ -148,7 +148,7 @@ var gameLib = {
         {
             "name": "Soaring Sheep",
             "filename": "SoaringSheep",
-            "url": "https://samleo8.github.io/SoaringSheep/",
+            "url": "https:// samleo8.github.io/SoaringSheep/",
             "description": "Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready", "Single Button"],
             featured: true
@@ -156,14 +156,14 @@ var gameLib = {
         {
             "name": "PixArt",
             "filename": "PixArt",
-            "url": "https://samleo8.github.io/PixArt/",
+            "url": "https:// samleo8.github.io/PixArt/",
             "description": "Colourful recreation of Japanese Nonogram puzzle.",
             "tags": ["Puzzle", "Mobile Ready"]
         },
         {
             "name": "Slitherie",
             "filename": "Slitherie",
-            "url": "https://samleo8.github.io/Slitherie/",
+            "url": "https:// samleo8.github.io/Slitherie/",
             "description": "Recreation of classic 'Snake' game with different foods and crazy levels.",
             "tags": ["Arcade"]
         }
@@ -172,9 +172,9 @@ var gameLib = {
             "name": "Soaring Sheep",
             "filename": "SoaringSheep",
             "url": {
-                "android": "https://play.google.com/store/apps/details?id=io.samleo8.SoaringSheep",
-                "web": "https://samleo8.github.io/SoaringSheep/",
-                "telegram": "https://telegram.me/SamStudiosBot?game=SoaringSheep"
+                "android": "https:// play.google.com/store/apps/details?id=io.samleo8.SoaringSheep",
+                "web": "https:// samleo8.github.io/SoaringSheep/",
+                "telegram": "https:// telegram.me/SamStudiosBot?game=SoaringSheep"
             },
             "description": "Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags": ["Arcade", "Endless", "Sheep", "Single Button"],
@@ -184,9 +184,9 @@ var gameLib = {
             "name": "Sisyphus Sheep",
             "filename": "SisyphusSheep",
             "url": {
-                "android": "https://play.google.com/store/apps/details?id=io.samleo8.SisyphusSheep",
-                "web": "https://samleo8.github.io/SisyphusSheep/",
-                "telegram": "https://telegram.me/SamStudiosBot?game=SisyphusSheep"
+                "android": "https:// play.google.com/store/apps/details?id=io.samleo8.SisyphusSheep",
+                "web": "https:// samleo8.github.io/SisyphusSheep/",
+                "telegram": "https:// telegram.me/SamStudiosBot?game=SisyphusSheep"
             },
             "description": "Run to the end of the treadmill. Avoid the spikes. Score points. Repeat.",
             "tags": ["Arcade", "Endless", "Sheep", "Treadmill"],
@@ -390,7 +390,7 @@ var galleryLib = {
     ]
 }
 
-//Page resize
+// Page resize
 function pageChange() {
     windowH = getBodyHeight();
     windowW = getBodyWidth();
@@ -405,9 +405,9 @@ function pageChange() {
         optionsOriWidth = document.getElementById("optionsCircle").offsetHeight;
     }
 
-    //other elements on page
-    vMCWidth = windowW * (100 - 58) * 0.01; //visible main circle width
-    //document.getElementById("bs").style.width = vMCWidth+"px";
+    // other elements on page
+    vMCWidth = windowW * (100 - 58) * 0.01; // visible main circle width
+    // document.getElementById("bs").style.width = vMCWidth+"px";
     MCCircle = document.getElementById("mainCircleHome");
     MCContent = document.getElementById("mainCircleContent");
 
@@ -419,14 +419,14 @@ function pageChange() {
         } else if (switchVar != null && switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split("-"))) {
             MCContent.style = '';
         } else {
-            //positioning
+            // positioning
             MCContent.style.left = parseInt(MCCircle.offsetWidth - vMCWidth + vMCWidth * 0.05) + "px";
-            //MCContent.style.top = parseInt(windowH*0.1+windowH*0.3)+"px";
+            // MCContent.style.top = parseInt(windowH*0.1+windowH*0.3)+"px";
             MCContent.style.bottom = parseInt(windowH * 0.3 + windowH * 0.1) + "px"
             /*
             fnt = 0.055*Math.min(windowH,windowW);
             MCContent.style.fontSize = fnt+"px";
-            //*/
+            // */
 
             MCContent.style.width = parseInt(vMCWidth * 0.80) + "px";
         }
@@ -434,14 +434,14 @@ function pageChange() {
     /*Alternate Menu*/
 
 
-    //Concept Circles
+    // Concept Circles
     if (document.getElementById("conceptIntro") != null) {
         var conCirs = getElementsByClass("conceptCircle");
         var conCirWidth = conCirs[0].offsetWidth;
         var overallWidth = window.innerWidth;
         var pad = (overallWidth - conCirs.length * conCirWidth) / (conCirs.length + 1);
 
-        //trace(conCirWidth+" "+overallWidth+" "+pad);
+        // trace(conCirWidth+" "+overallWidth+" "+pad);
 
         for (i = 0; i < conCirs.length; i++) {
             conCirs[i].style.left = parseInt(pad * parseInt(i + 1) + conCirWidth * i) + "px";
@@ -463,14 +463,14 @@ function pageInit() {
 
     loadOptions();
 
-    //Options Box Hide
+    // Options Box Hide
     if (options["hideOnLaunch"]) {
         document.getElementById("optionsBox").className += " disappear";
     } else {
         document.getElementById("optionsBox").className = " appear";
     }
 
-    //Add Event Listeners
+    // Add Event Listeners
     navList = document.getElementById("navList");
     if (navList != null) {
         if (options["menuHide"] || !options["hideOnLaunch"]) {
@@ -495,7 +495,7 @@ function pageInit() {
             document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
         }
 
-        //Create Mouseover & Mouseout events for Menu
+        // Create Mouseover & Mouseout events for Menu
         navCircles = getElementsByClass("navCircle");
         for (i = 0; i < navCircles.length; i++) {
             navCircles[i].addEventListener("mouseover", navCircleHover, false);
@@ -505,7 +505,7 @@ function pageInit() {
         document.getElementById("navCircle1").addEventListener("click", toggleMenu, false);
     }
 
-    //Options Box Buttons
+    // Options Box Buttons
     if (document.getElementById("mainCircleHome") == null)
         getEle(".optionsIcons .icon-home")[0].addEventListener("click", function () {
             window.location.href = "../index.html"
@@ -513,7 +513,7 @@ function pageInit() {
 
     getEle(".optionsIcons .icon-reset")[0].addEventListener("click", resetOptions, false);
 
-    //Navigation Circles Ordering
+    // Navigation Circles Ordering
     var urlArr = window.location.href.toString().split("/");
     var pageName = urlArr[urlArr.length - 2];
     var currPage = "../" + pageName + "/index.html";
@@ -523,20 +523,21 @@ function pageInit() {
     var i, j;
 
     for (i = 0; i < navCirclesOrder.length; i++) {
-        //Get rid of entry for current page
+        // Get rid of entry for current page
         if (navCirclesOrder[i]["href"] == currPage) {
             navCirclesOrder.splice(i, 1);
             break;
         }
     }
 
-    for (i = 1; i < navCirclesEle.length; i++) { //skip first navCircle (#navCircle1)
+    // Skip first navCircle (#navCircle1)
+    for (i = 1; i < navCirclesEle.length; i++) { 
         navCirclesEle[i].parentElement.href = navCirclesOrder[i - 1]["href"];
         navCirclesEle[i].getElementsByClassName("menu-icon")[0].className += " " + navCirclesOrder[i - 1]["icon"];
         navCirclesEle[i].getElementsByClassName("center")[0].innerHTML = navCirclesOrder[i - 1]["name"];
     }
 
-    //Table of Contents setup
+    // Table of Contents setup
     var tableOfContents = [];
     var contentTitles = document.querySelectorAll(".content-section h1");
     for (i = 0; i < contentTitles.length; i++) {
@@ -571,7 +572,7 @@ function pageInit() {
             out = '';
 
             for (i = 0; i < subTableOfContents.length; i++) {
-                var idName = j.toString() + '-' + subTableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ", "-"); //requires such unique id because the sub-content-titles tend to overlap
+                var idName = j.toString() + '-' + subTableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ", "-"); // requires such unique id because the sub-content-titles tend to overlap
                 subContentTitles[i].id = idName;
 
                 out += '<a href="#' + idName + '" class="gen-btn table-of-contents-btn">';
@@ -582,14 +583,14 @@ function pageInit() {
         }
     }
 
-    //Game screenshots setup
+    // Game screenshots setup
     var gameScreenshotHolder = document.getElementsByClassName("gameScreenshotHolder");
     var outEle = {};
 
     if (gameScreenshotHolder != null && gameScreenshotHolder != undefined && gameScreenshotHolder.length > 0) {
-        if (gameScreenshotHolder[0].className.indexOf("games-main") != -1) { //for main game page
+        if (gameScreenshotHolder[0].className.indexOf("games-main") != -1) { // for main game page
             out = "";
-            //First Mobile
+            // First Mobile
             for (i = 0; i < gameLib["mobile"].length; i++) {
                 var gameInfo = gameLib["mobile"][i];
 
@@ -616,7 +617,7 @@ function pageInit() {
             gameScreenshotHolder[0].innerHTML = out;
 
             out = "";
-            //Then HTML
+            // Then HTML
             for (i = 0; i < gameLib["html"].length; i++) {
                 var gameInfo = gameLib["html"][i];
 
@@ -638,7 +639,7 @@ function pageInit() {
             gameScreenshotHolder[1].innerHTML = out;
 
             out = "";
-            //Then Flash
+            // Then Flash
             for (i = 0; i < gameLib["flash"].length; i++) {
                 var gameInfo = gameLib["flash"][i];
 
@@ -658,11 +659,11 @@ function pageInit() {
             }
 
             gameScreenshotHolder[2].innerHTML = out;
-        } else { //for projects/other page which include these games
+        } else { // for projects/other page which include these games
 
-            //Look for the project game in both HTML and Flash games
+            // Look for the project game in both HTML and Flash games
 
-            //HTML First
+            // HTML First
             for (i = 0; i < gameLib["html"].length; i++) {
                 var gameInfo = gameLib["html"][i];
 
@@ -691,7 +692,7 @@ function pageInit() {
                 }
             }
 
-            //Then Flash
+            // Then Flash
             for (i = 0; i < gameLib["flash"].length; i++) {
                 var gameInfo = gameLib["flash"][i];
 
@@ -725,8 +726,8 @@ function pageInit() {
         }
     }
 
+    // Photo Gallery setup
     var outEle = {};
-    //Photo Gallery setup
     for (var j in galleryLib) {
         if (!galleryLib.hasOwnProperty(j)) continue;
 
@@ -757,7 +758,7 @@ function pageInit() {
         }
     }
 
-    //Add Event Listener for full-view photo
+    // Add Event Listener for full-view photo
     var e = document.getElementsByClassName("photoHolder");
     for (var j = 0; j < e.length; j++) {
         e[j].addEventListener("mouseup", function (ev) {
@@ -765,27 +766,27 @@ function pageInit() {
         });
     }
 
-    //Accordion Setup
+    // Accordion Setup
     var accEle = document.getElementsByClassName("accordion");
 
     for (var k = 0; k < accEle.length; k++) {
         var accItemEle = accEle[k].getElementsByClassName("accordion-item");
 
         for (var i = 0; i < accItemEle.length; i++) {
-            //Set all to closed first
+            // Set all to closed first
             accItemEle[i].className = accItemEle[i].className.replaceAll(" closed", "");
             accItemEle[i].className = accItemEle[i].className.replaceAll(" open", "");
             accItemEle[i].className += " closed";
 
-            //Add event listener to title for opening and closing
+            // Add event listener to title for opening and closing
             accTitle = accItemEle[i].getElementsByClassName("accordion-title")[0];
             accTitle.addEventListener("click", function () {
                 var par = this.parentNode;
 
-                if (par.className.indexOf(" open") != -1) { //item is open, hence close it
+                if (par.className.indexOf(" open") != -1) { // item is open, hence close it
                     par.className = par.className.replaceAll(" open", " closed");
                 } else {
-                    //item is closed
+                    // item is closed
                     //  1. open this item
                     //  2. close all other items
                     var accItemEleTemp = par.parentNode.getElementsByClassName("accordion-item");
@@ -804,7 +805,7 @@ function pageInit() {
 function photoToggleView(ele) {
     console.log(ele);
 
-    //Need to change the width and height of the image...
+    // Need to change the width and height of the image...
     var img = ele.getElementsByTagName("img")[0];
     var r = img.width / img.height;
 
@@ -823,7 +824,7 @@ function photoToggleView(ele) {
 
 
 function circlesCalibration() {
-    //align circles to respect width/height
+    // align circles to respect width/height
     var circles = getElementsByClass("circle-height");
     for (i = 0; i < circles.length; i++) {
         h = circles[i].offsetHeight;
@@ -919,12 +920,12 @@ function keyboardShortcuts() {
 
 /*-------NAVLIST------*/
 function navCircleHover() {
-    //use "this" to access element being hovered over.
-    //console.log(this.id);
+    // use "this" to access element being hovered over.
+    // console.log(this.id);
 }
 
 function navCircleUnhover() {
-    //use "this" to access element being hovered over.
+    // use "this" to access element being hovered over.
 
 }
 
@@ -974,13 +975,13 @@ function closeOptions() {
 function resetOptions() {
     if (!confirm("Are you sure you want to reset options?")) return;
 
-    //Remove after live demo
+    // Remove after live demo
     options["hideOnLaunch"] = true;
     options["welcomeHide"] = true;
     options["tabbedMenu"] = false;
     options["menuHide"] = true;
     saveOptions();
-    //if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
+    // if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
 }
 
 function toggleOptions(opt, ele) {
@@ -1047,7 +1048,7 @@ function checkOptions() {
         if (ele.checked) btnCheck(ele.id);
         else btnUncheck(ele.id);
     }
-    //trace("");
+    // trace("");
 }
 
 function btnUncheck(id) {
@@ -1057,7 +1058,7 @@ function btnUncheck(id) {
         ele.className = ele.className.replaceAll("checked", "unchecked");
     }
 
-    //For ensuring that menu doesn't get shown if optionsBox is also shown
+    // For ensuring that menu doesn't get shown if optionsBox is also shown
     if (ele.id == "optionsBoxHide") btnDisable("optionsMenuHide");
 }
 
@@ -1141,7 +1142,7 @@ function toggleReflections() {
 
         var reflectionsTxt = "";
         contentDiv.innerHTML = "Loading Reflections...";
-        //get reflections via ajax
+        // get reflections via ajax
         try {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('GET', title, false);
@@ -1168,9 +1169,9 @@ function toggleReflections() {
 
 /*-----SCROLLING------*/
 var tick;
-var scrollTime = 100; //milliseconds
-var scrollDist = 6; //pixels
-var smoothScrollSpd = 10; //milliseconds
+var scrollTime = 100; // milliseconds
+var scrollDist = 6; // pixels
+var smoothScrollSpd = 10; // milliseconds
 var scrollDir;
 
 function scrollAreaFire(id) {
