@@ -1101,8 +1101,8 @@ a.icon-website:before {
     height: 50px;
     line-height: 50px;
 
-    width: 200px;
-    flex: 1 190px;
+    width: 250px;
+    flex: 1 240px;
 
     transition: 0.3s ease;
 }
