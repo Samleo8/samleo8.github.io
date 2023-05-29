@@ -1,32 +1,33 @@
 // options["hideOnLaunch"] = true; options["welcomeHide"] = true; options["tabbedMenu"] = false; saveOptions(); window.location.href = "../index.html"
 
 /*---------DOCUMENT READY---------*/
-var domReady = function (callback) {
+var domReady = function(callback) {
     // Mozilla, Opera and WebKit
     if (document.addEventListener) {
         document.addEventListener("DOMContentLoaded", callback, false);
         // If Internet Explorer, the event model is used
-    } else if (document.attachEvent) {
-        document.attachEvent("onreadystatechange", function () {
+    }
+    else if (document.attachEvent) {
+        document.attachEvent("onreadystatechange", function() {
             if (document.readyState === "complete") {
                 callback();
             }
         });
         // A fallback to window.onload, that will always work
-    } else {
+    }
+    else {
         var oldOnload = window.onload;
-        window.onload = function () {
+        window.onload = function() {
             oldOnload && oldOnload();
             callback();
         }
     }
 };
 
-domReady(function () {
+domReady(function() {
     pageInit();
     pageChange();
 });
-
 
 /*----------GLOBALS---------*/
 var windowH, windowW;
@@ -41,7 +42,7 @@ var options = {
     "tabbedMenu": false
 }
 
-window.onresize = function () {
+window.onresize = function() {
     pageChange();
 }
 
@@ -196,6 +197,23 @@ var gameLib = {
 }
 
 var galleryLib = {
+    "scarf": [{
+            "filename": "render23_2L_32H.png",
+            "description": "Rendered image of house scene using SCARF (2 layers, 32 heads). Downsampled by 4."
+        },
+        {
+            "filename": "scene23_baseline.png",
+            "description": "Baseline images of house scene using NeRF and SRF. Downsampled by 4."
+        },
+        {
+            "filename": "render106_2L_32H.png",
+            "description": "Rendered image of dove scene using SCARF (2 layers, 32 heads). Downsampled by 4."
+        },
+        {
+            "filename": "scene106_baseline.png",
+            "description": "Baseline images of dove scene using NeRF and SRF. Downsampled by 4."
+        }
+    ],
     "harp-volumetric-1": [{
             "filename": "eval0_full.png",
             "description": "Testing on the CMU Panoptic dataset - no occlusions"
@@ -366,7 +384,7 @@ var galleryLib = {
         {
             "filename": "peacefulreflections.jpg",
             "description": ""
-        }, 
+        },
         {
             "filename": "roadbytheriver.jpg",
             "description": ""
@@ -391,7 +409,7 @@ var galleryLib = {
 }
 
 // Page resize
-function pageChange() {
+function pageChange () {
     windowH = getBodyHeight();
     windowW = getBodyWidth();
 
@@ -400,9 +418,12 @@ function pageChange() {
     var optionsCircle = document.getElementById("optionsCircle");
 
     if (optionsCircle.className.indexOf("hover") != -1) {
-        optionsOriWidth = document.getElementById("optionsCircle").offsetHeight / (3 / 2);
-    } else {
-        optionsOriWidth = document.getElementById("optionsCircle").offsetHeight;
+        optionsOriWidth = document.getElementById("optionsCircle")
+            .offsetHeight / (3 / 2);
+    }
+    else {
+        optionsOriWidth = document.getElementById("optionsCircle")
+            .offsetHeight;
     }
 
     // other elements on page
@@ -414,11 +435,15 @@ function pageChange() {
     if (MCCircle != null) {
         var switchVar = MCCircle.getAttribute("switch-var");
 
-        if (switchVar != null && switchVar.split("-")[0] == "width" && window.windowW <= parseInt(switchVar.split("-")[1])) {
+        if (switchVar != null && switchVar.split("-")[0] == "width" && window.windowW <= parseInt(switchVar.split("-")[
+                1])) {
             MCContent.style = '';
-        } else if (switchVar != null && switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split("-"))) {
+        }
+        else if (switchVar != null && switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split(
+                "-"))) {
             MCContent.style = '';
-        } else {
+        }
+        else {
             // positioning
             MCContent.style.left = parseInt(MCCircle.offsetWidth - vMCWidth + vMCWidth * 0.05) + "px";
             // MCContent.style.top = parseInt(windowH*0.1+windowH*0.3)+"px";
@@ -433,7 +458,6 @@ function pageChange() {
     }
     /*Alternate Menu*/
 
-
     // Concept Circles
     if (document.getElementById("conceptIntro") != null) {
         var conCirs = getElementsByClass("conceptCircle");
@@ -447,17 +471,21 @@ function pageChange() {
             conCirs[i].style.left = parseInt(pad * parseInt(i + 1) + conCirWidth * i) + "px";
         }
 
-        document.getElementById("conceptIntro").style.height = parseInt(30 + conCirs[0].offsetHeight + 20) + "px";
-        if (document.getElementById("conceptIntro").className.indexOf("aboutpg") != -1) {
-            document.getElementById("conceptIntro").style.height = parseInt(50 + conCirs[0].offsetHeight + 60) + "px";
+        document.getElementById("conceptIntro")
+            .style.height = parseInt(30 + conCirs[0].offsetHeight + 20) + "px";
+        if (document.getElementById("conceptIntro")
+            .className.indexOf("aboutpg") != -1) {
+            document.getElementById("conceptIntro")
+                .style.height = parseInt(50 + conCirs[0].offsetHeight + 60) + "px";
         }
     }
 }
 
-function pageInit() {
+function pageInit () {
     if (MobileCheck()) {
         document.body.className = "ismobile";
-    } else if (MobileAndTabletCheck()) {
+    }
+    else if (MobileAndTabletCheck()) {
         document.body.className = "istablet";
     }
 
@@ -465,9 +493,12 @@ function pageInit() {
 
     // Options Box Hide
     if (options["hideOnLaunch"]) {
-        document.getElementById("optionsBox").className += " disappear";
-    } else {
-        document.getElementById("optionsBox").className = " appear";
+        document.getElementById("optionsBox")
+            .className += " disappear";
+    }
+    else {
+        document.getElementById("optionsBox")
+            .className = " appear";
     }
 
     // Add Event Listeners
@@ -477,7 +508,8 @@ function pageInit() {
             if (navList.className.indexOf("disappear") == -1) {
                 navList.className = navList.className.replaceAll("appear center", "disappear");
             }
-        } else {
+        }
+        else {
             navList.className = navList.className.replaceAll("disappear", "appear center");
         }
 
@@ -485,14 +517,18 @@ function pageInit() {
             if (navList.className.indexOf("alt-nav") == -1) {
                 navList.className += " alt-nav";
             }
-        } else {
+        }
+        else {
             navList.className = navList.className.replaceAll(" alt-nav", "");
         }
 
         if (navList.className.indexOf("disappear") == -1) {
-            document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
-        } else {
-            document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
+            document.getElementById("navCircle1")
+                .getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
+        }
+        else {
+            document.getElementById("navCircle1")
+                .getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
         }
 
         // Create Mouseover & Mouseout events for Menu
@@ -502,19 +538,21 @@ function pageInit() {
             navCircles[i].addEventListener("mouseout", navCircleUnhover, false);
         }
 
-        document.getElementById("navCircle1").addEventListener("click", toggleMenu, false);
+        document.getElementById("navCircle1")
+            .addEventListener("click", toggleMenu, false);
     }
 
     // Options Box Buttons
     if (document.getElementById("mainCircleHome") == null)
-        getEle(".optionsIcons .icon-home")[0].addEventListener("click", function () {
+        getEle(".optionsIcons .icon-home")[0].addEventListener("click", function() {
             window.location.href = "../index.html"
         }, false);
 
     getEle(".optionsIcons .icon-reset")[0].addEventListener("click", resetOptions, false);
 
     // Navigation Circles Ordering
-    var urlArr = window.location.href.toString().split("/");
+    var urlArr = window.location.href.toString()
+        .split("/");
     var pageName = urlArr[urlArr.length - 2];
     var currPage = "../" + pageName + "/index.html";
 
@@ -531,7 +569,7 @@ function pageInit() {
     }
 
     // Skip first navCircle (#navCircle1)
-    for (i = 1; i < navCirclesEle.length; i++) { 
+    for (i = 1; i < navCirclesEle.length; i++) {
         navCirclesEle[i].parentElement.href = navCirclesOrder[i - 1]["href"];
         navCirclesEle[i].getElementsByClassName("menu-icon")[0].className += " " + navCirclesOrder[i - 1]["icon"];
         navCirclesEle[i].getElementsByClassName("center")[0].innerHTML = navCirclesOrder[i - 1]["name"];
@@ -548,7 +586,10 @@ function pageInit() {
     if (TCEle != null && TCEle != undefined) {
         out = '';
         for (i = 0; i < tableOfContents.length; i++) {
-            var idName = tableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ", "-");
+            var idName = tableOfContents[i].toLowerCase()
+                .removeAll(",")
+                .removeAll(".")
+                .replaceAll(" ", "-");
             contentTitles[i].parentNode.id = idName;
 
             out += '<a href="#' + idName + '" class="gen-btn table-of-contents-btn">';
@@ -572,7 +613,10 @@ function pageInit() {
             out = '';
 
             for (i = 0; i < subTableOfContents.length; i++) {
-                var idName = j.toString() + '-' + subTableOfContents[i].toLowerCase().removeAll(",").removeAll(".").replaceAll(" ", "-"); // requires such unique id because the sub-content-titles tend to overlap
+                var idName = j.toString() + '-' + subTableOfContents[i].toLowerCase()
+                    .removeAll(",")
+                    .removeAll(".")
+                    .replaceAll(" ", "-"); // requires such unique id because the sub-content-titles tend to overlap
                 subContentTitles[i].id = idName;
 
                 out += '<a href="#' + idName + '" class="gen-btn table-of-contents-btn">';
@@ -595,7 +639,8 @@ function pageInit() {
                 var gameInfo = gameLib["mobile"][i];
 
                 out += "<div class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo[
+                    "name"] + "'>";
                 out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                 out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                 out += "<div class='gameIconHolder'>";
@@ -606,7 +651,9 @@ function pageInit() {
                 out += "<div class='gameTagHolder'>";
                 out += "<div class='tag mobile'>Mobile</div>";
                 for (j = 0; j < gameInfo["tags"].length; j++) {
-                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+                    var clsNm = gameInfo["tags"][j].toLowerCase()
+                        .split(" ")
+                        .join("-");
 
                     out += "<div class='tag " + clsNm + "'>" + gameInfo["tags"][j] + "</div>";
                 }
@@ -621,14 +668,18 @@ function pageInit() {
             for (i = 0; i < gameLib["html"].length; i++) {
                 var gameInfo = gameLib["html"][i];
 
-                out += "<a href='" + gameInfo["url"] + "' target='_blank' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                out += "<a href='" + gameInfo["url"] + "' target='_blank' class='gameHolder" + ((gameInfo["featured"] ==
+                    true) ? " featured" : "") + "'>";
+                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo[
+                    "name"] + "'>";
                 out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                 out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                 out += "<div class='gameTagHolder'>";
                 out += "<div class='tag html'>HTML5</div>";
                 for (j = 0; j < gameInfo["tags"].length; j++) {
-                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+                    var clsNm = gameInfo["tags"][j].toLowerCase()
+                        .split(" ")
+                        .join("-");
 
                     out += "<div class='tag " + clsNm + "'>" + gameInfo["tags"][j] + "</div>";
                 }
@@ -643,14 +694,18 @@ function pageInit() {
             for (i = 0; i < gameLib["flash"].length; i++) {
                 var gameInfo = gameLib["flash"][i];
 
-                out += "<a href='playFlash.html?name=" + gameInfo["filename"] + "' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                out += "<a href='playFlash.html?name=" + gameInfo["filename"] + "' class='gameHolder" + ((gameInfo[
+                    "featured"] == true) ? " featured" : "") + "'>";
+                out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo[
+                    "name"] + "'>";
                 out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                 out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                 out += "<div class='gameTagHolder'>";
                 out += "<div class='tag flash'>Flash</div>";
                 for (j = 0; j < gameInfo["tags"].length; j++) {
-                    var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+                    var clsNm = gameInfo["tags"][j].toLowerCase()
+                        .split(" ")
+                        .join("-");
 
                     out += "<div class='tag " + clsNm + "'>" + gameInfo["tags"][j] + "</div>";
                 }
@@ -659,7 +714,8 @@ function pageInit() {
             }
 
             gameScreenshotHolder[2].innerHTML = out;
-        } else { // for projects/other page which include these games
+        }
+        else { // for projects/other page which include these games
 
             // Look for the project game in both HTML and Flash games
 
@@ -667,16 +723,21 @@ function pageInit() {
             for (i = 0; i < gameLib["html"].length; i++) {
                 var gameInfo = gameLib["html"][i];
 
-                if (gameInfo["project"] != null && gameInfo["project"] != undefined && gameInfo["project"] != false && gameInfo["project"] != "false" && gameInfo["project"] != "none") {
+                if (gameInfo["project"] != null && gameInfo["project"] != undefined && gameInfo["project"] != false &&
+                    gameInfo["project"] != "false" && gameInfo["project"] != "none") {
                     out = "";
-                    out += "<a href='" + gameInfo["url"] + "' target='_blank' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                    out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                    out += "<a href='" + gameInfo["url"] + "' target='_blank' class='gameHolder" + ((gameInfo[
+                        "featured"] == true) ? " featured" : "") + "'>";
+                    out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo[
+                        "name"] + "'>";
                     out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                     out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                     out += "<div class='gameTagHolder'>";
                     out += "<div class='tag html'>HTML5</div>";
                     for (j = 0; j < gameInfo["tags"].length; j++) {
-                        var clsNm = gameInfo["tags"][j].toLowerCase().split(" ").join("-");
+                        var clsNm = gameInfo["tags"][j].toLowerCase()
+                            .split(" ")
+                            .join("-");
 
                         out += "<div class='tag " + clsNm + "'>" + gameInfo["tags"][j] + "</div>";
                     }
@@ -686,7 +747,8 @@ function pageInit() {
                     if (outEle[gameInfo["project"].toString()] != null &&
                         outEle[gameInfo["project"].toString()] != undefined) {
                         outEle[gameInfo["project"].toString()] += out;
-                    } else {
+                    }
+                    else {
                         outEle[gameInfo["project"].toString()] = out;
                     }
                 }
@@ -696,11 +758,14 @@ function pageInit() {
             for (i = 0; i < gameLib["flash"].length; i++) {
                 var gameInfo = gameLib["flash"][i];
 
-                if (gameInfo["project"] != null && gameInfo["project"] != undefined && gameInfo["project"] != false && gameInfo["project"] != "false" && gameInfo["project"] != "none") {
+                if (gameInfo["project"] != null && gameInfo["project"] != undefined && gameInfo["project"] != false &&
+                    gameInfo["project"] != "false" && gameInfo["project"] != "none") {
                     out = "";
 
-                    out += "<a href='../games/playFlash.html?name=" + gameInfo["filename"] + "' class='gameHolder" + ((gameInfo["featured"] == true) ? " featured" : "") + "'>";
-                    out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo["name"] + "'>";
+                    out += "<a href='../games/playFlash.html?name=" + gameInfo["filename"] + "' class='gameHolder" + ((
+                        gameInfo["featured"] == true) ? " featured" : "") + "'>";
+                    out += "<img src='../images/GameScreenshots/" + gameInfo["filename"] + ".png' alt='" + gameInfo[
+                        "name"] + "'>";
                     out += "<div class='gameTitle'>" + gameInfo["name"] + "</div>";
                     out += "<div class='gameDesc'>" + gameInfo["description"] + "</div>";
                     out += "</div>";
@@ -709,7 +774,8 @@ function pageInit() {
                     if (outEle[gameInfo["project"].toString()] != null &&
                         outEle[gameInfo["project"].toString()] != undefined) {
                         outEle[gameInfo["project"].toString()] += out;
-                    } else {
+                    }
+                    else {
                         outEle[gameInfo["project"].toString()] = out;
                     }
                 }
@@ -740,7 +806,8 @@ function pageInit() {
             out = "";
 
             out += "<div class='photoHolder" + ((photoInfo["featured"] == true) ? " featured" : "") + "'>";
-            out += "<img src='../images/gallery/" + j.toString() + "/" + photoInfo["filename"] + "' alt='" + photoInfo["description"] + "'>";
+            out += "<img src='../images/gallery/" + j.toString() + "/" + photoInfo["filename"] + "' alt='" + photoInfo[
+                "description"] + "'>";
             out += "<div class='photoDesc'>" + photoInfo["description"] + "</div>";
             out += "</div>";
             out += "</a>";
@@ -761,7 +828,7 @@ function pageInit() {
     // Add Event Listener for full-view photo
     var e = document.getElementsByClassName("photoHolder");
     for (var j = 0; j < e.length; j++) {
-        e[j].addEventListener("mouseup", function (ev) {
+        e[j].addEventListener("mouseup", function(ev) {
             photoToggleView(this)
         });
     }
@@ -780,19 +847,21 @@ function pageInit() {
 
             // Add event listener to title for opening and closing
             accTitle = accItemEle[i].getElementsByClassName("accordion-title")[0];
-            accTitle.addEventListener("click", function () {
+            accTitle.addEventListener("click", function() {
                 var par = this.parentNode;
 
                 if (par.className.indexOf(" open") != -1) { // item is open, hence close it
                     par.className = par.className.replaceAll(" open", " closed");
-                } else {
+                }
+                else {
                     // item is closed
                     //  1. open this item
                     //  2. close all other items
                     var accItemEleTemp = par.parentNode.getElementsByClassName("accordion-item");
                     for (var j = 0; j < accItemEleTemp.length; j++) {
                         if (par != accItemEleTemp[j])
-                            accItemEleTemp[j].className = accItemEleTemp[j].className.replaceAll(" open", " closed");
+                            accItemEleTemp[j].className = accItemEleTemp[j].className.replaceAll(" open",
+                                " closed");
                     }
 
                     par.className = par.className.replaceAll(" closed", " open");
@@ -802,7 +871,7 @@ function pageInit() {
     }
 }
 
-function photoToggleView(ele) {
+function photoToggleView (ele) {
     console.log(ele);
 
     // Need to change the width and height of the image...
@@ -812,7 +881,8 @@ function photoToggleView(ele) {
     if (ele.className.indexOf(" fullView") != -1) {
         ele.className = ele.className.replaceAll(" fullView", "");
 
-    } else {
+    }
+    else {
         ele.className += " fullView";
 
         /*
@@ -822,8 +892,7 @@ function photoToggleView(ele) {
     }
 }
 
-
-function circlesCalibration() {
+function circlesCalibration () {
     // align circles to respect width/height
     var circles = getElementsByClass("circle-height");
     for (i = 0; i < circles.length; i++) {
@@ -845,10 +914,12 @@ function circlesCalibration() {
         if (switchVar.split("-")[0] == "width" && window.windowW <= parseInt(switchVar.split("-")[1])) {
             w = circles[i].offsetWidth;
             circles[i].style.height = w + "px";
-        } else if (switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split("-")[1])) {
+        }
+        else if (switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split("-")[1])) {
             w = circles[i].offsetWidth;
             circles[i].style.height = w + "px";
-        } else {
+        }
+        else {
             h = circles[i].offsetHeight;
             circles[i].style.width = h + "px";
         }
@@ -862,10 +933,12 @@ function circlesCalibration() {
         if (switchVar.split("-")[0] == "width" && window.windowW <= switchVar.split("-")[1]) {
             h = circles[i].offsetHeight;
             circles[i].style.width = h + "px";
-        } else if (switchVar.split("-")[0] == "height" && window.windowH <= switchVar.split("-")[1]) {
+        }
+        else if (switchVar.split("-")[0] == "height" && window.windowH <= switchVar.split("-")[1]) {
             h = circles[i].offsetHeight;
             circles[i].style.width = h + "px";
-        } else {
+        }
+        else {
             w = circles[i].offsetWidth;
             circles[i].style.height = w + "px";
         }
@@ -878,9 +951,11 @@ function circlesCalibration() {
 
         if (switchVar.split("-")[0] == "width" && window.windowW <= parseInt(switchVar.split("-")[1])) {
             circles[i].style = '';
-        } else if (switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split("-")[1])) {
+        }
+        else if (switchVar.split("-")[0] == "height" && window.windowH <= parseInt(switchVar.split("-")[1])) {
             circles[i].style = '';
-        } else {
+        }
+        else {
             h = circles[i].offsetHeight;
             circles[i].style.width = h + "px";
         }
@@ -893,9 +968,11 @@ function circlesCalibration() {
 
         if (switchVar.split("-")[0] == "width" && window.windowW <= switchVar.split("-")[1]) {
             circles[i].style = '';
-        } else if (switchVar.split("-")[0] == "height" && window.windowH <= switchVar.split("-")[1]) {
+        }
+        else if (switchVar.split("-")[0] == "height" && window.windowH <= switchVar.split("-")[1]) {
             circles[i].style = '';
-        } else {
+        }
+        else {
             w = circles[i].offsetWidth;
             circles[i].style.height = w + "px";
         }
@@ -907,72 +984,82 @@ var keyCodes = {
     "toggleOptions": 79
 }
 
-function keyboardShortcuts() {
+function keyboardShortcuts () {
     var e = window.event;
     var code = e.keyCode || e.which;
 
     if (code == keyCodes["toggleMenu"]) {
         toggleMenu();
-    } else if (code == keyCodes["toggleOptions"]) {
+    }
+    else if (code == keyCodes["toggleOptions"]) {
         optionsClick();
     }
 }
 
 /*-------NAVLIST------*/
-function navCircleHover() {
+function navCircleHover () {
     // use "this" to access element being hovered over.
     // console.log(this.id);
 }
 
-function navCircleUnhover() {
+function navCircleUnhover () {
     // use "this" to access element being hovered over.
 
 }
 
-function toggleMenu() {
+function toggleMenu () {
     closeOptions();
 
     if (navList.className.indexOf("disappear") != -1) {
         navList.className = navList.className.replaceAll("disappear", "appear center");
-        document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
-    } else {
+        document.getElementById("navCircle1")
+            .getElementsByTagName("span")[0].innerHTML = "Navigation Menu";
+    }
+    else {
         navList.className = navList.className.replaceAll("appear center", "disappear");
-        document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
+        document.getElementById("navCircle1")
+            .getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
     }
 }
 
 /*------OPTIONS------*/
-function optionsHover(obj) {
+function optionsHover (obj) {
     h = optionsOriWidth * (3 / 2);
     obj.style.height = obj.style.width = h + "px";
     obj.className += " hover";
 }
 
-function optionsUnhover(obj) {
+function optionsUnhover (obj) {
     h = optionsOriWidth;
     obj.style.height = obj.style.width = h + "px";
     obj.className = obj.className.replaceAll(" hover", "");
 }
 
-function optionsClick(obj) {
+function optionsClick (obj) {
     navList.className = navList.className.replaceAll("appear center", "disappear");
-    document.getElementById("navCircle1").getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
+    document.getElementById("navCircle1")
+        .getElementsByTagName("span")[0].innerHTML = "Navigation<br>Menu";
 
     optionsBox = document.getElementById("optionsBox");
     if (optionsBox.className.indexOf(" disappear") != -1) {
         openOptions();
-    } else closeOptions();
+    }
+    else closeOptions();
 }
 
-function openOptions() {
-    document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" disappear", " appear");
+function openOptions () {
+    document.getElementById("optionsBox")
+        .className = document.getElementById("optionsBox")
+        .className.replaceAll(" disappear", " appear");
 }
 
-function closeOptions() {
-    document.getElementById("optionsBox").className = document.getElementById("optionsBox").className.replaceAll(" appear", " disappear");
+function closeOptions () {
+    document.getElementById("optionsBox")
+        .className = document.getElementById("optionsBox")
+        .className.replaceAll(" appear", " disappear");
 }
 
-function resetOptions() {
+function resetOptions () {
     if (!confirm("Are you sure you want to reset options?")) return;
 
     // Remove after live demo
@@ -984,17 +1071,20 @@ function resetOptions() {
     // if(document.getElementById("navListHome")==null) window.location.href = "../index.html";
 }
 
-function toggleOptions(opt, ele) {
+function toggleOptions (opt, ele) {
     if (ele != null)
         if (ele.className.indexOf("disabled") != -1) return;
 
     if (opt == 'boxHide') {
         options["hideOnLaunch"] = !options["hideOnLaunch"];
-    } else if (opt == 'welcomeHide') {
+    }
+    else if (opt == 'welcomeHide') {
         options["welcomeHide"] = !options["welcomeHide"];
-    } else if (opt == 'menuHide') {
+    }
+    else if (opt == 'menuHide') {
         options["menuHide"] = !options["menuHide"];
-    } else if (opt == 'menuTypeToggle') {
+    }
+    else if (opt == 'menuTypeToggle') {
         options["tabbedMenu"] = !options["tabbedMenu"];
 
         if (navList != null) {
@@ -1002,11 +1092,12 @@ function toggleOptions(opt, ele) {
                 if (navList.className.indexOf("alt-nav") == -1) {
                     navList.className += " alt-nav";
                 }
-            } else {
+            }
+            else {
                 navList.className = navList.className.replaceAll(" alt-nav", "");
             }
 
-            var tt = setTimeout(function () {
+            var tt = setTimeout(function() {
                 pageChange();
                 clearTimeout(tt);
             }, 500);
@@ -1017,28 +1108,34 @@ function toggleOptions(opt, ele) {
     saveOptions();
 }
 
-function loadOptions() {
+function loadOptions () {
     if (window.localStorage) {
         if (localStorage["ifocus-options"]) {
             options = JSON.parse(localStorage["ifocus-options"]);
-        } else {
+        }
+        else {
             trace("Cannot find previously saved options.");
         }
-    } else trace("Local Storage not available! Unable to load options!");
+    }
+    else trace("Local Storage not available! Unable to load options!");
 
     checkOptions();
 }
 
-function saveOptions() {
+function saveOptions () {
     if (window.localStorage) {
         localStorage["ifocus-options"] = JSON.stringify(options);
-    } else trace("Local Storage not available! Unable to save options");
+    }
+    else trace("Local Storage not available! Unable to save options");
 }
 
-function checkOptions() {
-    document.getElementById("optionsBoxHide").checked = options["hideOnLaunch"];
-    document.getElementById("optionsMenuHide").checked = !options["menuHide"];
-    document.getElementById("optionsMenuType").checked = options["tabbedMenu"];
+function checkOptions () {
+    document.getElementById("optionsBoxHide")
+        .checked = options["hideOnLaunch"];
+    document.getElementById("optionsMenuHide")
+        .checked = !options["menuHide"];
+    document.getElementById("optionsMenuType")
+        .checked = options["tabbedMenu"];
 
     var optionsBtns = getElementsByClass("options-btn");
     for (var i = 0; i < optionsBtns.length; i++) {
@@ -1051,7 +1148,7 @@ function checkOptions() {
     // trace("");
 }
 
-function btnUncheck(id) {
+function btnUncheck (id) {
     var ele = document.getElementById(id);
     ele.checked = false;
     if (ele.className.indexOf("unchecked") == -1) {
@@ -1062,7 +1159,7 @@ function btnUncheck(id) {
     if (ele.id == "optionsBoxHide") btnDisable("optionsMenuHide");
 }
 
-function btnCheck(id) {
+function btnCheck (id) {
     var ele = document.getElementById(id);
     ele.checked = true;
     ele.className = ele.className.replaceAll("unchecked", "checked");
@@ -1070,12 +1167,12 @@ function btnCheck(id) {
     if (ele.id == "optionsBoxHide") btnEnable("optionsMenuHide");
 }
 
-function btnDisable(id) {
+function btnDisable (id) {
     var ele = document.getElementById(id);
     ele.className = ele.className.replaceAll(" disabled", "") + " disabled";
 }
 
-function btnEnable(id) {
+function btnEnable (id) {
     var ele = document.getElementById(id);
     ele.className = ele.className.replaceAll(" disabled", "");
 }
@@ -1084,35 +1181,35 @@ function btnEnable(id) {
 var vidPauseInterval = 1000;
 var vidTimer;
 
-function playVid(obj) {
+function playVid (obj) {
     obj.play();
 }
 
-function pauseVid(obj) {
+function pauseVid (obj) {
     obj.pause();
     clearInterval(vidTimer);
 }
 
-function playVideo() {
+function playVideo () {
     playVid(this);
 }
 
-function pauseVideo() {
+function pauseVideo () {
     var vid = this;
     if (!this.paused) {
         cur.activate(vidPauseInterval);
         cur.hoverElement = null;
-        vidTimer = setTimeout(function () {
+        vidTimer = setTimeout(function() {
             pauseVid(vid);
         }, vidPauseInterval);
     }
 }
 
-function clearVideo() {
+function clearVideo () {
     clearInterval(vidTimer);
 }
 
-function toggleVideo() {
+function toggleVideo () {
     if (options["eyeCursorEnabled"]) {
         playVid(this);
         return;
@@ -1128,7 +1225,7 @@ var originalStyles = {
     "width": 0
 }
 
-function toggleReflections() {
+function toggleReflections () {
     trace(this);
     var contentDiv = getElementsByClass("content", this)[0];
     var title = this.id + ".txt";
@@ -1155,10 +1252,12 @@ function toggleReflections() {
             }
 
             contentDiv.innerHTML = reflectionsTxt;
-        } catch (e) {
+        }
+        catch (e) {
             contentDiv.innerHTML = "Reflections could not be loaded...";
         }
-    } else {
+    }
+    else {
         this.className = this.className.replaceAll(" active", "");
         contentDiv.innerHTML = originalText;
         this.style.left = originalStyles["left"];
@@ -1174,14 +1273,14 @@ var scrollDist = 6; // pixels
 var smoothScrollSpd = 10; // milliseconds
 var scrollDir;
 
-function scrollAreaFire(id) {
+function scrollAreaFire (id) {
     if (!options["scrollAreaEnabled"]) return;
 
     scrollDir = id.split("scroll")[1].toLowerCase();
     tick = setInterval(beginScrolling, scrollTime);
 }
 
-function beginScrolling() {
+function beginScrolling () {
     switch (scrollDir) {
         case "up":
             scrollUp(scrollDist, smoothScrollSpd);
@@ -1198,6 +1297,6 @@ function beginScrolling() {
     }
 }
 
-function stopScrolling() {
+function stopScrolling () {
     clearInterval(tick);
 }

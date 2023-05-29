@@ -583,8 +583,8 @@ p.subtitle {
 
 #navList.alt-nav .icon-web:before,
 .gameMobileScreenshotHolder .icon-web:before,
-a.icon-web:before,
-a.icon-website:before {
+.icon-web:before,
+.icon-website:before {
     content: "\e902";
 }
 
