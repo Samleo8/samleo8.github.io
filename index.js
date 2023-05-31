@@ -214,6 +214,20 @@ var galleryLib = {
             "description": "Baseline images of dove scene using NeRF and SRF. Downsampled by 4."
         }
     ],
+    "radarslampy": [{
+            "filename": "amazingresult.jpg",
+            "description": "Result of our RadarSLAM Python implementation, with motion compensation."
+        }, {
+            "filename": "pipeline.png",
+            "description": "Visual Summary of Algorithm Pipeline."
+        }, {
+            "filename": "klttrack.png",
+            "description": "Tracking ."
+        }, {
+            "filename": "full_seq_1.jpg",
+            "description": "Importance of Motion Compensation: Result <i>without</i> motion compensation."
+        }
+    ],
     "harp-volumetric-1": [{
             "filename": "eval0_full.png",
             "description": "Testing on the CMU Panoptic dataset - no occlusions"
