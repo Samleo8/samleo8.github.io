@@ -215,17 +215,23 @@ var galleryLib = {
         }
     ],
     "radarslampy": [{
-            "filename": "amazingresult.jpg",
-            "description": "Result of our RadarSLAM Python implementation, with motion compensation."
-        }, {
             "filename": "pipeline.png",
             "description": "Visual Summary of Algorithm Pipeline."
         }, {
-            "filename": "klttrack.png",
-            "description": "Tracking ."
+            "filename": "klttrack.jpg",
+            "description": "KLT Tracking: Feature points being tracked from one image to another."
+        }, {
+            "filename": "motiondistort.jpg",
+            "description": "Visual Interpretation of Motion Distortion."
+        }, {
+            "filename": "motiondistort.jpg",
+            "description": "Motion Compensation: Example"
         }, {
             "filename": "full_seq_1.jpg",
-            "description": "Importance of Motion Compensation: Result <i>without</i> motion compensation."
+            "description": "Motion Compensation: Result <i>without</i> motion compensation."
+        }, {
+            "filename": "amazingresult.jpg",
+            "description": "Result of our RadarSLAM Python implementation, with motion compensation."
         }
     ],
     "harp-volumetric-1": [{
