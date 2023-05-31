@@ -138,20 +138,20 @@ var gameLib = {
                     "tags":["Arcade","Shooting","Defence"]
                 }*/
     ],
-    "html": [{
-            "name": "Sisyphus Sheep",
-            "filename": "SisyphusSheep",
-            "url": "https://samleo8.github.io/SisyphusSheep/",
-            "description": "Run for your life as you avoid the spikes on an endless treadmill!",
-            "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready"],
-            featured: true
-        },
+    "html": [
         {
             "name": "Soaring Sheep",
             "filename": "SoaringSheep",
             "url": "https://samleo8.github.io/SoaringSheep/",
             "description": "Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready", "Single Button"],
+            featured: true
+        }, {
+            "name": "Sisyphus Sheep",
+            "filename": "SisyphusSheep",
+            "url": "https://samleo8.github.io/SisyphusSheep/",
+            "description": "Run for your life as you avoid the spikes on an endless treadmill!",
+            "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready"],
             featured: true
         },
         {
