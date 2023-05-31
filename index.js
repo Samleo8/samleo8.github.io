@@ -141,7 +141,7 @@ var gameLib = {
     "html": [{
             "name": "Sisyphus Sheep",
             "filename": "SisyphusSheep",
-            "url": "https:// samleo8.github.io/SisyphusSheep/",
+            "url": "https://samleo8.github.io/SisyphusSheep/",
             "description": "Run for your life as you avoid the spikes on an endless treadmill!",
             "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready"],
             featured: true
@@ -149,7 +149,7 @@ var gameLib = {
         {
             "name": "Soaring Sheep",
             "filename": "SoaringSheep",
-            "url": "https:// samleo8.github.io/SoaringSheep/",
+            "url": "https://samleo8.github.io/SoaringSheep/",
             "description": "Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags": ["Arcade", "Endless", "Sheep", "Mobile Ready", "Single Button"],
             featured: true
@@ -157,14 +157,14 @@ var gameLib = {
         {
             "name": "PixArt",
             "filename": "PixArt",
-            "url": "https:// samleo8.github.io/PixArt/",
+            "url": "https://samleo8.github.io/PixArt/",
             "description": "Colourful recreation of Japanese Nonogram puzzle.",
             "tags": ["Puzzle", "Mobile Ready"]
         },
         {
             "name": "Slitherie",
             "filename": "Slitherie",
-            "url": "https:// samleo8.github.io/Slitherie/",
+            "url": "https://samleo8.github.io/Slitherie/",
             "description": "Recreation of classic 'Snake' game with different foods and crazy levels.",
             "tags": ["Arcade"]
         }
@@ -173,9 +173,9 @@ var gameLib = {
             "name": "Soaring Sheep",
             "filename": "SoaringSheep",
             "url": {
-                "android": "https:// play.google.com/store/apps/details?id=io.samleo8.SoaringSheep",
-                "web": "https:// samleo8.github.io/SoaringSheep/",
-                "telegram": "https:// telegram.me/SamStudiosBot?game=SoaringSheep"
+                "android": "https://play.google.com/store/apps/details?id=io.samleo8.SoaringSheep",
+                "web": "https://samleo8.github.io/SoaringSheep/",
+                "telegram": "https://telegram.me/SamStudiosBot?game=SoaringSheep"
             },
             "description": "Flappy Bird on steroids: Jump to avoid those nasty spikes. Bounce off the walls to score points.",
             "tags": ["Arcade", "Endless", "Sheep", "Single Button"],
@@ -185,9 +185,9 @@ var gameLib = {
             "name": "Sisyphus Sheep",
             "filename": "SisyphusSheep",
             "url": {
-                "android": "https:// play.google.com/store/apps/details?id=io.samleo8.SisyphusSheep",
-                "web": "https:// samleo8.github.io/SisyphusSheep/",
-                "telegram": "https:// telegram.me/SamStudiosBot?game=SisyphusSheep"
+                "android": "https://play.google.com/store/apps/details?id=io.samleo8.SisyphusSheep",
+                "web": "https://samleo8.github.io/SisyphusSheep/",
+                "telegram": "https://telegram.me/SamStudiosBot?game=SisyphusSheep"
             },
             "description": "Run to the end of the treadmill. Avoid the spikes. Score points. Repeat.",
             "tags": ["Arcade", "Endless", "Sheep", "Treadmill"],
